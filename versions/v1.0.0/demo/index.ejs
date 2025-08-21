@@ -1,0 +1,356 @@
+<%- include('../../../shared/layouts/version', {
+    title: 'Demo Components - LBM UI Kit v' + version.version,
+    version: version,
+    breadcrumbs: [
+        { title: 'Home', url: '/' + version.version },
+        { title: 'Demo', url: '/' + version.version + '/demo' }
+    ]
+}) %>
+
+<% contentFor('content') %>
+<div class="container-fluid">
+    <!-- Page Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h2 mb-2">
+                        <i class="fas fa-play-circle me-2 text-primary"></i>
+                        Demo Components
+                    </h1>
+                    <p class="text-muted mb-0">Interactive examples of all available components in v<%= version.version %></p>
+                </div>
+                <div>
+                    <a href="/<%= version.version %>/docs" class="btn btn-outline-primary">
+                        <i class="fas fa-book me-2"></i>
+                        Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search and Filter -->
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <div class="input-group">
+                <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                </span>
+                <input type="search" class="form-control" id="componentSearch" placeholder="Search components...">
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <select class="form-select" id="categoryFilter">
+                <option value="">All Categories</option>
+                <% 
+                const categories = [...new Set(config.components.map(comp => comp.category))];
+                categories.forEach(category => { %>
+                <option value="<%= category %>"><%= category %></option>
+                <% }) %>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Component Stats -->
+    <div class="row mb-4">
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-center">
+                <div class="card-body py-3">
+                    <div class="text-primary mb-1">
+                        <i class="fas fa-puzzle-piece fa-2x"></i>
+                    </div>
+                    <h4 class="mb-1"><%= config.components.length %></h4>
+                    <small class="text-muted">Total Components</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-center">
+                <div class="card-body py-3">
+                    <div class="text-success mb-1">
+                        <i class="fas fa-play fa-2x"></i>
+                    </div>
+                    <h4 class="mb-1"><%= config.components.filter(comp => comp.hasDemo).length %></h4>
+                    <small class="text-muted">With Demo</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-center">
+                <div class="card-body py-3">
+                    <div class="text-info mb-1">
+                        <i class="fas fa-book fa-2x"></i>
+                    </div>
+                    <h4 class="mb-1"><%= config.components.filter(comp => comp.hasDocs).length %></h4>
+                    <small class="text-muted">Documented</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card text-center">
+                <div class="card-body py-3">
+                    <div class="text-warning mb-1">
+                        <i class="fas fa-layer-group fa-2x"></i>
+                    </div>
+                    <h4 class="mb-1"><%= categories.length %></h4>
+                    <small class="text-muted">Categories</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Components Grid -->
+    <div class="row" id="componentsGrid">
+        <% config.components.forEach(component => { %>
+        <div class="col-lg-4 col-md-6 mb-4 component-item" 
+             data-category="<%= component.category %>" 
+             data-name="<%= component.name.toLowerCase() %>" 
+             data-title="<%= component.title.toLowerCase() %>">
+            <div class="card component-card h-100" data-component="<%= component.name %>">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle p-2 me-2" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-<%= component.icon || 'cube' %> fa-sm"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0"><%= component.title %></h6>
+                            <small class="text-muted"><%= component.category %></small>
+                        </div>
+                    </div>
+                    <div>
+                        <% if (component.status === 'new') { %>
+                            <span class="badge bg-success">New</span>
+                        <% } else if (component.status === 'updated') { %>
+                            <span class="badge bg-warning">Updated</span>
+                        <% } else if (component.status === 'deprecated') { %>
+                            <span class="badge bg-danger">Deprecated</span>
+                        <% } %>
+                    </div>
+                </div>
+                
+                <div class="card-body">
+                    <p class="card-text text-muted mb-3"><%= component.description %></p>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <% if (component.hasDemo) { %>
+                                <span class="badge bg-success me-1">
+                                    <i class="fas fa-play me-1"></i>Demo
+                                </span>
+                            <% } %>
+                            <% if (component.hasDocs) { %>
+                                <span class="badge bg-info">
+                                    <i class="fas fa-book me-1"></i>Docs
+                                </span>
+                            <% } %>
+                        </div>
+                        <div class="btn-group btn-group-sm">
+                            <% if (component.hasDemo) { %>
+                                <a href="/<%= version.version %>/demo/<%= component.name %>" 
+                                   class="btn btn-outline-primary" 
+                                   title="View Demo">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            <% } %>
+                            <% if (component.hasDocs) { %>
+                                <a href="/<%= version.version %>/docs/<%= component.name %>" 
+                                   class="btn btn-outline-secondary" 
+                                   title="View Documentation">
+                                    <i class="fas fa-book"></i>
+                                </a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                
+                <% if (component.hasDemo) { %>
+                <div class="card-footer bg-transparent">
+                    <small class="text-muted">
+                        <i class="fas fa-mouse-pointer me-1"></i>
+                        Click to view interactive demo
+                    </small>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+    
+    <!-- No Results Message -->
+    <div class="row" id="noResults" style="display: none;">
+        <div class="col-12">
+            <div class="text-center py-5">
+                <div class="text-muted mb-3">
+                    <i class="fas fa-search fa-3x"></i>
+                </div>
+                <h4 class="text-muted">No components found</h4>
+                <p class="text-muted">Try adjusting your search or filter criteria</p>
+                <button class="btn btn-outline-primary" onclick="clearFilters()">
+                    <i class="fas fa-times me-2"></i>
+                    Clear Filters
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Categories Overview -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="mb-4">
+                <i class="fas fa-layer-group me-2 text-primary"></i>
+                Browse by Category
+            </h3>
+            <div class="row">
+                <% categories.forEach(category => { 
+                    const categoryComponents = config.components.filter(comp => comp.category === category);
+                %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="card category-card" data-category="<%= category %>" style="cursor: pointer;">
+                        <div class="card-body text-center">
+                            <div class="text-primary mb-2">
+                                <i class="fas fa-<%= category === 'Forms' ? 'wpforms' : category === 'Navigation' ? 'compass' : category === 'Layout' ? 'th-large' : category === 'Content' ? 'file-alt' : 'cube' %> fa-2x"></i>
+                            </div>
+                            <h6 class="card-title"><%= category %></h6>
+                            <p class="card-text text-muted small">
+                                <%= categoryComponents.length %> component<%= categoryComponents.length !== 1 ? 's' : '' %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+
+<% contentFor('scripts') %>
+<script>
+// Search and filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('componentSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const componentsGrid = document.getElementById('componentsGrid');
+    const noResults = document.getElementById('noResults');
+    const componentItems = document.querySelectorAll('.component-item');
+    
+    // Search functionality
+    function filterComponents() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategory = categoryFilter.value;
+        let visibleCount = 0;
+        
+        componentItems.forEach(item => {
+            const name = item.dataset.name;
+            const title = item.dataset.title;
+            const category = item.dataset.category;
+            
+            const matchesSearch = !searchTerm || 
+                                name.includes(searchTerm) || 
+                                title.includes(searchTerm);
+            const matchesCategory = !selectedCategory || category === selectedCategory;
+            
+            if (matchesSearch && matchesCategory) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+            componentsGrid.style.display = 'none';
+            noResults.style.display = 'block';
+        } else {
+            componentsGrid.style.display = 'flex';
+            noResults.style.display = 'none';
+        }
+    }
+    
+    // Event listeners
+    searchInput.addEventListener('input', filterComponents);
+    categoryFilter.addEventListener('change', filterComponents);
+    
+    // Clear filters function
+    window.clearFilters = function() {
+        searchInput.value = '';
+        categoryFilter.value = '';
+        filterComponents();
+    };
+    
+    // Component card click handlers
+    const componentCards = document.querySelectorAll('.component-card');
+    componentCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Don't trigger if clicking on buttons
+            if (e.target.closest('.btn-group')) return;
+            
+            const componentName = this.dataset.component;
+            if (componentName) {
+                window.location.href = `/<%= version.version %>/demo/${componentName}`;
+            }
+        });
+        
+        // Hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+            this.style.transition = 'all 0.2s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // Category card click handlers
+    const categoryCards = document.querySelectorAll('.category-card');
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const category = this.dataset.category;
+            categoryFilter.value = category;
+            filterComponents();
+            
+            // Scroll to components grid
+            componentsGrid.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Hover effects for category cards
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+            this.style.transition = 'all 0.2s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+        });
+    });
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Focus search on '/' key
+        if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+            e.preventDefault();
+            searchInput.focus();
+        }
+        
+        // Clear search on Escape
+        if (e.key === 'Escape' && document.activeElement === searchInput) {
+            clearFilters();
+            searchInput.blur();
+        }
+    });
+    
+    // Add search hint
+    const searchHint = document.createElement('small');
+    searchHint.className = 'form-text text-muted';
+    searchHint.innerHTML = 'Press <kbd>/</kbd> to focus search, <kbd>Esc</kbd> to clear';
+    searchInput.parentNode.parentNode.appendChild(searchHint);
+});
+</script>
+<% end %>

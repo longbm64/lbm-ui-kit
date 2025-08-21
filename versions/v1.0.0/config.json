@@ -1,0 +1,181 @@
+{
+  "version": "v1.0.0",
+  "name": "LBM UI Kit v1.0.0",
+  "description": "First stable release with core components",
+  "releaseDate": "2024-01-15",
+  "status": "stable",
+  "components": [
+    {
+      "name": "button",
+      "title": "Button",
+      "category": "Form Controls",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Interactive button component with various styles and states"
+    },
+    {
+      "name": "modal",
+      "title": "Modal",
+      "category": "Overlays",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Modal dialogs for user interaction"
+    },
+    {
+      "name": "alert",
+      "title": "Alert",
+      "category": "Feedback",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Alert messages for user notifications"
+    },
+    {
+      "name": "avatar",
+      "title": "Avatar",
+      "category": "Display",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "User profile picture component with various shapes and sizes"
+    },
+    {
+      "name": "accordion",
+      "title": "Accordion",
+      "category": "Layout",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Collapsible content panels"
+    },
+    {
+      "name": "carousel",
+      "title": "Carousel",
+      "category": "Display",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Image and content slider component"
+    },
+    {
+      "name": "input-field",
+      "title": "Input Field",
+      "category": "Form Controls",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Text input component with validation"
+    },
+    {
+      "name": "select-dropdown",
+      "title": "Select Dropdown",
+      "category": "Form Controls",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Dropdown selection component"
+    },
+    {
+      "name": "table",
+      "title": "Table",
+      "category": "Display",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Data table component with sorting and pagination"
+    },
+    {
+      "name": "pagination",
+      "title": "Pagination",
+      "category": "Navigation",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Page navigation component"
+    },
+    {
+      "name": "progress-bar",
+      "title": "Progress Bar",
+      "category": "Feedback",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Progress indicator component"
+    },
+    {
+      "name": "tab",
+      "title": "Tab",
+      "category": "Navigation",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Tabbed content navigation"
+    },
+    {
+      "name": "toast",
+      "title": "Toast",
+      "category": "Feedback",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Toast notifications for user feedback"
+    },
+    {
+      "name": "tooltip",
+      "title": "Tooltip",
+      "category": "Overlays",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Contextual information overlay"
+    },
+    {
+      "name": "navigation",
+      "title": "Navigation",
+      "category": "Navigation",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Navigation menu components"
+    },
+    {
+      "name": "tree-view",
+      "title": "Tree View",
+      "category": "Display",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Hierarchical tree structure component"
+    },
+    {
+      "name": "input-dropdown",
+      "title": "Input Dropdown",
+      "category": "Form Controls",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Searchable dropdown input component"
+    },
+    {
+      "name": "confirm",
+      "title": "Confirm Dialog",
+      "category": "Overlays",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Confirmation dialog component"
+    },
+    {
+      "name": "scrollbar",
+      "title": "Scrollbar",
+      "category": "Layout",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Custom scrollbar styling"
+    },
+    {
+      "name": "theme",
+      "title": "Theme",
+      "category": "Utilities",
+      "hasDemo": true,
+      "hasDocs": true,
+      "description": "Theme customization utilities"
+    }
+  ],
+  "dependencies": {
+    "bootstrap": "5.3.7",
+    "fontawesome": "6.7.2"
+  },
+  "theme": {
+    "primaryColor": "#007bff",
+    "secondaryColor": "#6c757d",
+    "successColor": "#28a745",
+    "dangerColor": "#dc3545",
+    "warningColor": "#ffc107",
+    "infoColor": "#17a2b8"
+  }
+}
