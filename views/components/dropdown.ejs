@@ -1,0 +1,850 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Dropdown</h1>
+        <p class="lead">Dropdown components with various styles, triggers, and interactive features.</p>
+    </div>
+</div>
+
+<!-- Basic Dropdowns -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Dropdowns</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Basic dropdown menus with different button styles and directions.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Standard Dropdowns</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Primary Dropdown
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Secondary
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Success
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <h6>Outline Dropdowns</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Primary
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Danger
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <h6>Dropdown Sizes</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="dropdown">
+                    <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Large
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Default
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Small
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Split Button Dropdowns</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Action</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                      <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success">Success</button>
+                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                      <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <h6>Dropdown Directions</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <!-- Dropup -->
+                  <div class="btn-group dropup">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                      Dropup
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Dropend -->
+                  <div class="btn-group dropend">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                      Dropend
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Dropstart -->
+                  <div class="btn-group dropstart">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                      Dropstart
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-dropdowns-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-dropdowns-code" class="language-html">&lt;!-- Basic Dropdown --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+    Primary Dropdown
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Split Button Dropdown --&gt;
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Action&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"&gt;
+    &lt;span class="visually-hidden"&gt;Toggle Dropdown&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Dropup --&gt;
+&lt;div class="btn-group dropup"&gt;
+  &lt;button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"&gt;
+    Dropup
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dropdown Menu Items -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Dropdown Menu Items</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Different types of dropdown menu items including headers, dividers, and disabled items.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Menu with Headers & Dividers</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Menu Items
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><h6 class="dropdown-header">Dropdown header</h6></li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                
+                <h6>Active & Disabled Items</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Item States
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Regular link</a></li>
+                    <li><a class="dropdown-item active" href="#">Active link</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Disabled link</a></li>
+                  </ul>
+                </div>
+                
+                <h6>Menu with Icons</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <i class="fas fa-cog me-2"></i>Settings
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Sign out</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Form Elements in Dropdown</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Form Dropdown
+                  </button>
+                  <div class="dropdown-menu p-3" style="min-width: 250px;">
+                    <form>
+                      <div class="mb-3">
+                        <label for="dropdownEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="dropdownEmail" placeholder="email@example.com">
+                      </div>
+                      <div class="mb-3">
+                        <label for="dropdownPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="dropdownPassword" placeholder="Password">
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                          <label class="form-check-label" for="dropdownCheck">
+                            Remember me
+                          </label>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Sign in</button>
+                    </form>
+                  </div>
+                </div>
+                
+                <h6>Text Content</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Text Content
+                  </button>
+                  <div class="dropdown-menu p-3 text-muted" style="max-width: 200px;">
+                    <p>
+                      Some example text that's free-flowing within the dropdown menu.
+                    </p>
+                    <p class="mb-0">
+                      And this is more example text.
+                    </p>
+                  </div>
+                </div>
+                
+                <h6>Dropdown with Badges</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Notifications <span class="badge bg-danger">3</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                      Messages <span class="badge bg-primary rounded-pill">2</span>
+                    </a></li>
+                    <li><a class="dropdown-item d-flex justify-content-between align-items-center" href="#">
+                      Updates <span class="badge bg-success rounded-pill">1</span>
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">View all</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('dropdown-items-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="dropdown-items-code" class="language-html">&lt;!-- Menu with Headers & Dividers --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+    Menu Items
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;h6 class="dropdown-header"&gt;Dropdown header&lt;/h6&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Active & Disabled Items --&gt;
+&lt;ul class="dropdown-menu"&gt;
+  &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Regular link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class="dropdown-item active" href="#"&gt;Active link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a class="dropdown-item disabled" href="#"&gt;Disabled link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Form in Dropdown --&gt;
+&lt;div class="dropdown-menu p-3"&gt;
+  &lt;form&gt;
+    &lt;div class="mb-3"&gt;
+      &lt;input type="email" class="form-control" placeholder="email@example.com"&gt;
+    &lt;/div&gt;
+    &lt;div class="mb-3"&gt;
+      &lt;input type="password" class="form-control" placeholder="Password"&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Sign in&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dropdown Alignment & Positioning -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Dropdown Alignment & Positioning</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Control dropdown menu alignment and positioning options.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Menu Alignment</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Left-aligned
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Right-aligned
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <h6>Responsive Alignment</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Responsive
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Auto Close Behavior</h6>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true">
+                      Default
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside">
+                      Clickable outside
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                      Clickable inside
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                  </div>
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false">
+                      Manual close
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                      <li><a class="dropdown-item" href="#">Menu item</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('dropdown-alignment-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="dropdown-alignment-code" class="language-html">&lt;!-- Left-aligned (default) --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+    Left-aligned
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Right-aligned --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+    Right-aligned
+  &lt;/button&gt;
+  &lt;ul class="dropdown-menu dropdown-menu-end"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Auto Close Options --&gt;
+&lt;button data-bs-auto-close="true"&gt;Default behavior&lt;/button&gt;
+&lt;button data-bs-auto-close="inside"&gt;Clickable outside&lt;/button&gt;
+&lt;button data-bs-auto-close="outside"&gt;Clickable inside&lt;/button&gt;
+&lt;button data-bs-auto-close="false"&gt;Manual close&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Interactive Dropdowns -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Interactive Dropdowns</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Interactive dropdown examples with JavaScript functionality.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Dynamic Content</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" id="dynamicDropdown">
+                    Load Content
+                  </button>
+                  <ul class="dropdown-menu" id="dynamicMenu">
+                    <li><a class="dropdown-item" href="#" onclick="loadDynamicContent('option1')">Load Option 1</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="loadDynamicContent('option2')">Load Option 2</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="loadDynamicContent('option3')">Load Option 3</a></li>
+                  </ul>
+                </div>
+                
+                <h6>Search Dropdown</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Search Items
+                  </button>
+                  <div class="dropdown-menu p-3" style="min-width: 250px;">
+                    <input type="text" class="form-control mb-2" placeholder="Search..." id="searchInput" onkeyup="filterDropdownItems()">
+                    <ul class="list-unstyled mb-0" id="searchableItems">
+                      <li><a class="dropdown-item" href="#">Apple</a></li>
+                      <li><a class="dropdown-item" href="#">Banana</a></li>
+                      <li><a class="dropdown-item" href="#">Cherry</a></li>
+                      <li><a class="dropdown-item" href="#">Date</a></li>
+                      <li><a class="dropdown-item" href="#">Elderberry</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <h6>Multi-Select Dropdown</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" id="multiSelectBtn">
+                    Select Multiple (0)
+                  </button>
+                  <div class="dropdown-menu p-3" style="min-width: 200px;">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="option1" id="check1" onchange="updateMultiSelect()">
+                      <label class="form-check-label" for="check1">Option 1</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="option2" id="check2" onchange="updateMultiSelect()">
+                      <label class="form-check-label" for="check2">Option 2</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="option3" id="check3" onchange="updateMultiSelect()">
+                      <label class="form-check-label" for="check3">Option 3</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="option4" id="check4" onchange="updateMultiSelect()">
+                      <label class="form-check-label" for="check4">Option 4</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Programmatic Control</h6>
+                <div class="mb-3">
+                  <div class="dropdown d-inline-block me-2" id="programmableDropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Controlled Dropdown
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                  <div class="d-block mt-2">
+                    <button class="btn btn-sm btn-outline-primary me-1" onclick="showDropdown()">Show</button>
+                    <button class="btn btn-sm btn-outline-secondary me-1" onclick="hideDropdown()">Hide</button>
+                    <button class="btn btn-sm btn-outline-info" onclick="toggleDropdown()">Toggle</button>
+                  </div>
+                </div>
+                
+                <h6>Event Handling</h6>
+                <div class="dropdown mb-3">
+                  <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" id="eventDropdown">
+                    Event Dropdown
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="logDropdownEvent('Item 1 clicked')">Item 1</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="logDropdownEvent('Item 2 clicked')">Item 2</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="logDropdownEvent('Item 3 clicked')">Item 3</a></li>
+                  </ul>
+                </div>
+                <div id="eventLog" class="alert alert-light" style="max-height: 100px; overflow-y: auto; font-size: 0.875rem;">
+                  Event log will appear here...
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('interactive-dropdowns-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="interactive-dropdowns-code" class="language-html">&lt;!-- Search Dropdown --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+    Search Items
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu p-3"&gt;
+    &lt;input type="text" class="form-control mb-2" placeholder="Search..." onkeyup="filterItems()"&gt;
+    &lt;ul class="list-unstyled mb-0"&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Apple&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Banana&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Cherry&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Multi-Select Dropdown --&gt;
+&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;
+    Select Multiple
+  &lt;/button&gt;
+  &lt;div class="dropdown-menu p-3"&gt;
+    &lt;div class="form-check"&gt;
+      &lt;input class="form-check-input" type="checkbox" value="option1"&gt;
+      &lt;label class="form-check-label"&gt;Option 1&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="form-check"&gt;
+      &lt;input class="form-check-input" type="checkbox" value="option2"&gt;
+      &lt;label class="form-check-label"&gt;Option 2&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.dropdown-menu {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:hover {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.code-block {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+.code-block code {
+  color: #212529;
+  background: none;
+}
+</style>
+
+<script>
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const button = event.target.closest('button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+    button.classList.remove('btn-outline-secondary');
+    button.classList.add('btn-success');
+    
+    setTimeout(() => {
+      button.innerHTML = originalText;
+      button.classList.remove('btn-success');
+      button.classList.add('btn-outline-secondary');
+    }, 2000);
+  });
+}
+
+// Dynamic content loading
+function loadDynamicContent(option) {
+  const menu = document.getElementById('dynamicMenu');
+  const button = document.getElementById('dynamicDropdown');
+  
+  // Simulate loading
+  button.innerHTML = 'Loading...';
+  
+  setTimeout(() => {
+    button.innerHTML = `Selected: ${option}`;
+    
+    // Update menu content
+    menu.innerHTML = `
+      <li><h6 class="dropdown-header">Loaded Content for ${option}</h6></li>
+      <li><a class="dropdown-item" href="#">Sub-option 1</a></li>
+      <li><a class="dropdown-item" href="#">Sub-option 2</a></li>
+      <li><a class="dropdown-item" href="#">Sub-option 3</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#" onclick="resetDynamicContent()">Reset</a></li>
+    `;
+  }, 1000);
+}
+
+function resetDynamicContent() {
+  const menu = document.getElementById('dynamicMenu');
+  const button = document.getElementById('dynamicDropdown');
+  
+  button.innerHTML = 'Load Content';
+  menu.innerHTML = `
+    <li><a class="dropdown-item" href="#" onclick="loadDynamicContent('option1')">Load Option 1</a></li>
+    <li><a class="dropdown-item" href="#" onclick="loadDynamicContent('option2')">Load Option 2</a></li>
+    <li><a class="dropdown-item" href="#" onclick="loadDynamicContent('option3')">Load Option 3</a></li>
+  `;
+}
+
+// Search functionality
+function filterDropdownItems() {
+  const input = document.getElementById('searchInput');
+  const filter = input.value.toLowerCase();
+  const items = document.querySelectorAll('#searchableItems .dropdown-item');
+  
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    const li = item.parentElement;
+    if (text.includes(filter)) {
+      li.style.display = 'block';
+    } else {
+      li.style.display = 'none';
+    }
+  });
+}
+
+// Multi-select functionality
+function updateMultiSelect() {
+  const checkboxes = document.querySelectorAll('#multiSelectBtn + .dropdown-menu input[type="checkbox"]');
+  const button = document.getElementById('multiSelectBtn');
+  const selected = Array.from(checkboxes).filter(cb => cb.checked);
+  
+  button.innerHTML = `Select Multiple (${selected.length})`;
+  
+  if (selected.length > 0) {
+    const selectedValues = selected.map(cb => cb.nextElementSibling.textContent).join(', ');
+    button.title = `Selected: ${selectedValues}`;
+  } else {
+    button.title = '';
+  }
+}
+
+// Programmatic dropdown control
+function showDropdown() {
+  const dropdown = new bootstrap.Dropdown(document.querySelector('#programmableDropdown .dropdown-toggle'));
+  dropdown.show();
+}
+
+function hideDropdown() {
+  const dropdown = new bootstrap.Dropdown(document.querySelector('#programmableDropdown .dropdown-toggle'));
+  dropdown.hide();
+}
+
+function toggleDropdown() {
+  const dropdown = new bootstrap.Dropdown(document.querySelector('#programmableDropdown .dropdown-toggle'));
+  dropdown.toggle();
+}
+
+// Event logging
+function logDropdownEvent(message) {
+  const log = document.getElementById('eventLog');
+  const timestamp = new Date().toLocaleTimeString();
+  log.innerHTML += `<div><small class="text-muted">${timestamp}:</small> ${message}</div>`;
+  log.scrollTop = log.scrollHeight;
+}
+
+// Event listeners for dropdown events
+document.addEventListener('DOMContentLoaded', function() {
+  const eventDropdown = document.getElementById('eventDropdown');
+  
+  eventDropdown.addEventListener('show.bs.dropdown', function() {
+    logDropdownEvent('Dropdown is about to be shown');
+  });
+  
+  eventDropdown.addEventListener('shown.bs.dropdown', function() {
+    logDropdownEvent('Dropdown has been shown');
+  });
+  
+  eventDropdown.addEventListener('hide.bs.dropdown', function() {
+    logDropdownEvent('Dropdown is about to be hidden');
+  });
+  
+  eventDropdown.addEventListener('hidden.bs.dropdown', function() {
+    logDropdownEvent('Dropdown has been hidden');
+  });
+});
+</script>

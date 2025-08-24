@@ -1,0 +1,932 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Select</h1>
+        <p class="lead">Select form components with various types, styles and validation states.</p>
+    </div>
+</div>
+
+<!-- Basic Selects -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Selects</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Basic select fields with different sizes and styles.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Standard Select</h6>
+                <div class="mb-3">
+                  <label for="basicSelect" class="form-label">Basic Select</label>
+                  <select class="form-select" id="basicSelect">
+                    <option selected>Choose an option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                
+                <h6>Select Sizes</h6>
+                <div class="mb-2">
+                  <select class="form-select form-select-lg" aria-label="Large select">
+                    <option selected>Large select</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <select class="form-select" aria-label="Default select">
+                    <option selected>Default select</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <select class="form-select form-select-sm" aria-label="Small select">
+                    <option selected>Small select</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Multiple Select</h6>
+                <div class="mb-3">
+                  <label for="multipleSelect" class="form-label">Multiple Select</label>
+                  <select class="form-select" id="multipleSelect" multiple aria-label="Multiple select">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    <option value="4">Option 4</option>
+                    <option value="5">Option 5</option>
+                  </select>
+                </div>
+                
+                <h6>Disabled Select</h6>
+                <div class="mb-3">
+                  <select class="form-select" aria-label="Disabled select" disabled>
+                    <option selected>Disabled select</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                
+                <h6>Select with Optgroups</h6>
+                <div class="mb-3">
+                  <select class="form-select" aria-label="Select with optgroups">
+                    <option selected>Choose a category</option>
+                    <optgroup label="Fruits">
+                      <option value="apple">Apple</option>
+                      <option value="banana">Banana</option>
+                      <option value="orange">Orange</option>
+                    </optgroup>
+                    <optgroup label="Vegetables">
+                      <option value="carrot">Carrot</option>
+                      <option value="broccoli">Broccoli</option>
+                      <option value="spinach">Spinach</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-selects-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-selects-code" class="language-html">&lt;!-- Basic Select --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="basicSelect" class="form-label"&gt;Basic Select&lt;/label&gt;
+  &lt;select class="form-select" id="basicSelect"&gt;
+    &lt;option selected&gt;Choose an option&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+    &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    &lt;option value="3"&gt;Option 3&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- Select Sizes --&gt;
+&lt;select class="form-select form-select-lg"&gt;
+  &lt;option selected&gt;Large select&lt;/option&gt;
+  &lt;option value="1"&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select class="form-select"&gt;
+  &lt;option selected&gt;Default select&lt;/option&gt;
+  &lt;option value="1"&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select class="form-select form-select-sm"&gt;
+  &lt;option selected&gt;Small select&lt;/option&gt;
+  &lt;option value="1"&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Multiple Select --&gt;
+&lt;select class="form-select" multiple&gt;
+  &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;option value="2"&gt;Option 2&lt;/option&gt;
+  &lt;option value="3"&gt;Option 3&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Select Types -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Select Types</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Different select configurations and behaviors.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="countrySelect" class="form-label">Country</label>
+                  <select class="form-select" id="countrySelect">
+                    <option selected>Select country</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="prioritySelect" class="form-label">Priority</label>
+                  <select class="form-select" id="prioritySelect">
+                    <option selected>Select priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    <option value="urgent">Urgent</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="statusSelect" class="form-label">Status</label>
+                  <select class="form-select" id="statusSelect">
+                    <option selected>Select status</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="pending">Pending</option>
+                    <option value="suspended">Suspended</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="categorySelect" class="form-label">Category</label>
+                  <select class="form-select" id="categorySelect">
+                    <option selected>Select category</option>
+                    <optgroup label="Technology">
+                      <option value="web">Web Development</option>
+                      <option value="mobile">Mobile Development</option>
+                      <option value="ai">Artificial Intelligence</option>
+                    </optgroup>
+                    <optgroup label="Design">
+                      <option value="ui">UI Design</option>
+                      <option value="ux">UX Design</option>
+                      <option value="graphic">Graphic Design</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="skillsSelect" class="form-label">Skills (Multiple)</label>
+                  <select class="form-select" id="skillsSelect" multiple size="4">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                    <option value="react">React</option>
+                    <option value="vue">Vue.js</option>
+                    <option value="angular">Angular</option>
+                    <option value="node">Node.js</option>
+                    <option value="python">Python</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('select-types-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="select-types-code" class="language-html">&lt;!-- Basic Select --&gt;
+&lt;select class="form-select"&gt;
+  &lt;option selected&gt;Select country&lt;/option&gt;
+  &lt;option value="us"&gt;United States&lt;/option&gt;
+  &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Select with Optgroups --&gt;
+&lt;select class="form-select"&gt;
+  &lt;option selected&gt;Select category&lt;/option&gt;
+  &lt;optgroup label="Technology"&gt;
+    &lt;option value="web"&gt;Web Development&lt;/option&gt;
+    &lt;option value="mobile"&gt;Mobile Development&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Design"&gt;
+    &lt;option value="ui"&gt;UI Design&lt;/option&gt;
+    &lt;option value="ux"&gt;UX Design&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+
+&lt;!-- Multiple Select --&gt;
+&lt;select class="form-select" multiple size="4"&gt;
+  &lt;option value="html"&gt;HTML&lt;/option&gt;
+  &lt;option value="css"&gt;CSS&lt;/option&gt;
+  &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+  &lt;option value="react"&gt;React&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Select Groups -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Select Groups</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Select groups with text, buttons, and dropdown addons.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Text Addons</h6>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="selectWithLabel">Options</label>
+                  <select class="form-select" id="selectWithLabel">
+                    <option selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <select class="form-select" id="selectWithSuffix">
+                    <option selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <span class="input-group-text">@domain.com</span>
+                </div>
+                
+                <h6>Button Addons</h6>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary" type="button">Button</button>
+                  <select class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <select class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Dropdown Addons</h6>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Filter</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">All</a></li>
+                    <li><a class="dropdown-item" href="#">Active</a></li>
+                    <li><a class="dropdown-item" href="#">Inactive</a></li>
+                  </ul>
+                  <select class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                
+                <h6>Multiple Selects</h6>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">From - To</span>
+                  <select class="form-select">
+                    <option selected>Start</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                  </select>
+                  <select class="form-select">
+                    <option selected>End</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                  </select>
+                </div>
+                
+                <h6>Mixed Controls</h6>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search term">
+                  <select class="form-select">
+                    <option selected>In</option>
+                    <option value="title">Title</option>
+                    <option value="content">Content</option>
+                    <option value="author">Author</option>
+                  </select>
+                  <button class="btn btn-primary" type="button">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('select-groups-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="select-groups-code" class="language-html">&lt;!-- Text Addons --&gt;
+&lt;div class="input-group"&gt;
+  &lt;label class="input-group-text" for="selectWithLabel"&gt;Options&lt;/label&gt;
+  &lt;select class="form-select" id="selectWithLabel"&gt;
+    &lt;option selected&gt;Choose...&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- Button Addons --&gt;
+&lt;div class="input-group"&gt;
+  &lt;select class="form-select"&gt;
+    &lt;option selected&gt;Choose...&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;button class="btn btn-primary" type="button"&gt;&lt;i class="fas fa-search"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Multiple Selects --&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-text"&gt;From - To&lt;/span&gt;
+  &lt;select class="form-select"&gt;
+    &lt;option selected&gt;Start&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;select class="form-select"&gt;
+    &lt;option selected&gt;End&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Validation States -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Validation States</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Select validation states with feedback messages and styling.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Valid State</h6>
+                <div class="mb-3">
+                  <label for="validSelect" class="form-label">Valid Select</label>
+                  <select class="form-select is-valid" id="validSelect" required>
+                    <option value="">Choose...</option>
+                    <option value="1" selected>Valid option</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                
+                <h6>Invalid State</h6>
+                <div class="mb-3">
+                  <label for="invalidSelect" class="form-label">Invalid Select</label>
+                  <select class="form-select is-invalid" id="invalidSelect" required>
+                    <option value="" selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid option.
+                  </div>
+                </div>
+                
+                <h6>Custom Validation</h6>
+                <div class="mb-3">
+                  <label for="customValidationSelect" class="form-label">Priority Selection</label>
+                  <select class="form-select" id="customValidationSelect" onchange="validatePriority(this)">
+                    <option value="">Select priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    <option value="urgent">Urgent</option>
+                  </select>
+                  <div class="feedback-message"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Real-time Validation</h6>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label for="realtimeCountry" class="form-label">Country</label>
+                    <select class="form-select" id="realtimeCountry" required>
+                      <option value="">Choose country</option>
+                      <option value="us">United States</option>
+                      <option value="uk">United Kingdom</option>
+                      <option value="ca">Canada</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a country.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="realtimeCategory" class="form-label">Category</label>
+                    <select class="form-select" id="realtimeCategory" required>
+                      <option value="">Choose category</option>
+                      <option value="tech">Technology</option>
+                      <option value="design">Design</option>
+                      <option value="marketing">Marketing</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a category.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="realtimeSkills" class="form-label">Skills (Multiple)</label>
+                    <select class="form-select" id="realtimeSkills" multiple required>
+                      <option value="html">HTML</option>
+                      <option value="css">CSS</option>
+                      <option value="js">JavaScript</option>
+                      <option value="react">React</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select at least one skill.
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('validation-states-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="validation-states-code" class="language-html">&lt;!-- Valid State --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="validSelect" class="form-label"&gt;Valid Select&lt;/label&gt;
+  &lt;select class="form-select is-valid" id="validSelect" required&gt;
+    &lt;option value=""&gt;Choose...&lt;/option&gt;
+    &lt;option value="1" selected&gt;Valid option&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;div class="valid-feedback"&gt;
+    Looks good!
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Invalid State --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="invalidSelect" class="form-label"&gt;Invalid Select&lt;/label&gt;
+  &lt;select class="form-select is-invalid" id="invalidSelect" required&gt;
+    &lt;option value="" selected&gt;Choose...&lt;/option&gt;
+    &lt;option value="1"&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;div class="invalid-feedback"&gt;
+    Please select a valid option.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bootstrap Validation --&gt;
+&lt;form class="needs-validation" novalidate&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="country" class="form-label"&gt;Country&lt;/label&gt;
+    &lt;select class="form-select" id="country" required&gt;
+      &lt;option value=""&gt;Choose country&lt;/option&gt;
+      &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;div class="invalid-feedback"&gt;
+      Please select a country.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Programmatic Control -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Programmatic Control</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Control selects programmatically with JavaScript methods and events.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Select Control</h6>
+                <div class="mb-3">
+                  <label for="controlledSelect" class="form-label">Controlled Select</label>
+                  <select class="form-select" id="controlledSelect">
+                    <option value="">Choose an option</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-primary me-2" onclick="setSelectValue()">Set Value</button>
+                  <button type="button" class="btn btn-secondary me-2" onclick="clearSelect()">Clear</button>
+                  <button type="button" class="btn btn-info me-2" onclick="focusSelect()">Focus</button>
+                  <button type="button" class="btn btn-warning" onclick="toggleSelectDisabled()">Toggle Disabled</button>
+                </div>
+                
+                <h6>Select Events</h6>
+                <div class="mb-3">
+                  <label for="eventSelect" class="form-label">Event Select</label>
+                  <select class="form-select" id="eventSelect">
+                    <option value="">Choose to see events...</option>
+                    <option value="event1">Event Option 1</option>
+                    <option value="event2">Event Option 2</option>
+                    <option value="event3">Event Option 3</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <div class="alert alert-info" role="alert">
+                    <strong>Event Log:</strong>
+                    <div id="selectEventLog" class="mt-2" style="max-height: 100px; overflow-y: auto;">
+                      <small class="text-muted">Select an option to see events...</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Dynamic Options</h6>
+                <div class="mb-3">
+                  <label for="dynamicSelect" class="form-label">Dynamic Select</label>
+                  <select class="form-select" id="dynamicSelect">
+                    <option value="">Choose category first</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-success me-2" onclick="loadTechOptions()">Load Tech</button>
+                  <button type="button" class="btn btn-success me-2" onclick="loadDesignOptions()">Load Design</button>
+                  <button type="button" class="btn btn-danger" onclick="clearOptions()">Clear Options</button>
+                </div>
+                
+                <h6>Multiple Select Control</h6>
+                <div class="mb-3">
+                  <label for="multiControlSelect" class="form-label">Multi Control</label>
+                  <select class="form-select" id="multiControlSelect" multiple size="4">
+                    <option value="item1">Item 1</option>
+                    <option value="item2">Item 2</option>
+                    <option value="item3">Item 3</option>
+                    <option value="item4">Item 4</option>
+                    <option value="item5">Item 5</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-primary me-2" onclick="selectAll()">Select All</button>
+                  <button type="button" class="btn btn-secondary me-2" onclick="selectNone()">Select None</button>
+                  <button type="button" class="btn btn-info" onclick="getSelectedValues()">Get Values</button>
+                </div>
+                <div class="mb-3">
+                  <div class="alert alert-secondary" role="alert">
+                    <strong>Selected Values:</strong>
+                    <div id="selectedValues" class="mt-2">
+                      <small class="text-muted">No items selected</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('programmatic-control-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="programmatic-control-code" class="language-html">&lt;!-- Controlled Select --&gt;
+&lt;select class="form-select" id="controlledSelect"&gt;
+  &lt;option value=""&gt;Choose an option&lt;/option&gt;
+  &lt;option value="option1"&gt;Option 1&lt;/option&gt;
+  &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- JavaScript Control --&gt;
+&lt;script&gt;
+// Set select value
+function setSelectValue() {
+  document.getElementById('controlledSelect').value = 'option2';
+}
+
+// Clear select
+function clearSelect() {
+  document.getElementById('controlledSelect').value = '';
+}
+
+// Focus select
+function focusSelect() {
+  document.getElementById('controlledSelect').focus();
+}
+
+// Toggle disabled state
+function toggleSelectDisabled() {
+  const select = document.getElementById('controlledSelect');
+  select.disabled = !select.disabled;
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Format date input to use MM-DD-YYYY format
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize event listeners for select events
+  const eventSelect = document.getElementById('eventSelect');
+  if (eventSelect) {
+    eventSelect.addEventListener('change', function(e) {
+      logSelectEvent(`Select changed to: ${e.target.value}`);
+    });
+    
+    eventSelect.addEventListener('focus', function(e) {
+      logSelectEvent('Select focused');
+    });
+    
+    eventSelect.addEventListener('blur', function(e) {
+      logSelectEvent('Select blurred');
+    });
+  }
+  
+  // Initialize form validation
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        logSelectEvent('Form validation failed');
+      } else {
+        event.preventDefault(); // Prevent actual submission for demo
+        logSelectEvent('Form validation passed');
+      }
+      form.classList.add('was-validated');
+    });
+  });
+});
+
+// Select control functions
+function setSelectValue() {
+  const select = document.getElementById('controlledSelect');
+  select.value = 'option2';
+  logSelectEvent('Select value set to: option2');
+}
+
+function clearSelect() {
+  const select = document.getElementById('controlledSelect');
+  select.value = '';
+  logSelectEvent('Select cleared');
+}
+
+function focusSelect() {
+  const select = document.getElementById('controlledSelect');
+  select.focus();
+  logSelectEvent('Select focused programmatically');
+}
+
+function toggleSelectDisabled() {
+  const select = document.getElementById('controlledSelect');
+  select.disabled = !select.disabled;
+  logSelectEvent(`Select ${select.disabled ? 'disabled' : 'enabled'}`);
+}
+
+// Dynamic options functions
+function loadTechOptions() {
+  const select = document.getElementById('dynamicSelect');
+  select.innerHTML = `
+    <option value="">Choose technology</option>
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+    <option value="react">React</option>
+    <option value="vue">Vue.js</option>
+  `;
+  logSelectEvent('Tech options loaded');
+}
+
+function loadDesignOptions() {
+  const select = document.getElementById('dynamicSelect');
+  select.innerHTML = `
+    <option value="">Choose design skill</option>
+    <option value="ui">UI Design</option>
+    <option value="ux">UX Design</option>
+    <option value="graphic">Graphic Design</option>
+    <option value="branding">Branding</option>
+    <option value="illustration">Illustration</option>
+  `;
+  logSelectEvent('Design options loaded');
+}
+
+function clearOptions() {
+  const select = document.getElementById('dynamicSelect');
+  select.innerHTML = '<option value="">Choose category first</option>';
+  logSelectEvent('Options cleared');
+}
+
+// Multiple select functions
+function selectAll() {
+  const select = document.getElementById('multiControlSelect');
+  for (let option of select.options) {
+    option.selected = true;
+  }
+  logSelectEvent('All options selected');
+  updateSelectedValues();
+}
+
+function selectNone() {
+  const select = document.getElementById('multiControlSelect');
+  for (let option of select.options) {
+    option.selected = false;
+  }
+  logSelectEvent('All options deselected');
+  updateSelectedValues();
+}
+
+function getSelectedValues() {
+  updateSelectedValues();
+  logSelectEvent('Selected values retrieved');
+}
+
+function updateSelectedValues() {
+  const select = document.getElementById('multiControlSelect');
+  const selectedValues = Array.from(select.selectedOptions).map(option => option.value);
+  const valuesDiv = document.getElementById('selectedValues');
+  
+  if (selectedValues.length > 0) {
+    valuesDiv.innerHTML = selectedValues.map(value => `<span class="badge bg-primary me-1">${value}</span>`).join('');
+  } else {
+    valuesDiv.innerHTML = '<small class="text-muted">No items selected</small>';
+  }
+}
+
+// Custom validation functions
+function validatePriority(select) {
+  const feedbackDiv = select.parentNode.querySelector('.feedback-message');
+  const value = select.value;
+  
+  if (!feedbackDiv) {
+    const div = document.createElement('div');
+    div.className = 'feedback-message';
+    select.parentNode.appendChild(div);
+  }
+  
+  const feedback = select.parentNode.querySelector('.feedback-message');
+  
+  if (value === '') {
+    select.classList.add('is-invalid');
+    select.classList.remove('is-valid');
+    feedback.className = 'feedback-message invalid-feedback d-block';
+    feedback.textContent = 'Please select a priority level.';
+  } else if (value === 'urgent') {
+    select.classList.add('is-valid');
+    select.classList.remove('is-invalid');
+    feedback.className = 'feedback-message valid-feedback d-block';
+    feedback.textContent = 'High priority selected - please ensure this is correct.';
+  } else {
+    select.classList.add('is-valid');
+    select.classList.remove('is-invalid');
+    feedback.className = 'feedback-message valid-feedback d-block';
+    feedback.textContent = 'Good choice!';
+  }
+}
+
+// Event logging function
+function logSelectEvent(message) {
+  const logDiv = document.getElementById('selectEventLog');
+  if (logDiv) {
+    const timestamp = new Date().toLocaleTimeString();
+    const logEntry = document.createElement('div');
+    logEntry.innerHTML = `<small><strong>${timestamp}:</strong> ${message}</small>`;
+    logDiv.appendChild(logEntry);
+    logDiv.scrollTop = logDiv.scrollHeight;
+    
+    // Keep only last 10 entries
+    while (logDiv.children.length > 10) {
+      logDiv.removeChild(logDiv.firstChild);
+    }
+  }
+}
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    
+    btn.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-success');
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.classList.remove('btn-success');
+      btn.classList.add('btn-outline-secondary');
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+}
+</script>
+
+<style>
+.form-select:focus {
+  box-shadow: none !important;
+}
+
+/* Square borders for select dropdown when opened/focused */
+.form-select:focus,
+.form-select:active {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.form-select option {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* For input groups with selects - only when focused */
+.input-group .form-select:focus:not(:first-child),
+.input-group .form-select:active:not(:first-child) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.input-group .form-select:focus:not(:last-child),
+.input-group .form-select:active:not(:last-child) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+</style>

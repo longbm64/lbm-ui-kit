@@ -1,0 +1,734 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Popovers</h1>
+        <p class="lead">Popover components with various triggers and content options.</p>
+    </div>
+</div>
+
+<!-- Basic Popovers -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Popovers</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <p class="text-muted mb-3">Basic popovers with title and content that appear on click.</p>
+          
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3 text-center">
+                    <button type="button" class="btn btn-primary me-2 mb-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="top" 
+                            data-bs-title="Top Popover" 
+                            data-bs-content="This popover appears on the top of the button when clicked.">
+                        <i class="fas fa-arrow-up me-1"></i>Top
+                    </button>
+                    <button type="button" class="btn btn-success me-2 mb-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="right" 
+                            data-bs-title="Right Popover" 
+                            data-bs-content="This popover appears on the right side of the button.">
+                        <i class="fas fa-arrow-right me-1"></i>Right
+                    </button>
+                    <button type="button" class="btn btn-warning me-2 mb-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="bottom" 
+                            data-bs-title="Bottom Popover" 
+                            data-bs-content="This popover appears below the button when triggered.">
+                        <i class="fas fa-arrow-down me-1"></i>Bottom
+                    </button>
+                    <button type="button" class="btn btn-info mb-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-placement="left" 
+                            data-bs-title="Left Popover" 
+                            data-bs-content="This popover appears on the left side of the button.">
+                        <i class="fas fa-arrow-left me-1"></i>Left
+                    </button>
+                </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-popovers-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-popovers-code" class="language-html">&lt;div class="p-4 mb-3 text-center"&gt;
+    &lt;button type="button" class="btn btn-primary me-2 mb-2" 
+            data-bs-toggle="popover" 
+            data-bs-placement="top" 
+            data-bs-title="Top Popover" 
+            data-bs-content="This popover appears on the top of the button when clicked."&gt;
+        &lt;i class="fas fa-arrow-up me-1"&gt;&lt;/i&gt;Top
+    &lt;/button&gt;
+    &lt;button type="button" class="btn btn-success me-2 mb-2" 
+            data-bs-toggle="popover" 
+            data-bs-placement="right" 
+            data-bs-title="Right Popover" 
+            data-bs-content="This popover appears on the right side of the button."&gt;
+        &lt;i class="fas fa-arrow-right me-1"&gt;&lt;/i&gt;Right
+    &lt;/button&gt;
+    &lt;button type="button" class="btn btn-warning me-2 mb-2" 
+            data-bs-toggle="popover" 
+            data-bs-placement="bottom" 
+            data-bs-title="Bottom Popover" 
+            data-bs-content="This popover appears below the button when triggered."&gt;
+        &lt;i class="fas fa-arrow-down me-1"&gt;&lt;/i&gt;Bottom
+    &lt;/button&gt;
+    &lt;button type="button" class="btn btn-info mb-2" 
+            data-bs-toggle="popover" 
+            data-bs-placement="left" 
+            data-bs-title="Left Popover" 
+            data-bs-content="This popover appears on the left side of the button."&gt;
+        &lt;i class="fas fa-arrow-left me-1"&gt;&lt;/i&gt;Left
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// Initialize popovers
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dismissible Popovers -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Dismissible Popovers</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <p class="text-muted mb-3">Popovers that can be dismissed by clicking outside or with focus triggers.</p>
+          
+          <!-- Demo -->
+                <div class="p-4 mb-3 text-center">
+                    <button type="button" class="btn btn-primary me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="focus" 
+                            data-bs-title="Dismissible popover" 
+                            data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                        Dismissible popover
+                    </button>
+                    <button type="button" class="btn btn-success me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="hover" 
+                            data-bs-title="Hover popover" 
+                            data-bs-content="This popover appears on hover and disappears when you move away.">
+                        Hover popover
+                    </button>
+                    <button type="button" class="btn btn-info me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-trigger="hover focus" 
+                            data-bs-title="Multi-trigger popover" 
+                            data-bs-content="This popover can be triggered by both hover and focus events.">
+                        Multi-trigger popover
+                    </button>
+                    <a tabindex="0" class="btn btn-warning" role="button" 
+                       data-bs-toggle="popover" 
+                       data-bs-trigger="focus" 
+                       data-bs-title="Link popover" 
+                       data-bs-content="This popover is attached to a link element.">
+                        Link with popover
+                    </a>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('dismissible-popovers-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="dismissible-popovers-code" class="language-html">&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-trigger="focus" 
+        data-bs-title="Dismissible popover" 
+        data-bs-content="And here's some amazing content. It's very engaging. Right?"&gt;
+  Dismissible popover
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-success" 
+        data-bs-toggle="popover" 
+        data-bs-trigger="hover" 
+        data-bs-title="Hover popover" 
+        data-bs-content="This popover appears on hover and disappears when you move away."&gt;
+  Hover popover
+&lt;/button&gt;
+
+&lt;a tabindex="0" class="btn btn-warning" role="button" 
+   data-bs-toggle="popover" 
+   data-bs-trigger="focus" 
+   data-bs-title="Link popover" 
+   data-bs-content="This popover is attached to a link element."&gt;
+  Link with popover
+&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HTML Content Popovers -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">HTML Content Popovers</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <p class="text-muted mb-3">Popovers with rich HTML content including images, lists, and formatted text.</p>
+          
+          <!-- Demo -->
+                <div class="p-4 mb-3 text-center">
+                    <button type="button" class="btn btn-primary me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-html="true" 
+                            data-bs-title="<i class='fas fa-user'></i> User Profile" 
+                            data-bs-content="<div class='text-center'><img src='https://via.placeholder.com/60x60' class='rounded-circle mb-2' alt='User'><br><strong>John Doe</strong><br><small class='text-muted'>Software Developer</small><br><a href='#' class='btn btn-sm btn-outline-primary mt-2'>View Profile</a></div>">
+                        User Info
+                    </button>
+                    <button type="button" class="btn btn-success me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-html="true" 
+                            data-bs-title="<i class='fas fa-list'></i> Features" 
+                            data-bs-content="<ul class='list-unstyled mb-0'><li><i class='fas fa-check text-success'></i> Feature 1</li><li><i class='fas fa-check text-success'></i> Feature 2</li><li><i class='fas fa-check text-success'></i> Feature 3</li><li><i class='fas fa-times text-danger'></i> Feature 4</li></ul>">
+                        Feature List
+                    </button>
+                    <button type="button" class="btn btn-info me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-html="true" 
+                            data-bs-title="<i class='fas fa-chart-bar'></i> Statistics" 
+                            data-bs-content="<div><strong>Performance:</strong><div class='progress mb-2' style='height: 10px;'><div class='progress-bar bg-success' style='width: 85%'></div></div><strong>Usage:</strong><div class='progress mb-2' style='height: 10px;'><div class='progress-bar bg-info' style='width: 70%'></div></div><strong>Storage:</strong><div class='progress' style='height: 10px;'><div class='progress-bar bg-warning' style='width: 45%'></div></div></div>">
+                        Statistics
+                    </button>
+                    <button type="button" class="btn btn-warning" 
+                            data-bs-toggle="popover" 
+                            data-bs-html="true" 
+                            data-bs-title="<i class='fas fa-exclamation-triangle'></i> Warning" 
+                            data-bs-content="<div class='text-center'><p class='mb-2'><strong>Are you sure?</strong></p><p class='text-muted small mb-3'>This action cannot be undone.</p><button class='btn btn-sm btn-danger me-2'>Delete</button><button class='btn btn-sm btn-secondary'>Cancel</button></div>">
+                        Confirmation
+                    </button>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('html-popovers-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="html-popovers-code" class="language-html">&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-html="true" 
+        data-bs-title="&lt;i class='fas fa-user'&gt;&lt;/i&gt; User Profile" 
+        data-bs-content="&lt;div class='text-center'&gt;&lt;img src='https://via.placeholder.com/60x60' class='rounded-circle mb-2' alt='User'&gt;&lt;br&gt;&lt;strong&gt;John Doe&lt;/strong&gt;&lt;br&gt;&lt;small class='text-muted'&gt;Software Developer&lt;/small&gt;&lt;br&gt;&lt;a href='#' class='btn btn-sm btn-outline-primary mt-2'&gt;View Profile&lt;/a&gt;&lt;/div&gt;"&gt;
+  User Info
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-success" 
+        data-bs-toggle="popover" 
+        data-bs-html="true" 
+        data-bs-title="&lt;i class='fas fa-list'&gt;&lt;/i&gt; Features" 
+        data-bs-content="&lt;ul class='list-unstyled mb-0'&gt;&lt;li&gt;&lt;i class='fas fa-check text-success'&gt;&lt;/i&gt; Feature 1&lt;/li&gt;&lt;li&gt;&lt;i class='fas fa-check text-success'&gt;&lt;/i&gt; Feature 2&lt;/li&gt;&lt;li&gt;&lt;i class='fas fa-check text-success'&gt;&lt;/i&gt; Feature 3&lt;/li&gt;&lt;li&gt;&lt;i class='fas fa-times text-danger'&gt;&lt;/i&gt; Feature 4&lt;/li&gt;&lt;/ul&gt;"&gt;
+  Feature List
+&lt;/button&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styled Popovers -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Custom Styled Popovers</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <p class="text-muted mb-3">Popovers with custom CSS classes for different styling themes.</p>
+          
+          <!-- Demo -->
+                <div class="p-4 mb-3 text-center">
+                    <button type="button" class="btn btn-outline-primary me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-custom-class="custom-popover-primary"
+                            data-bs-title="Primary Popover" 
+                            data-bs-content="This is a custom styled primary popover with enhanced appearance.">
+                        Primary Style
+                    </button>
+                    <button type="button" class="btn btn-outline-success me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-custom-class="custom-popover-success"
+                            data-bs-title="Success Popover" 
+                            data-bs-content="This is a custom styled success popover with green theme.">
+                        Success Style
+                    </button>
+                    <button type="button" class="btn btn-outline-danger me-2" 
+                            data-bs-toggle="popover" 
+                            data-bs-custom-class="custom-popover-danger"
+                            data-bs-title="Danger Popover" 
+                            data-bs-content="This is a custom styled danger popover with red theme.">
+                        Danger Style
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" 
+                            data-bs-toggle="popover" 
+                            data-bs-custom-class="custom-popover-dark"
+                            data-bs-title="Dark Popover" 
+                            data-bs-content="This is a custom styled dark popover with elegant appearance.">
+                        Dark Style
+                    </button>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('custom-popovers-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="custom-popovers-code" class="language-html">&lt;button type="button" class="btn btn-outline-primary" 
+        data-bs-toggle="popover" 
+        data-bs-custom-class="custom-popover-primary"
+        data-bs-title="Primary Popover" 
+        data-bs-content="This is a custom styled primary popover with enhanced appearance."&gt;
+  Primary Style
+&lt;/button&gt;
+
+&lt;style&gt;
+.custom-popover-primary {
+  --bs-popover-max-width: 300px;
+  --bs-popover-border-color: var(--bs-primary);
+  --bs-popover-header-bg: var(--bs-primary);
+  --bs-popover-header-color: white;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.75rem;
+}
+
+.custom-popover-success {
+  --bs-popover-max-width: 300px;
+  --bs-popover-border-color: var(--bs-success);
+  --bs-popover-header-bg: var(--bs-success);
+  --bs-popover-header-color: white;
+}
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Interactive Popovers -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Interactive Popovers</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <p class="text-muted mb-3">Popovers with interactive content and form elements.</p>
+          
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row g-3">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary" id="formPopover"
+                                        data-bs-toggle="popover" 
+                                        data-bs-html="true" 
+                                        data-bs-title="<i class='fas fa-wpforms me-1'></i>Quick Form" 
+                                        data-bs-content="<form><div class='mb-2'><input type='text' class='form-control form-control-sm' placeholder='Full Name'></div><div class='mb-2'><input type='email' class='form-control form-control-sm' placeholder='Email Address'></div><div class='mb-2'><select class='form-select form-select-sm'><option>Select Department</option><option>Sales</option><option>Support</option><option>Marketing</option></select></div><button type='submit' class='btn btn-sm btn-primary w-100'>Submit Form</button></form>">
+                                    <i class="fas fa-wpforms me-2"></i>Contact Form
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-success" id="menuPopover"
+                                        data-bs-toggle="popover" 
+                                        data-bs-html="true" 
+                                        data-bs-title="<i class='fas fa-tasks me-1'></i>Quick Actions" 
+                                        data-bs-content="<div class='d-grid gap-2'><button class='btn btn-sm btn-outline-primary'><i class='fas fa-edit me-1'></i>Edit Item</button><button class='btn btn-sm btn-outline-info'><i class='fas fa-eye me-1'></i>View Details</button><button class='btn btn-sm btn-outline-warning'><i class='fas fa-share me-1'></i>Share Link</button><button class='btn btn-sm btn-outline-danger'><i class='fas fa-trash me-1'></i>Delete Item</button></div>">
+                                    <i class="fas fa-ellipsis-v me-2"></i>Actions
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-warning" id="ratingPopover"
+                                        data-bs-toggle="popover" 
+                                        data-bs-html="true" 
+                                        data-bs-title="<i class='fas fa-star me-1'></i>Rate Experience" 
+                                        data-bs-content="<div class='text-center'><div class='mb-3'><span class='fs-5'>How was your experience?</span></div><div class='mb-3'><i class='fas fa-star text-warning fs-4 me-1' style='cursor:pointer'></i><i class='fas fa-star text-warning fs-4 me-1' style='cursor:pointer'></i><i class='fas fa-star text-warning fs-4 me-1' style='cursor:pointer'></i><i class='far fa-star text-muted fs-4 me-1' style='cursor:pointer'></i><i class='far fa-star text-muted fs-4' style='cursor:pointer'></i></div><textarea class='form-control form-control-sm mb-3' rows='3' placeholder='Share your feedback...'></textarea><button class='btn btn-sm btn-warning w-100'><i class='fas fa-paper-plane me-1'></i>Submit Review</button></div>">
+                                    <i class="fas fa-star me-2"></i>Rate Us
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-info" id="settingsPopover"
+                                        data-bs-toggle="popover" 
+                                        data-bs-html="true" 
+                                        data-bs-title="<i class='fas fa-cog me-1'></i>User Preferences" 
+                                        data-bs-content="<div><div class='mb-3'><strong class='text-muted'>Notifications</strong></div><div class='form-check form-switch mb-2'><input class='form-check-input' type='checkbox' id='setting1' checked><label class='form-check-label' for='setting1'>Email Notifications</label></div><div class='form-check form-switch mb-2'><input class='form-check-input' type='checkbox' id='setting2'><label class='form-check-label' for='setting2'>Auto-save Changes</label></div><div class='form-check form-switch mb-3'><input class='form-check-input' type='checkbox' id='setting3' checked><label class='form-check-label' for='setting3'>Dark Mode Theme</label></div><button class='btn btn-sm btn-info w-100'><i class='fas fa-save me-1'></i>Save Settings</button></div>">
+                                    <i class="fas fa-cog me-2"></i>Settings
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('interactive-popovers-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="interactive-popovers-code" class="language-html">&lt;div class="p-4 mb-3"&gt;
+    &lt;div class="row g-3"&gt;
+        &lt;div class="col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;button type="button" class="btn btn-primary" id="formPopover"
+                        data-bs-toggle="popover" 
+                        data-bs-html="true" 
+                        data-bs-title="&lt;i class='fas fa-wpforms me-1'&gt;&lt;/i&gt;Quick Form" 
+                        data-bs-content="&lt;form&gt;&lt;div class='mb-2'&gt;&lt;input type='text' class='form-control form-control-sm' placeholder='Full Name'&gt;&lt;/div&gt;&lt;div class='mb-2'&gt;&lt;input type='email' class='form-control form-control-sm' placeholder='Email Address'&gt;&lt;/div&gt;&lt;div class='mb-2'&gt;&lt;select class='form-select form-select-sm'&gt;&lt;option&gt;Select Department&lt;/option&gt;&lt;option&gt;Sales&lt;/option&gt;&lt;option&gt;Support&lt;/option&gt;&lt;option&gt;Marketing&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;&lt;button type='submit' class='btn btn-sm btn-primary w-100'&gt;Submit Form&lt;/button&gt;&lt;/form&gt;"&gt;
+                    &lt;i class="fas fa-wpforms me-2"&gt;&lt;/i&gt;Contact Form
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;button type="button" class="btn btn-success" id="menuPopover"
+                        data-bs-toggle="popover" 
+                        data-bs-html="true" 
+                        data-bs-title="&lt;i class='fas fa-tasks me-1'&gt;&lt;/i&gt;Quick Actions" 
+                        data-bs-content="&lt;div class='d-grid gap-2'&gt;&lt;button class='btn btn-sm btn-outline-primary'&gt;&lt;i class='fas fa-edit me-1'&gt;&lt;/i&gt;Edit Item&lt;/button&gt;&lt;button class='btn btn-sm btn-outline-info'&gt;&lt;i class='fas fa-eye me-1'&gt;&lt;/i&gt;View Details&lt;/button&gt;&lt;button class='btn btn-sm btn-outline-warning'&gt;&lt;i class='fas fa-share me-1'&gt;&lt;/i&gt;Share Link&lt;/button&gt;&lt;button class='btn btn-sm btn-outline-danger'&gt;&lt;i class='fas fa-trash me-1'&gt;&lt;/i&gt;Delete Item&lt;/button&gt;&lt;/div&gt;"&gt;
+                    &lt;i class="fas fa-ellipsis-v me-2"&gt;&lt;/i&gt;Actions
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;button type="button" class="btn btn-warning" id="ratingPopover"
+                        data-bs-toggle="popover" 
+                        data-bs-html="true" 
+                        data-bs-title="&lt;i class='fas fa-star me-1'&gt;&lt;/i&gt;Rate Experience" 
+                        data-bs-content="&lt;div class='text-center'&gt;&lt;div class='mb-3'&gt;&lt;span class='fs-5'&gt;How was your experience?&lt;/span&gt;&lt;/div&gt;&lt;div class='mb-3'&gt;&lt;i class='fas fa-star text-warning fs-4 me-1' style='cursor:pointer'&gt;&lt;/i&gt;&lt;i class='fas fa-star text-warning fs-4 me-1' style='cursor:pointer'&gt;&lt;/i&gt;&lt;i class='fas fa-star text-warning fs-4 me-1' style='cursor:pointer'&gt;&lt;/i&gt;&lt;i class='far fa-star text-muted fs-4 me-1' style='cursor:pointer'&gt;&lt;/i&gt;&lt;i class='far fa-star text-muted fs-4' style='cursor:pointer'&gt;&lt;/i&gt;&lt;/div&gt;&lt;textarea class='form-control form-control-sm mb-3' rows='3' placeholder='Share your feedback...'&gt;&lt;/textarea&gt;&lt;button class='btn btn-sm btn-warning w-100'&gt;&lt;i class='fas fa-paper-plane me-1'&gt;&lt;/i&gt;Submit Review&lt;/button&gt;&lt;/div&gt;"&gt;
+                    &lt;i class="fas fa-star me-2"&gt;&lt;/i&gt;Rate Us
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6 col-lg-3"&gt;
+            &lt;div class="text-center"&gt;
+                &lt;button type="button" class="btn btn-info" id="settingsPopover"
+                        data-bs-toggle="popover" 
+                        data-bs-html="true" 
+                        data-bs-title="&lt;i class='fas fa-cog me-1'&gt;&lt;/i&gt;User Preferences" 
+                        data-bs-content="&lt;div&gt;&lt;div class='mb-3'&gt;&lt;strong class='text-muted'&gt;Notifications&lt;/strong&gt;&lt;/div&gt;&lt;div class='form-check form-switch mb-2'&gt;&lt;input class='form-check-input' type='checkbox' id='setting1' checked&gt;&lt;label class='form-check-label' for='setting1'&gt;Email Notifications&lt;/label&gt;&lt;/div&gt;&lt;div class='form-check form-switch mb-2'&gt;&lt;input class='form-check-input' type='checkbox' id='setting2'&gt;&lt;label class='form-check-label' for='setting2'&gt;Auto-save Changes&lt;/label&gt;&lt;/div&gt;&lt;div class='form-check form-switch mb-3'&gt;&lt;input class='form-check-input' type='checkbox' id='setting3' checked&gt;&lt;label class='form-check-label' for='setting3'&gt;Dark Mode Theme&lt;/label&gt;&lt;/div&gt;&lt;button class='btn btn-sm btn-info w-100'&gt;&lt;i class='fas fa-save me-1'&gt;&lt;/i&gt;Save Settings&lt;/button&gt;&lt;/div&gt;"&gt;
+                    &lt;i class="fas fa-cog me-2"&gt;&lt;/i&gt;Settings
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Programmatic Control -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Programmatic Control</h2>
+        <div class="card">
+            <div class="card-body">
+
+                <p class="text-muted mb-3">Control popovers programmatically with JavaScript methods.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-5">
+                    <button type="button" class="btn btn-primary" id="programmaticPopover" 
+                            data-bs-toggle="popover" 
+                            data-bs-title="Programmatic Popover" 
+                            data-bs-content="This popover is controlled programmatically with JavaScript methods.">
+                        Target Popover
+                    </button>
+              </div>
+              <div class="col-md-7">
+                    <button type="button" class="btn btn-outline-success me-2" onclick="showBootstrapPopover()">
+                        <i class="fas fa-eye"></i> Show
+                    </button>
+                    <button type="button" class="btn btn-outline-danger me-2" onclick="hideBootstrapPopover()">
+                        <i class="fas fa-eye-slash"></i> Hide
+                    </button>
+                    <button type="button" class="btn btn-outline-info me-2" onclick="toggleBootstrapPopover()">
+                        <i class="fas fa-exchange-alt"></i> Toggle
+                    </button>
+                    <button type="button" class="btn btn-outline-warning me-2" onclick="updateBootstrapPopover()">
+                        <i class="fas fa-edit"></i> Update
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="disposeBootstrapPopover()">
+                        <i class="fas fa-trash"></i> Dispose
+                    </button>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('programmatic-popovers-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="programmatic-popovers-code" class="language-html">&lt;button type="button" class="btn btn-primary" id="programmaticPopover" 
+        data-bs-toggle="popover" 
+        data-bs-title="Programmatic Popover" 
+        data-bs-content="This popover is controlled programmatically with JavaScript methods."&gt;
+  Target Popover
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-outline-success btn-sm" onclick="showBootstrapPopover()"&gt;
+  Show
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-danger btn-sm" onclick="hideBootstrapPopover()"&gt;
+  Hide
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-info btn-sm" onclick="toggleBootstrapPopover()"&gt;
+  Toggle
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-warning btn-sm" onclick="updateBootstrapPopover()"&gt;
+  Update
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-secondary btn-sm" onclick="disposeBootstrapPopover()"&gt;
+  Dispose
+&lt;/button&gt;
+
+&lt;script&gt;
+// Get popover instance
+const popoverElement = document.getElementById('programmaticPopover');
+const popover = new bootstrap.Popover(popoverElement);
+
+// Control functions
+function showBootstrapPopover() {
+  popover.show();
+}
+
+function hideBootstrapPopover() {
+  popover.hide();
+}
+
+function toggleBootstrapPopover() {
+  popover.toggle();
+}
+
+function updateBootstrapPopover() {
+  popover.setContent({
+    '.popover-header': 'Updated Title',
+    '.popover-body': 'This content has been updated programmatically!'
+  });
+}
+
+function disposeBootstrapPopover() {
+  popover.dispose();
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Custom popover styles */
+.custom-popover-primary {
+  --bs-popover-max-width: 300px;
+  --bs-popover-border-color: var(--bs-primary);
+  --bs-popover-header-bg: var(--bs-primary);
+  --bs-popover-header-color: white;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.75rem;
+}
+
+.custom-popover-success {
+  --bs-popover-max-width: 300px;
+  --bs-popover-border-color: var(--bs-success);
+  --bs-popover-header-bg: var(--bs-success);
+  --bs-popover-header-color: white;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.75rem;
+}
+
+.custom-popover-danger {
+  --bs-popover-max-width: 300px;
+  --bs-popover-border-color: var(--bs-danger);
+  --bs-popover-header-bg: var(--bs-danger);
+  --bs-popover-header-color: white;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.75rem;
+}
+
+.custom-popover-dark {
+  --bs-popover-max-width: 300px;
+  --bs-popover-border-color: var(--bs-dark);
+  --bs-popover-header-bg: var(--bs-dark);
+  --bs-popover-header-color: white;
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: 0.75rem;
+  --bs-popover-font-size: 0.875rem;
+}
+
+/* Enhanced popover content styling */
+.popover-body .btn {
+  font-size: 0.75rem;
+}
+
+.popover-body .form-control {
+  font-size: 0.875rem;
+}
+
+.popover-body .progress {
+  height: 8px;
+}
+</style>
+
+<script>
+// Wait for Bootstrap to be available
+function initializePopovers() {
+  if (typeof bootstrap === 'undefined') {
+    setTimeout(initializePopovers, 100);
+    return;
+  }
+  
+  // Initialize all popovers except the programmatic one
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]:not(#programmaticPopover)'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+  
+  // Initialize the programmatic popover separately (without auto-trigger)
+  const popoverElement = document.getElementById('programmaticPopover');
+  if (popoverElement) {
+    window.popover = new bootstrap.Popover(popoverElement, {
+      trigger: 'manual'
+    });
+  }
+}
+
+// Programmatic control functions
+let popover = null;
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  initializePopovers();
+});
+
+function showBootstrapPopover() {
+  const element = document.getElementById('programmaticPopover');
+  if (element && window.popover) {
+    try {
+      window.popover.show();
+    } catch (error) {
+      console.error('Error showing popover:', error);
+    }
+  }
+}
+
+function hideBootstrapPopover() {
+  const element = document.getElementById('programmaticPopover');
+  if (element && window.popover) {
+    try {
+      window.popover.hide();
+    } catch (error) {
+      console.error('Error hiding popover:', error);
+    }
+  }
+}
+
+function toggleBootstrapPopover() {
+  const element = document.getElementById('programmaticPopover');
+  if (element && window.popover) {
+    try {
+      window.popover.toggle();
+    } catch (error) {
+      console.error('Error toggling popover:', error);
+    }
+  }
+}
+
+function updateBootstrapPopover() {
+  if (window.popover) {
+    try {
+      // Dispose current popover and create new one with updated content
+      const element = document.getElementById('programmaticPopover');
+      window.popover.dispose();
+      
+      // Update the element attributes
+      element.setAttribute('data-bs-title', 'Updated Title');
+      element.setAttribute('data-bs-content', 'This content has been updated programmatically!');
+      
+      // Recreate the popover
+      window.popover = new bootstrap.Popover(element, { trigger: 'manual' });
+      window.popover.show();
+    } catch (error) {
+      console.error('Error updating popover:', error);
+    }
+  }
+}
+
+function disposeBootstrapPopover() {
+  if (window.popover) {
+    try {
+      window.popover.dispose();
+      window.popover = null;
+    } catch (error) {
+      console.error('Error disposing popover:', error);
+    }
+  }
+}
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const btn = event.target.closest('.copy-btn');
+    const originalTitle = btn.getAttribute('data-bs-original-title');
+    const tooltip = bootstrap.Tooltip.getInstance(btn);
+    
+    btn.setAttribute('data-bs-original-title', 'Copied!');
+    tooltip.show();
+    
+    setTimeout(() => {
+      btn.setAttribute('data-bs-original-title', originalTitle);
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+}
+
+</script>

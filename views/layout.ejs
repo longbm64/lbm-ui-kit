@@ -54,7 +54,7 @@
     <div class="container-fluid" style="margin-top: 56px;">
         <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="height: calc(100vh - 56px); overflow-y: auto;">
         <div class="position-sticky">
   
             <ul class="nav flex-column pt-4">
@@ -65,12 +65,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <%= page === 'components' || page?.startsWith('components/') ? 'active' : '' %>" href="/components" data-bs-toggle="collapse" data-bs-target="#componentsSubmenu" aria-expanded="<%= page === 'components' || page?.startsWith('components/') ? 'true' : 'false' %>">
+                    <a class="nav-link <%= page === 'components' || (page && page.startsWith('components/')) ? 'active' : '' %>" href="/components" data-bs-toggle="collapse" data-bs-target="#componentsSubmenu" aria-expanded="<%= page === 'components' || (page && page.startsWith('components/')) ? 'true' : 'false' %>">
                         <i class="fas fa-th me-2"></i>
                         Components
                         <i class="fas fa-chevron-down ms-auto"></i>
                     </a>
-                    <div class="collapse <%= page === 'components' || page?.startsWith('components/') ? 'show' : '' %>" id="componentsSubmenu">
+                    <div class="collapse <%= page === 'components' || (page && page.startsWith('components/')) ? 'show' : '' %>" id="componentsSubmenu">
                         <ul class="nav flex-column ms-3">
                             <li class="nav-item">
                                 <a class="nav-link <%= page === 'components' ? 'active' : '' %>" href="/components">
@@ -115,9 +115,81 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/dropdown' ? 'active' : '' %>" href="/components/dropdown">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Dropdown
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/input' ? 'active' : '' %>" href="/components/input">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Input
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/input-dropdown' ? 'active' : '' %>" href="/components/input-dropdown">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Input Dropdown
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/select' ? 'active' : '' %>" href="/components/select">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Select
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link <%= page === 'components/modals' ? 'active' : '' %>" href="/components/modals">
                                     <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
                                     Modals
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/navbar' ? 'active' : '' %>" href="/components/navbar">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Navbar
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/navs-tabs' ? 'active' : '' %>" href="/components/navs-tabs">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Navs & Tabs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/pagination' ? 'active' : '' %>" href="/components/pagination">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Pagination
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/popovers' ? 'active' : '' %>" href="/components/popovers">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Popovers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/scrollspy' ? 'active' : '' %>" href="/components/scrollspy">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Scrollspy
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/scroll-types' ? 'active' : '' %>" href="/components/scroll-types">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Scroll Types
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/toasts' ? 'active' : '' %>" href="/components/toasts">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Toasts
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/tooltips' ? 'active' : '' %>" href="/components/tooltips">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Tooltips
                                 </a>
                             </li>
                         </ul>

@@ -1,0 +1,715 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Input Dropdown</h1>
+        <p class="lead">Interactive input dropdown with search functionality, Vietnamese language support, and dynamic data management.</p>
+    </div>
+</div>
+
+<!-- Basic Input Dropdown -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Input Dropdown</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Basic searchable dropdown with array data initialization and Vietnamese search support.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Array Data Example</h6>
+                            <div class="mb-3">
+                                <label for="basicArrayInput" class="form-label">Select Programming Language</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control searchable-input" id="basicArrayInput" 
+                                           placeholder="Type to search languages..." autocomplete="off">
+                                    <div class="dropdown-menu searchable-dropdown" id="basicArrayDropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-searchable-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-searchable-code" class="language-html">&lt;!-- Basic Input Dropdown --&gt;
+&lt;div class="position-relative"&gt;
+  &lt;input type="text" class="form-control searchable-input" 
+         placeholder="Type to search..." autocomplete="off"&gt;
+  &lt;div class="dropdown-menu searchable-dropdown"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                
+                <!-- JavaScript Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-searchable-js')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-searchable-js" class="language-javascript">// Array data initialization
+const languages = [
+    { value: 'js', text: 'JavaScript', icon: 'fab fa-js-square' },
+    { value: 'py', text: 'Python', icon: 'fab fa-python' },
+    { value: 'java', text: 'Java', icon: 'fab fa-java' }
+];
+
+const searchableInput = new SearchableInput({
+    inputId: 'basicArrayInput',
+    dropdownId: 'basicArrayDropdown',
+    data: languages,
+    onSelect: (value, text, item) => {
+        // Selected item logged
+    }
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- API Data Loading -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">API Data Loading</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Load data from API endpoints with loading states and error handling.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>API Users Example</h6>
+                            <div class="mb-3">
+                                <label for="apiUsersInput" class="form-label">Select User</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control searchable-input" id="apiUsersInput" 
+                                           placeholder="Loading users..." autocomplete="off">
+                                    <div class="dropdown-menu searchable-dropdown" id="apiUsersDropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>API Posts Example</h6>
+                            <div class="mb-3">
+                                <label for="apiPostsInput" class="form-label">Select Post</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control searchable-input" id="apiPostsInput" 
+                                           placeholder="Loading posts..." autocomplete="off">
+                                    <div class="dropdown-menu searchable-dropdown" id="apiPostsDropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('api-searchable-js')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="api-searchable-js" class="language-javascript">// API data initialization
+const apiInput = new SearchableInput({
+    inputId: 'apiUsersInput',
+    dropdownId: 'apiUsersDropdown',
+    apiUrl: 'https://jsonplaceholder.typicode.com/users',
+    valueKey: 'id',
+    textKey: 'name',
+    iconKey: null, // No icon for this example
+    onSelect: (value, text, item) => {
+        // User selected
+    },
+    onError: (error) => {
+        console.error('API Error:', error);
+    }
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dynamic Data Management -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Dynamic Data Management</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Add, update, and remove items dynamically after initialization.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Manageable List</h6>
+                            <div class="mb-3">
+                                <label for="manageableInput" class="form-label">Select Framework</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control searchable-input" id="manageableInput" 
+                                           placeholder="Type to search frameworks..." autocomplete="off">
+                                    <div class="dropdown-menu searchable-dropdown" id="manageableDropdown"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6>Management Controls</h6>
+                                <div class="btn-group-vertical d-grid gap-2">
+                                    <button type="button" class="btn btn-success" onclick="addNewItem()">Add New Item</button>
+                                    <button type="button" class="btn btn-warning" onclick="updateSelectedItem()">Update Selected</button>
+                                    <button type="button" class="btn btn-danger" onclick="removeSelectedItem()">Remove Selected</button>
+                                    <button type="button" class="btn btn-secondary" onclick="resetList()">Reset List</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Current Selection</h6>
+                            <div class="mb-3">
+                                <label class="form-label">Selected Value:</label>
+                                <input type="text" class="form-control" id="selectedValue" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Selected Text:</label>
+                                <input type="text" class="form-control" id="selectedText" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Total Items:</label>
+                                <input type="text" class="form-control" id="totalItems" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('management-js')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="management-js" class="language-javascript">// Dynamic management example
+const manageable = new SearchableInput({
+    inputId: 'manageableInput',
+    dropdownId: 'manageableDropdown',
+    data: [
+        { value: 'react', text: 'React', icon: 'fab fa-react' },
+        { value: 'vue', text: 'Vue.js', icon: 'fab fa-vuejs' }
+    ],
+    onSelect: (value, text, item) => {
+        document.getElementById('selectedValue').value = value;
+        document.getElementById('selectedText').value = text;
+    }
+});
+
+// Management functions
+function addNewItem() {
+    const newItem = {
+        value: 'angular',
+        text: 'Angular',
+        icon: 'fab fa-angular'
+    };
+    manageable.addItem(newItem);
+}
+
+function updateSelectedItem() {
+    const value = manageable.getValue();
+    if (value) {
+        manageable.updateItem(value, {
+            text: 'Updated ' + manageable.getSelectedText(),
+            icon: 'fas fa-star'
+        });
+    }
+}
+
+function removeSelectedItem() {
+    const value = manageable.getValue();
+    if (value) {
+        manageable.removeItem(value);
+    }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vietnamese Language Support -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Vietnamese Language Support</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Advanced Vietnamese text search with diacritic normalization and case-insensitive matching.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Vietnamese Cities</h6>
+                            <div class="mb-3">
+                                <label for="vietnameseCitiesInput" class="form-label">Chọn thành phố Việt Nam</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control searchable-input" id="vietnameseCitiesInput" 
+                                           placeholder="Nhập tên thành phố..." autocomplete="off">
+                                    <div class="dropdown-menu searchable-dropdown" id="vietnameseCitiesDropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Vietnamese Food</h6>
+                            <div class="mb-3">
+                                <label for="vietnameseFoodInput" class="form-label">Chọn món ăn</label>
+                                <div class="position-relative">
+                                    <input type="text" class="form-control searchable-input" id="vietnameseFoodInput" 
+                                           placeholder="Tìm món ăn..." autocomplete="off">
+                                    <div class="dropdown-menu searchable-dropdown" id="vietnameseFoodDropdown"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- JavaScript Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('vietnamese-js')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="vietnamese-js" class="language-javascript">// Vietnamese cities example
+const cities = [
+    { value: 'hanoi', text: 'Hà Nội', icon: 'fas fa-city' },
+    { value: 'hcm', text: 'Thành phố Hồ Chí Minh', icon: 'fas fa-city' },
+    { value: 'danang', text: 'Đà Nẵng', icon: 'fas fa-city' },
+    { value: 'haiphong', text: 'Hải Phòng', icon: 'fas fa-city' },
+    { value: 'cantho', text: 'Cần Thơ', icon: 'fas fa-city' }
+];
+
+const vietnameseCities = new SearchableInput({
+    inputId: 'vietnameseCitiesInput',
+    dropdownId: 'vietnameseCitiesDropdown',
+    data: cities,
+    searchVietnamese: true, // Enable Vietnamese search
+    onSelect: (value, text, item) => {
+        // Item selected
+    }
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Multi-Select Mode Demo -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Multi-Select Mode</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-4">Enhanced SearchableInput with multi-select functionality and tag management.</p>
+                
+                <!-- Demo -->
+                <div class="demo-section p-4 mb-4 bg-light rounded">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h5 class="mb-3"><i class="fas fa-list me-2 text-success"></i>Multi-Select Demo</h5>
+                            <div class="mb-3">
+                                <label for="multiSelectDemo" class="form-label fw-semibold">Select Multiple Technologies</label>
+                                <div class="position-relative">
+                                    <input type="text" 
+                                           class="form-control searchable-input" 
+                                           id="multiSelectDemo" 
+                                           placeholder="Choose multiple technologies..." 
+                                           autocomplete="off">
+                                </div>
+                                <div class="form-text">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Multiple selections with tag display
+                                </div>
+                            </div>
+                            <div class="mt-3 p-3 bg-white border rounded">
+                                <div class="row text-center">
+                                    <div class="col-6">
+                                        <div class="fw-bold text-success" id="multiSelectedCount">0</div>
+                                        <small class="text-muted">Selected</small>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-sm btn-outline-danger" 
+                                                id="clearMultiBtn" 
+                                                onclick="clearMultiSelections()">
+                                            <i class="fas fa-trash me-1"></i>Clear
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Implementation -->
+                <div class="code-section mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>Multi-Select Implementation</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('multiselect-js')">
+                            <i class="fas fa-copy me-1"></i>Copy Code
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="multiselect-js" class="language-javascript">// Multi-Select Mode
+const multiSelect = new LBMUIKit.SearchableInput(
+  document.getElementById('multiSelectDemo'),
+  {
+    data: technologies,
+    placeholder: 'Choose multiple technologies...',
+    multiSelect: true, // Enable multi-select mode
+    onSelect: (item, selectedItems) => {
+      // Item selected and added to collection
+      // Update UI counter
+      document.getElementById('multiSelectedCount').textContent = selectedItems.length;
+    },
+    onRemove: (item, selectedItems) => {
+      // Item removed from selection
+      // Update UI counter
+      document.getElementById('multiSelectedCount').textContent = selectedItems.length;
+    }
+  }
+);</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent || element.innerText;
+    
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+            // Show success feedback
+            const button = event.target.closest('button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+            button.classList.remove('btn-outline-secondary');
+            button.classList.add('btn-success');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-outline-secondary');
+            }, 2000);
+        });
+    } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    }
+}
+
+// Initialize SearchableInput instances when DOM and LBMUIKit are ready
+function initializeSearchableInputs() {
+    // Check if LBMUIKit is available
+    if (typeof LBMUIKit === 'undefined' || !LBMUIKit.SearchableInput) {
+        // LBMUIKit not loaded - ensure lbm-ui-kit.js is included
+        return;
+    }
+    // Basic Array Data Example
+    const languages = [
+        { value: 'js', text: 'JavaScript', icon: 'fab fa-js-square' },
+        { value: 'py', text: 'Python', icon: 'fab fa-python' },
+        { value: 'java', text: 'Java', icon: 'fab fa-java' }
+    ];
+
+    const basicArrayInput = new LBMUIKit.SearchableInput(
+        document.getElementById('basicArrayInput'),
+        {
+            data: languages,
+            placeholder: 'Type to search languages...',
+            onSelect: (value, text, item) => {
+                // Language selected
+            }
+        }
+    );
+
+
+
+    // API Users Example
+    const apiUsersInput = new LBMUIKit.SearchableInput(
+        document.getElementById('apiUsersInput'),
+        {
+            apiUrl: 'https://jsonplaceholder.typicode.com/users',
+            placeholder: 'Loading users...',
+            onSelect: (value, text, item) => {
+                // Selected user logged
+            },
+            onError: (error) => {
+                // API Error occurred
+            }
+        }
+    );
+
+    // API Posts Example
+    const apiPostsInput = new LBMUIKit.SearchableInput(
+        document.getElementById('apiPostsInput'),
+        {
+            apiUrl: 'https://jsonplaceholder.typicode.com/posts',
+            placeholder: 'Loading posts...',
+            onSelect: (value, text, item) => {
+                // Post selected
+            },
+            onError: (error) => {
+                console.error('API Error:', error);
+            }
+        }
+    );
+
+    // Dynamic Data Management Example
+    let manageable;
+    const frameworks = [
+        { value: 'react', text: 'React', icon: 'fab fa-react' },
+        { value: 'vue', text: 'Vue.js', icon: 'fab fa-vuejs' },
+        { value: 'angular', text: 'Angular', icon: 'fab fa-angular' },
+        { value: 'svelte', text: 'Svelte', icon: 'fas fa-bolt' }
+    ];
+
+    manageable = new LBMUIKit.SearchableInput(
+        document.getElementById('manageableInput'),
+        {
+            data: frameworks,
+            placeholder: 'Type to search frameworks...',
+            allowAdd: true,
+            allowEdit: true,
+            allowDelete: true,
+            onSelect: (value, text, item) => {
+                document.getElementById('selectedValue').value = value || '';
+                document.getElementById('selectedText').value = text || '';
+                document.getElementById('totalItems').value = manageable.data.length;
+            }
+        }
+    );
+
+    // Management functions
+    window.addNewItem = function() {
+        const newText = prompt('Enter new framework name:');
+        if (newText && newText.trim()) {
+            const newItem = {
+                value: newText.toLowerCase().replace(/\s+/g, ''),
+                text: newText.trim(),
+                icon: 'fas fa-code'
+            };
+            manageable.addItem(newItem);
+            document.getElementById('totalItems').value = manageable.data.length;
+        }
+    };
+
+    window.updateSelectedItem = function() {
+        const currentValue = manageable.getValue();
+        if (currentValue) {
+            const currentItem = manageable.data.find(item => 
+                (item.value !== undefined ? item.value : item.id || item.text || item.name) === currentValue
+            );
+            if (currentItem) {
+                const currentText = currentItem.text || currentItem.name || String(currentItem);
+                const newText = prompt('Update item name:', currentText);
+                if (newText && newText !== currentText) {
+                    const index = manageable.data.indexOf(currentItem);
+                    if (index >= 0) {
+                        manageable.data[index] = {
+                            ...currentItem,
+                            text: newText,
+                            value: newText.toLowerCase().replace(/\s+/g, '')
+                        };
+                        manageable.search(manageable.element.value);
+                        document.getElementById('selectedText').value = newText;
+                    }
+                }
+            }
+        } else {
+            alert('Please select an item first');
+        }
+    };
+
+    window.removeSelectedItem = function() {
+        const currentValue = manageable.getValue();
+        if (currentValue) {
+            const currentItem = manageable.data.find(item => 
+                (item.value !== undefined ? item.value : item.id || item.text || item.name) === currentValue
+            );
+            if (currentItem) {
+                const currentText = currentItem.text || currentItem.name || String(currentItem);
+                if (confirm(`Are you sure you want to remove "${currentText}"?`)) {
+                    const index = manageable.data.indexOf(currentItem);
+                    if (index >= 0) {
+                        manageable.removeItem(index);
+                        manageable.reset();
+                        document.getElementById('selectedValue').value = '';
+                        document.getElementById('selectedText').value = '';
+                        document.getElementById('totalItems').value = manageable.data.length;
+                    }
+                }
+            }
+        } else {
+            alert('Please select an item first');
+        }
+    };
+
+    window.resetList = function() {
+        if (confirm('Reset to original framework list?')) {
+            manageable.setData([...frameworks]);
+            manageable.reset();
+            document.getElementById('selectedValue').value = '';
+            document.getElementById('selectedText').value = '';
+            document.getElementById('totalItems').value = manageable.data.length;
+        }
+    };
+
+    // Vietnamese Cities Example
+    const cities = [
+        { value: 'hanoi', text: 'Hà Nội', icon: 'fas fa-city' },
+        { value: 'hcm', text: 'Thành phố Hồ Chí Minh', icon: 'fas fa-city' },
+        { value: 'danang', text: 'Đà Nẵng', icon: 'fas fa-city' },
+        { value: 'haiphong', text: 'Hải Phòng', icon: 'fas fa-city' },
+        { value: 'cantho', text: 'Cần Thơ', icon: 'fas fa-city' },
+        { value: 'nhatrang', text: 'Nha Trang', icon: 'fas fa-city' },
+        { value: 'dalat', text: 'Đà Lạt', icon: 'fas fa-city' },
+        { value: 'hue', text: 'Huế', icon: 'fas fa-city' }
+    ];
+
+    const vietnameseCitiesInput = new LBMUIKit.SearchableInput(
+        document.getElementById('vietnameseCitiesInput'),
+        {
+            data: cities,
+            placeholder: 'Nhập tên thành phố...',
+            onSelect: (value, text, item) => {
+                // City selected
+            }
+        }
+    );
+
+    // Vietnamese Food Example (different from basic)
+    const moreVietnameseFoods = [
+        { value: 'buncha', text: 'Bún chả', icon: 'fas fa-bowl-food' },
+        { value: 'miquang', text: 'Mì Quảng', icon: 'fas fa-bowl-food' },
+        { value: 'banhcuon', text: 'Bánh cuốn', icon: 'fas fa-cookie' },
+        { value: 'nemran', text: 'Nem rán', icon: 'fas fa-drumstick-bite' },
+        { value: 'chaca', text: 'Chả cá Lã Vọng', icon: 'fas fa-fish' },
+        { value: 'banhchung', text: 'Bánh chưng', icon: 'fas fa-cookie' },
+        { value: 'thitbo', text: 'Thịt bò nướng lá lốt', icon: 'fas fa-fire' },
+        { value: 'canh', text: 'Canh chua', icon: 'fas fa-bowl-food' }
+    ];
+
+    const vietnameseFoodInput = new LBMUIKit.SearchableInput(
+        document.getElementById('vietnameseFoodInput'),
+        {
+            data: moreVietnameseFoods,
+            placeholder: 'Tìm món ăn...',
+            onSelect: (value, text, item) => {
+                // Food item selected
+            }
+        }
+    );
+
+
+
+    // Multi-Select Input Implementation has been replaced by enhanced SearchableInput class
+    // Removed - using enhanced SearchableInput class instead
+    
+    // Sample data for the demo
+    const technologyData = [
+        { value: 'javascript', text: 'JavaScript', icon: 'fab fa-js-square' },
+        { value: 'typescript', text: 'TypeScript', icon: 'fas fa-code' },
+        { value: 'python', text: 'Python', icon: 'fab fa-python' },
+        { value: 'java', text: 'Java', icon: 'fab fa-java' },
+        { value: 'csharp', text: 'C#', icon: 'fas fa-code' },
+        { value: 'php', text: 'PHP', icon: 'fab fa-php' },
+        { value: 'ruby', text: 'Ruby', icon: 'fas fa-gem' },
+        { value: 'go', text: 'Go', icon: 'fas fa-code' },
+        { value: 'rust', text: 'Rust', icon: 'fas fa-cog' },
+        { value: 'swift', text: 'Swift', icon: 'fab fa-swift' },
+        { value: 'react', text: 'React', icon: 'fab fa-react' },
+        { value: 'vue', text: 'Vue.js', icon: 'fab fa-vuejs' },
+        { value: 'angular', text: 'Angular', icon: 'fab fa-angular' },
+        { value: 'nodejs', text: 'Node.js', icon: 'fab fa-node-js' },
+        { value: 'express', text: 'Express.js', icon: 'fas fa-server' },
+        { value: 'laravel', text: 'Laravel', icon: 'fas fa-code' },
+        { value: 'django', text: 'Django', icon: 'fas fa-code' },
+        { value: 'flask', text: 'Flask', icon: 'fas fa-flask' },
+        { value: 'spring', text: 'Spring Boot', icon: 'fas fa-leaf' },
+        { value: 'mysql', text: 'MySQL', icon: 'fas fa-database' },
+        { value: 'postgresql', text: 'PostgreSQL', icon: 'fas fa-database' },
+        { value: 'mongodb', text: 'MongoDB', icon: 'fas fa-leaf' },
+        { value: 'redis', text: 'Redis', icon: 'fas fa-database' },
+        { value: 'docker', text: 'Docker', icon: 'fab fa-docker' },
+        { value: 'kubernetes', text: 'Kubernetes', icon: 'fas fa-dharmachakra' },
+        { value: 'aws', text: 'AWS', icon: 'fab fa-aws' },
+        { value: 'azure', text: 'Azure', icon: 'fab fa-microsoft' },
+        { value: 'gcp', text: 'Google Cloud', icon: 'fab fa-google' },
+        { value: 'git', text: 'Git', icon: 'fab fa-git-alt' },
+        { value: 'linux', text: 'Linux', icon: 'fab fa-linux' }
+    ];
+    
+    // Initialize demo instances
+    let multiSelectDemoInstance;
+    let multiSelectInstance;
+    
+    // Initialize Multi-Select Demo
+    multiSelectDemoInstance = new LBMUIKit.SearchableInput(
+        document.getElementById('multiSelectDemo'),
+        {
+            data: technologyData,
+            placeholder: 'Choose multiple technologies...',
+            multiSelect: true,
+            onSelect: function(item, selectedItems) {
+                // Multi-select item added
+                document.getElementById('multiSelectedCount').textContent = selectedItems.length;
+            },
+            onRemove: function(item, selectedItems) {
+                // Multi-select item removed
+                document.getElementById('multiSelectedCount').textContent = selectedItems.length;
+            }
+        }
+    );
+    
+    // Global function for clearing multi demo selections
+    window.clearMultiSelections = function() {
+        if (multiSelectDemoInstance) {
+            multiSelectDemoInstance.reset();
+            document.getElementById('multiSelectedCount').textContent = '0';
+        }
+    };
+    
+
+    
+    // Initialize total items display
+    const totalItemsElement = document.getElementById('totalItems');
+    if (totalItemsElement) {
+        totalItemsElement.value = technologyData.length;
+    }
+}
+
+// Wait for DOM to be ready, then initialize
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSearchableInputs();
+});
+</script>

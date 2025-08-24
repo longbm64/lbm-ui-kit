@@ -1,0 +1,970 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Scroll Types</h1>
+        <p class="lead">Scroll behavior utilities and components for enhanced user experience.</p>
+    </div>
+</div>
+
+<!-- Basic Scroll Behaviors -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Scroll Behaviors</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Different scroll behaviors for smooth navigation and user interaction.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Smooth Scroll</h6>
+                <div class="border rounded p-3 mb-3" style="height: 200px; overflow-y: auto;" id="smoothScrollContainer">
+                  <div style="height: 500px; background: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
+                    <p class="p-3">Content with smooth scrolling behavior. Scroll down to see the effect.</p>
+                    <div class="p-3 mt-5">
+                      <button class="btn btn-primary" onclick="smoothScrollTo('smoothScrollContainer', 200)">Scroll to Middle</button>
+                      <button class="btn btn-secondary ms-2" onclick="smoothScrollTo('smoothScrollContainer', 0)">Scroll to Top</button>
+                    </div>
+                    <p class="p-3 mt-5">More content here...</p>
+                    <p class="p-3">Even more content at the bottom.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Auto Scroll</h6>
+                <div class="border rounded p-3 mb-3" style="height: 200px; overflow-y: auto;" id="autoScrollContainer">
+                  <div id="autoScrollContent" style="height: 400px; background: linear-gradient(to bottom, #fff3cd, #ffeaa7);">
+                    <p class="p-3">Auto-scrolling content. Watch it scroll automatically.</p>
+                    <div class="p-3">
+                      <button class="btn btn-success" onclick="startAutoScroll()">Start Auto Scroll</button>
+                      <button class="btn btn-danger ms-2" onclick="stopAutoScroll()">Stop Auto Scroll</button>
+                    </div>
+                    <p class="p-3 mt-3">Content continues here...</p>
+                    <p class="p-3">More auto-scrolling content...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-scroll-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-scroll-code" class="language-html">&lt;!-- Smooth Scroll Container --&gt;
+&lt;div class="border rounded p-3" style="height: 200px; overflow-y: auto; scroll-behavior: smooth;"&gt;
+  &lt;div style="height: 500px;"&gt;
+    &lt;p&gt;Content with smooth scrolling behavior.&lt;/p&gt;
+    &lt;button onclick="smoothScrollTo('container', 200)"&gt;Scroll to Middle&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Auto Scroll --&gt;
+&lt;script&gt;
+function smoothScrollTo(containerId, position) {
+  const container = document.getElementById(containerId);
+  container.scrollTo({
+    top: position,
+    behavior: 'smooth'
+  });
+}
+
+let autoScrollInterval;
+function startAutoScroll() {
+  const container = document.getElementById('autoScrollContainer');
+  let position = 0;
+  autoScrollInterval = setInterval(() =&gt; {
+    position += 2;
+    container.scrollTop = position;
+    if (position &gt;= container.scrollHeight - container.clientHeight) {
+      position = 0;
+    }
+  }, 50);
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden Scrollbar -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Hidden Scrollbar</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Scroll containers with hidden scrollbars while maintaining scroll functionality.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Hidden Scrollbar (Webkit)</h6>
+                <div class="border rounded p-3 mb-3 hidden-scrollbar-webkit" style="height: 200px; overflow-y: auto;" id="hiddenScrollWebkit">
+                  <div style="height: 500px; background: linear-gradient(to bottom, #e3f2fd, #bbdefb);">
+                    <p class="p-3">This container has a hidden scrollbar but you can still scroll with mouse wheel, touch, or keyboard.</p>
+                    <div class="p-3 mt-4">
+                      <div class="alert alert-info">Scrollbar is hidden using CSS but scroll functionality remains intact.</div>
+                    </div>
+                    <p class="p-3 mt-4">Try scrolling with:</p>
+                    <ul class="p-3">
+                      <li>Mouse wheel</li>
+                      <li>Touch gestures (on mobile)</li>
+                      <li>Keyboard arrows (when focused)</li>
+                      <li>Drag scrolling</li>
+                    </ul>
+                    <p class="p-3 mt-4">More content here...</p>
+                    <p class="p-3">Bottom of hidden scrollbar content.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Hidden Scrollbar (Cross-browser)</h6>
+                <div class="border rounded p-3 mb-3 hidden-scrollbar-universal" style="height: 200px; overflow-y: auto;" id="hiddenScrollUniversal">
+                  <div style="height: 500px; background: linear-gradient(to bottom, #f3e5f5, #e1bee7);">
+                    <p class="p-3">This version works across all browsers including Firefox and older versions.</p>
+                    <div class="p-3 mt-4">
+                      <div class="alert alert-success">Universal compatibility with hidden scrollbar technique.</div>
+                    </div>
+                    <p class="p-3 mt-4">Features:</p>
+                    <ul class="p-3">
+                      <li>Works in all modern browsers</li>
+                      <li>Maintains accessibility</li>
+                      <li>Preserves scroll functionality</li>
+                      <li>Clean visual appearance</li>
+                    </ul>
+                    <div class="p-3 mt-4">
+                      <button class="btn btn-primary" onclick="scrollHiddenContainer('hiddenScrollUniversal', 200)">Scroll to Middle</button>
+                      <button class="btn btn-secondary ms-2" onclick="scrollHiddenContainer('hiddenScrollUniversal', 0)">Scroll to Top</button>
+                    </div>
+                    <p class="p-3 mt-4">End of universal hidden scrollbar content.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('hidden-scrollbar-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="hidden-scrollbar-code" class="language-html">&lt;!-- Webkit Hidden Scrollbar --&gt;
+&lt;div class="hidden-scrollbar-webkit" style="height: 200px; overflow-y: auto;"&gt;
+  &lt;div style="height: 500px;"&gt;
+    &lt;p&gt;Content with hidden scrollbar (Webkit browsers)&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Universal Hidden Scrollbar --&gt;
+&lt;div class="hidden-scrollbar-universal" style="height: 200px; overflow-y: auto;"&gt;
+  &lt;div style="height: 500px;"&gt;
+    &lt;p&gt;Content with hidden scrollbar (All browsers)&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+/* Webkit browsers (Chrome, Safari, Edge) */
+.hidden-scrollbar-webkit::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden-scrollbar-webkit {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Universal method using wrapper */
+.hidden-scrollbar-universal {
+  overflow: hidden;
+}
+
+.hidden-scrollbar-universal &gt; div {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 17px; /* Compensate for scrollbar width */
+  margin-right: -17px;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+function scrollHiddenContainer(containerId, position) {
+  const container = document.getElementById(containerId);
+  if (container) {
+    // For universal method, target the inner div
+    const scrollElement = container.classList.contains('hidden-scrollbar-universal') 
+      ? container.firstElementChild 
+      : container;
+    
+    scrollElement.scrollTo({
+      top: position,
+      behavior: 'smooth'
+    });
+  }
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll Indicators -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Scroll Indicators</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Visual indicators showing scroll progress and position.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Progress Bar Indicator</h6>
+                <div class="progress mb-2" style="height: 8px;">
+                  <div class="progress-bar bg-primary" id="scrollProgress1" role="progressbar" style="width: 0%"></div>
+                </div>
+                <div class="border rounded p-3" style="height: 200px; overflow-y: auto;" id="progressScrollContainer" onscroll="updateScrollProgress('progressScrollContainer', 'scrollProgress1')">
+                  <div style="height: 600px; background: linear-gradient(to bottom, #d4edda, #c3e6cb);">
+                    <p class="p-3">Scroll to see the progress bar update above.</p>
+                    <div class="p-3 mt-4">
+                      <div class="alert alert-info">Progress: <span id="progressText1">0%</span></div>
+                    </div>
+                    <p class="p-3 mt-4">Keep scrolling...</p>
+                    <p class="p-3 mt-4">More content here...</p>
+                    <p class="p-3 mt-4">Almost at the bottom...</p>
+                    <p class="p-3">Bottom reached!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Circular Progress Indicator</h6>
+                <div class="text-center mb-2">
+                  <div class="position-relative d-inline-block">
+                    <svg width="60" height="60" class="circular-progress">
+                      <circle cx="30" cy="30" r="25" fill="none" stroke="#e9ecef" stroke-width="4"></circle>
+                      <circle cx="30" cy="30" r="25" fill="none" stroke="#007bff" stroke-width="4" 
+                              stroke-dasharray="157" stroke-dashoffset="157" id="circularProgress"
+                              style="transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset 0.3s;"></circle>
+                    </svg>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                      <small id="circularText">0%</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="border rounded p-3" style="height: 200px; overflow-y: auto;" id="circularScrollContainer" onscroll="updateCircularProgress('circularScrollContainer')">
+                  <div style="height: 600px; background: linear-gradient(to bottom, #fff3cd, #ffeaa7);">
+                    <p class="p-3">Scroll to see the circular progress indicator update above.</p>
+                    <div class="p-3 mt-4">
+                      <div class="alert alert-warning">Circular Progress Updates Here</div>
+                    </div>
+                    <p class="p-3 mt-4">Continue scrolling...</p>
+                    <p class="p-3 mt-4">More scrollable content...</p>
+                    <p class="p-3 mt-4">Getting closer to the end...</p>
+                    <p class="p-3">End of content!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('scroll-indicators-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="scroll-indicators-code" class="language-html">&lt;!-- Progress Bar Indicator --&gt;
+&lt;div class="progress mb-2" style="height: 8px;"&gt;
+  &lt;div class="progress-bar bg-primary" id="scrollProgress" role="progressbar" style="width: 0%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="border rounded p-3" style="height: 200px; overflow-y: auto;" 
+     onscroll="updateScrollProgress('container', 'scrollProgress')"&gt;
+  &lt;!-- Scrollable content --&gt;
+&lt;/div&gt;
+
+&lt;!-- Circular Progress Indicator --&gt;
+&lt;svg width="60" height="60"&gt;
+  &lt;circle cx="30" cy="30" r="25" fill="none" stroke="#e9ecef" stroke-width="4"&gt;&lt;/circle&gt;
+  &lt;circle cx="30" cy="30" r="25" fill="none" stroke="#007bff" stroke-width="4" 
+          stroke-dasharray="157" stroke-dashoffset="157" id="circularProgress"&gt;&lt;/circle&gt;
+&lt;/svg&gt;
+
+&lt;script&gt;
+function updateScrollProgress(containerId, progressId) {
+  const container = document.getElementById(containerId);
+  const progress = document.getElementById(progressId);
+  const scrollPercent = (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100;
+  progress.style.width = scrollPercent + '%';
+}
+
+function updateCircularProgress(containerId) {
+  const container = document.getElementById(containerId);
+  const circle = document.getElementById('circularProgress');
+  const scrollPercent = (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100;
+  const circumference = 157;
+  const offset = circumference - (scrollPercent / 100) * circumference;
+  circle.style.strokeDashoffset = offset;
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll Utilities -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Scroll Utilities</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Utility classes and functions for scroll behavior control.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Scroll Snap</h6>
+                <div class="border rounded p-3 mb-3" style="height: 200px; overflow-y: auto; scroll-snap-type: y mandatory;" id="snapScrollContainer">
+                  <div class="bg-primary text-white p-4 mb-2" style="height: 180px; scroll-snap-align: start;">
+                    <h5>Section 1</h5>
+                    <p>This section snaps to the top when scrolling.</p>
+                  </div>
+                  <div class="bg-success text-white p-4 mb-2" style="height: 180px; scroll-snap-align: start;">
+                    <h5>Section 2</h5>
+                    <p>This section also snaps to the top.</p>
+                  </div>
+                  <div class="bg-warning text-dark p-4 mb-2" style="height: 180px; scroll-snap-align: start;">
+                    <h5>Section 3</h5>
+                    <p>Each section snaps into place.</p>
+                  </div>
+                  <div class="bg-danger text-white p-4" style="height: 180px; scroll-snap-align: start;">
+                    <h5>Section 4</h5>
+                    <p>Final section with snap behavior.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Scroll Controls</h6>
+                <div class="mb-3">
+                  <button class="btn btn-outline-primary me-2 mb-2" onclick="scrollToSection(1)">Go to Section 1</button>
+                  <button class="btn btn-outline-success me-2 mb-2" onclick="scrollToSection(2)">Go to Section 2</button>
+                  <button class="btn btn-outline-warning me-2 mb-2" onclick="scrollToSection(3)">Go to Section 3</button>
+                  <button class="btn btn-outline-danger mb-2" onclick="scrollToSection(4)">Go to Section 4</button>
+                </div>
+                <div class="mb-3">
+                  <h6>Scroll Speed Control</h6>
+                  <div class="btn-group" role="group">
+                    <input type="radio" class="btn-check" name="scrollSpeed" id="slow" value="slow">
+                    <label class="btn btn-outline-secondary" for="slow">Slow</label>
+                    
+                    <input type="radio" class="btn-check" name="scrollSpeed" id="normal" value="normal" checked>
+                    <label class="btn btn-outline-secondary" for="normal">Normal</label>
+                    
+                    <input type="radio" class="btn-check" name="scrollSpeed" id="fast" value="fast">
+                    <label class="btn btn-outline-secondary" for="fast">Fast</label>
+                  </div>
+                </div>
+                <div>
+                  <h6>Scroll Direction</h6>
+                  <button class="btn btn-info me-2" onclick="scrollDirection('up')">Scroll Up</button>
+                  <button class="btn btn-info" onclick="scrollDirection('down')">Scroll Down</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('scroll-utilities-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="scroll-utilities-code" class="language-html">&lt;!-- Scroll Snap Container --&gt;
+&lt;div style="height: 200px; overflow-y: auto; scroll-snap-type: y mandatory;"&gt;
+  &lt;div style="height: 180px; scroll-snap-align: start;"&gt;Section 1&lt;/div&gt;
+  &lt;div style="height: 180px; scroll-snap-align: start;"&gt;Section 2&lt;/div&gt;
+  &lt;div style="height: 180px; scroll-snap-align: start;"&gt;Section 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Scroll Controls --&gt;
+&lt;button onclick="scrollToSection(1)"&gt;Go to Section 1&lt;/button&gt;
+
+&lt;script&gt;
+function scrollToSection(sectionNumber) {
+  const container = document.getElementById('snapScrollContainer');
+  const sectionHeight = 182; // Height + margin
+  const targetPosition = (sectionNumber - 1) * sectionHeight;
+  
+  container.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth'
+  });
+}
+
+function scrollDirection(direction) {
+  const container = document.getElementById('snapScrollContainer');
+  const scrollAmount = 100;
+  
+  if (direction === 'up') {
+    container.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
+  } else {
+    container.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+  }
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Infinite Scroll -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Infinite Scroll</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Infinite scrolling implementation for dynamic content loading.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                <h6>Infinite Scroll Demo</h6>
+                <div class="border rounded p-3" style="height: 300px; overflow-y: auto;" id="infiniteScrollContainer">
+                  <div id="infiniteScrollContent">
+                    <!-- Initial content will be loaded here -->
+                  </div>
+                  <div id="loadingIndicator" class="text-center p-3" style="display: none;">
+                    <div class="spinner-border spinner-border-sm text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <span class="ms-2">Loading more content...</span>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <button class="btn btn-primary" onclick="initInfiniteScroll()">Start Infinite Scroll</button>
+                  <button class="btn btn-secondary ms-2" onclick="resetInfiniteScroll()">Reset</button>
+                  <span class="ms-3 text-muted">Items loaded: <span id="itemCount">0</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('infinite-scroll-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="infinite-scroll-code" class="language-html">&lt;div class="border rounded p-3" style="height: 300px; overflow-y: auto;" id="infiniteScrollContainer"&gt;
+  &lt;div id="infiniteScrollContent"&gt;
+    &lt;!-- Dynamic content will be loaded here --&gt;
+  &lt;/div&gt;
+  &lt;div id="loadingIndicator" class="text-center p-3" style="display: none;"&gt;
+    &lt;div class="spinner-border spinner-border-sm text-primary"&gt;&lt;/div&gt;
+    &lt;span class="ms-2"&gt;Loading more content...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+let itemCount = 0;
+let isLoading = false;
+
+function initInfiniteScroll() {
+  const container = document.getElementById('infiniteScrollContainer');
+  
+  // Load initial content
+  loadMoreItems();
+  
+  // Add scroll event listener
+  container.addEventListener('scroll', function() {
+    if (container.scrollTop + container.clientHeight &gt;= container.scrollHeight - 10 && !isLoading) {
+      loadMoreItems();
+    }
+  });
+}
+
+function loadMoreItems() {
+  if (isLoading) return;
+  
+  isLoading = true;
+  document.getElementById('loadingIndicator').style.display = 'block';
+  
+  // Simulate API call delay
+  setTimeout(() =&gt; {
+    const content = document.getElementById('infiniteScrollContent');
+    
+    // Add new items
+    for (let i = 0; i &lt; 5; i++) {
+      itemCount++;
+      const item = document.createElement('div');
+      item.className = 'border-bottom p-3';
+      item.innerHTML = `&lt;h6&gt;Item ${itemCount}&lt;/h6&gt;&lt;p&gt;This is content for item ${itemCount}. Lorem ipsum dolor sit amet.&lt;/p&gt;`;
+      content.appendChild(item);
+    }
+    
+    document.getElementById('itemCount').textContent = itemCount;
+    document.getElementById('loadingIndicator').style.display = 'none';
+    isLoading = false;
+  }, 1000);
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Programmatic Control -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Programmatic Control</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Advanced scroll control with JavaScript methods and events.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Scroll Events</h6>
+                <div class="border rounded p-3 mb-3" style="height: 200px; overflow-y: auto;" id="eventScrollContainer">
+                  <div style="height: 500px; background: linear-gradient(to bottom, #f1f3f4, #e8eaed);">
+                    <p class="p-3">Scroll to trigger events. Check the event log on the right.</p>
+                    <div class="p-3 mt-4">
+                      <div class="alert alert-info">Scroll position: <span id="scrollPosition">0</span>px</div>
+                    </div>
+                    <p class="p-3 mt-4">More content for scrolling...</p>
+                    <p class="p-3 mt-4">Keep scrolling to see events...</p>
+                    <p class="p-3">End of scrollable content.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Event Log</h6>
+                <div class="border rounded p-3" style="height: 200px; overflow-y: auto; background-color: #f8f9fa;">
+                  <div id="eventLog" class="small">
+                    <p class="text-muted">Scroll events will appear here...</p>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="clearEventLog()">Clear Log</button>
+                  <button class="btn btn-outline-primary btn-sm ms-2" onclick="enableScrollEvents()">Enable Events</button>
+                  <button class="btn btn-outline-danger btn-sm ms-2" onclick="disableScrollEvents()">Disable Events</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('programmatic-scroll-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="programmatic-scroll-code" class="language-html">&lt;div id="scrollContainer" style="height: 200px; overflow-y: auto;"&gt;
+  &lt;!-- Scrollable content --&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+const container = document.getElementById('scrollContainer');
+let scrollEventEnabled = true;
+
+// Scroll event listener
+container.addEventListener('scroll', function(e) {
+  if (!scrollEventEnabled) return;
+  
+  const scrollTop = e.target.scrollTop;
+  const scrollHeight = e.target.scrollHeight;
+  const clientHeight = e.target.clientHeight;
+  const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+  
+  // Log scroll events
+  logEvent(`Scroll: ${scrollTop}px (${scrollPercent.toFixed(1)}%)`);
+  
+  // Update scroll position display
+  document.getElementById('scrollPosition').textContent = scrollTop;
+});
+
+// Scroll to specific position
+function scrollToPosition(position) {
+  container.scrollTo({
+    top: position,
+    behavior: 'smooth'
+  });
+}
+
+// Scroll by amount
+function scrollByAmount(amount) {
+  container.scrollBy({
+    top: amount,
+    behavior: 'smooth'
+  });
+}
+
+// Event logging
+function logEvent(message) {
+  const log = document.getElementById('eventLog');
+  const time = new Date().toLocaleTimeString();
+  const entry = document.createElement('div');
+  entry.innerHTML = `&lt;span class="text-muted"&gt;${time}&lt;/span&gt; ${message}`;
+  log.appendChild(entry);
+  log.scrollTop = log.scrollHeight;
+}
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Scroll counter for unique IDs
+let scrollCounter = 0;
+
+// Basic scroll functions
+function smoothScrollTo(containerId, position) {
+  const container = document.getElementById(containerId);
+  if (container) {
+    container.scrollTo({
+      top: position,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Auto scroll functionality
+let autoScrollInterval;
+function startAutoScroll() {
+  const container = document.getElementById('autoScrollContainer');
+  if (!container) return;
+  
+  let position = 0;
+  const speed = 2;
+  
+  autoScrollInterval = setInterval(() => {
+    position += speed;
+    container.scrollTop = position;
+    
+    if (position >= container.scrollHeight - container.clientHeight) {
+      position = 0;
+    }
+  }, 50);
+}
+
+function stopAutoScroll() {
+  if (autoScrollInterval) {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = null;
+  }
+}
+
+// Scroll progress indicators
+function updateScrollProgress(containerId, progressId) {
+  const container = document.getElementById(containerId);
+  const progress = document.getElementById(progressId);
+  const progressText = document.getElementById('progressText1');
+  
+  if (container && progress) {
+    const scrollPercent = (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100;
+    progress.style.width = Math.min(scrollPercent, 100) + '%';
+    if (progressText) {
+      progressText.textContent = Math.round(Math.min(scrollPercent, 100)) + '%';
+    }
+  }
+}
+
+function updateCircularProgress(containerId) {
+  const container = document.getElementById(containerId);
+  const circle = document.getElementById('circularProgress');
+  const text = document.getElementById('circularText');
+  
+  if (container && circle) {
+    const scrollPercent = (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100;
+    const circumference = 157;
+    const offset = circumference - (Math.min(scrollPercent, 100) / 100) * circumference;
+    
+    circle.style.strokeDashoffset = offset;
+    if (text) {
+      text.textContent = Math.round(Math.min(scrollPercent, 100)) + '%';
+    }
+  }
+}
+
+// Scroll snap utilities
+function scrollToSection(sectionNumber) {
+  const container = document.getElementById('snapScrollContainer');
+  if (!container) return;
+  
+  const sectionHeight = 182; // Height + margin
+  const targetPosition = (sectionNumber - 1) * sectionHeight;
+  
+  container.scrollTo({
+    top: targetPosition,
+    behavior: 'smooth'
+  });
+}
+
+function scrollDirection(direction) {
+  const container = document.getElementById('snapScrollContainer');
+  if (!container) return;
+  
+  const scrollAmount = 100;
+  
+  if (direction === 'up') {
+    container.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
+  } else {
+    container.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+  }
+}
+
+// Infinite scroll functionality
+let itemCount = 0;
+let isLoading = false;
+let infiniteScrollInitialized = false;
+
+function initInfiniteScroll() {
+  if (infiniteScrollInitialized) return;
+  
+  const container = document.getElementById('infiniteScrollContainer');
+  if (!container) return;
+  
+  infiniteScrollInitialized = true;
+  
+  // Load initial content
+  loadMoreItems();
+  
+  // Add scroll event listener
+  container.addEventListener('scroll', function() {
+    if (container.scrollTop + container.clientHeight >= container.scrollHeight - 10 && !isLoading) {
+      loadMoreItems();
+    }
+  });
+}
+
+function loadMoreItems() {
+  if (isLoading) return;
+  
+  isLoading = true;
+  const loadingIndicator = document.getElementById('loadingIndicator');
+  if (loadingIndicator) {
+    loadingIndicator.style.display = 'block';
+  }
+  
+  // Simulate API call delay
+  setTimeout(() => {
+    const content = document.getElementById('infiniteScrollContent');
+    if (!content) return;
+    
+    // Add new items
+    for (let i = 0; i < 5; i++) {
+      itemCount++;
+      const item = document.createElement('div');
+      item.className = 'border-bottom p-3';
+      item.innerHTML = `
+        <div class="d-flex align-items-center">
+          <div class="bg-primary rounded-circle me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+            <span class="text-white fw-bold">${itemCount}</span>
+          </div>
+          <div>
+            <h6 class="mb-1">Item ${itemCount}</h6>
+            <p class="mb-0 text-muted">This is content for item ${itemCount}. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      `;
+      content.appendChild(item);
+    }
+    
+    const itemCountElement = document.getElementById('itemCount');
+    if (itemCountElement) {
+      itemCountElement.textContent = itemCount;
+    }
+    
+    if (loadingIndicator) {
+      loadingIndicator.style.display = 'none';
+    }
+    isLoading = false;
+  }, 1000);
+}
+
+function resetInfiniteScroll() {
+  itemCount = 0;
+  isLoading = false;
+  infiniteScrollInitialized = false;
+  
+  const content = document.getElementById('infiniteScrollContent');
+  const itemCountElement = document.getElementById('itemCount');
+  const loadingIndicator = document.getElementById('loadingIndicator');
+  
+  if (content) content.innerHTML = '';
+  if (itemCountElement) itemCountElement.textContent = '0';
+  if (loadingIndicator) loadingIndicator.style.display = 'none';
+}
+
+// Event logging functionality
+let scrollEventEnabled = true;
+
+function enableScrollEvents() {
+  scrollEventEnabled = true;
+  logEvent('Scroll events enabled');
+}
+
+function disableScrollEvents() {
+  scrollEventEnabled = false;
+  logEvent('Scroll events disabled');
+}
+
+function clearEventLog() {
+  const log = document.getElementById('eventLog');
+  if (log) {
+    log.innerHTML = '<p class="text-muted">Event log cleared...</p>';
+  }
+}
+
+function logEvent(message) {
+  const log = document.getElementById('eventLog');
+  if (!log) return;
+  
+  const time = new Date().toLocaleTimeString();
+  const entry = document.createElement('div');
+  entry.className = 'mb-1';
+  entry.innerHTML = `<span class="text-muted">${time}</span> ${message}`;
+  log.appendChild(entry);
+  log.scrollTop = log.scrollHeight;
+}
+
+// Initialize event scroll container
+document.addEventListener('DOMContentLoaded', function() {
+  const eventContainer = document.getElementById('eventScrollContainer');
+  if (eventContainer) {
+    eventContainer.addEventListener('scroll', function(e) {
+      if (!scrollEventEnabled) return;
+      
+      const scrollTop = e.target.scrollTop;
+      const scrollHeight = e.target.scrollHeight;
+      const clientHeight = e.target.clientHeight;
+      const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+      
+      // Update scroll position display
+      const scrollPosition = document.getElementById('scrollPosition');
+      if (scrollPosition) {
+        scrollPosition.textContent = scrollTop;
+      }
+      
+      // Log scroll events (throttled)
+      if (scrollTop % 20 === 0 || scrollTop === 0) {
+        logEvent(`Scroll: ${scrollTop}px (${scrollPercent.toFixed(1)}%)`);
+      }
+    });
+  }
+});
+
+// Hidden scrollbar functionality
+function scrollHiddenContainer(containerId, position) {
+  const container = document.getElementById(containerId);
+  if (container) {
+    // For universal method, target the inner div
+    const scrollElement = container.classList.contains('hidden-scrollbar-universal') 
+      ? container.firstElementChild 
+      : container;
+    
+    if (scrollElement) {
+      scrollElement.scrollTo({
+        top: position,
+        behavior: 'smooth'
+      });
+    }
+  }
+}
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    const text = element.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+      // Show success feedback
+      const button = event.target.closest('button');
+      const originalText = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+      button.classList.remove('btn-outline-secondary');
+      button.classList.add('btn-success');
+      
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.classList.remove('btn-success');
+        button.classList.add('btn-outline-secondary');
+      }, 2000);
+    });
+  }
+}
+</script>
+
+<style>
+/* Hidden Scrollbar Styles */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.hidden-scrollbar-webkit::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden-scrollbar-webkit {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Universal method using wrapper */
+.hidden-scrollbar-universal {
+  overflow: hidden;
+}
+
+.hidden-scrollbar-universal > div {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 17px; /* Compensate for scrollbar width */
+  margin-right: -17px;
+}
+
+/* Ensure smooth scrolling for hidden scrollbar containers */
+.hidden-scrollbar-webkit,
+.hidden-scrollbar-universal > div {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.hidden-scrollbar-webkit:focus,
+.hidden-scrollbar-universal:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+</style>

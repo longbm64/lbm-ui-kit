@@ -1,0 +1,730 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Input</h1>
+        <p class="lead">Input form components with various types, styles and validation states.</p>
+    </div>
+</div>
+
+<!-- Basic Inputs -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Inputs</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Basic input fields with different sizes and styles.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Standard Input</h6>
+                <div class="mb-3">
+                  <label for="basicInput" class="form-label">Basic Input</label>
+                  <input type="text" class="form-control" id="basicInput" placeholder="Enter text here">
+                </div>
+                
+                <h6>Input Sizes</h6>
+                <div class="mb-2">
+                  <input class="form-control form-control-lg" type="text" placeholder="Large input" aria-label="Large input">
+                </div>
+                <div class="mb-2">
+                  <input class="form-control" type="text" placeholder="Default input" aria-label="Default input">
+                </div>
+                <div class="mb-3">
+                  <input class="form-control form-control-sm" type="text" placeholder="Small input" aria-label="Small input">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Readonly & Disabled</h6>
+                <div class="mb-2">
+                  <input class="form-control" type="text" value="Readonly input" aria-label="Readonly input" readonly>
+                </div>
+                <div class="mb-3">
+                  <input class="form-control" type="text" value="Disabled input" aria-label="Disabled input" disabled>
+                </div>
+                
+                <h6>With Icons</h6>
+                <div class="input-group mb-2">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-inputs-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-inputs-code" class="language-html">&lt;!-- Basic Input --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="basicInput" class="form-label"&gt;Basic Input&lt;/label&gt;
+  &lt;input type="text" class="form-control" id="basicInput" placeholder="Enter text here"&gt;
+&lt;/div&gt;
+
+&lt;!-- Input Sizes --&gt;
+&lt;input class="form-control form-control-lg" type="text" placeholder="Large input"&gt;
+&lt;input class="form-control" type="text" placeholder="Default input"&gt;
+&lt;input class="form-control form-control-sm" type="text" placeholder="Small input"&gt;
+
+&lt;!-- Readonly & Disabled --&gt;
+&lt;input class="form-control" type="text" value="Readonly input" readonly&gt;
+&lt;input class="form-control" type="text" value="Disabled input" disabled&gt;
+
+&lt;!-- With Icons --&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-text"&gt;&lt;i class="fas fa-user"&gt;&lt;/i&gt;&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="Username"&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Input Types -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Input Types</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Different HTML5 input types with their specific behaviors.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="textInput" class="form-label">Text</label>
+                  <input type="text" class="form-control" id="textInput" placeholder="Text input">
+                </div>
+                <div class="mb-3">
+                  <label for="emailInput" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                  <label for="passwordInput" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                  <label for="numberInput" class="form-label">Number</label>
+                  <input type="number" class="form-control" id="numberInput" placeholder="123">
+                </div>
+                <div class="mb-3">
+                  <label for="telInput" class="form-label">Telephone</label>
+                  <input type="tel" class="form-control" id="telInput" placeholder="+1 (555) 123-4567">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="urlInput" class="form-label">URL</label>
+                  <input type="url" class="form-control" id="urlInput" placeholder="https://example.com">
+                </div>
+                <div class="mb-3">
+                  <label for="dateInput" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="dateInput">
+                </div>
+                <div class="mb-3">
+                  <label for="timeInput" class="form-label">Time</label>
+                  <input type="time" class="form-control" id="timeInput">
+                </div>
+                <div class="mb-3">
+                  <label for="colorInput" class="form-label">Color</label>
+                  <input type="color" class="form-control form-control-color" id="colorInput" value="#563d7c">
+                </div>
+                <div class="mb-3">
+                  <label for="rangeInput" class="form-label">Range</label>
+                  <input type="range" class="form-range" id="rangeInput" min="0" max="100" value="50">
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('input-types-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="input-types-code" class="language-html">&lt;!-- Text Input --&gt;
+&lt;input type="text" class="form-control" placeholder="Text input"&gt;
+
+&lt;!-- Email Input --&gt;
+&lt;input type="email" class="form-control" placeholder="name@example.com"&gt;
+
+&lt;!-- Password Input --&gt;
+&lt;input type="password" class="form-control" placeholder="Password"&gt;
+
+&lt;!-- Number Input --&gt;
+&lt;input type="number" class="form-control" placeholder="123"&gt;
+
+&lt;!-- Date Input --&gt;
+&lt;input type="date" class="form-control"&gt;
+
+&lt;!-- Time Input --&gt;
+&lt;input type="time" class="form-control"&gt;
+
+&lt;!-- Color Input --&gt;
+&lt;input type="color" class="form-control form-control-color" value="#563d7c"&gt;
+
+&lt;!-- Range Input --&gt;
+&lt;input type="range" class="form-range" min="0" max="100" value="50"&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Input Groups -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Input Groups</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Input groups with text, buttons, and dropdown addons.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Text Addons</h6>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">@</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Recipient's username">
+                  <span class="input-group-text">@example.com</span>
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input type="text" class="form-control">
+                  <span class="input-group-text">.00</span>
+                </div>
+                
+                <h6>Button Addons</h6>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary" type="button">Button</button>
+                  <input type="text" class="form-control" placeholder="">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search">
+                  <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Dropdown Addons</h6>
+                <div class="input-group mb-3">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Dropdown</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                  <input type="text" class="form-control">
+                </div>
+                
+                <h6>Multiple Inputs</h6>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">First and last name</span>
+                  <input type="text" class="form-control" placeholder="First name">
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+                
+                <h6>Checkboxes and Radios</h6>
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox">
+                  </div>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="radio">
+                  </div>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('input-groups-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="input-groups-code" class="language-html">&lt;!-- Text Addons --&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-text"&gt;@&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="Username"&gt;
+&lt;/div&gt;
+
+&lt;!-- Button Addons --&gt;
+&lt;div class="input-group"&gt;
+  &lt;input type="text" class="form-control" placeholder="Search"&gt;
+  &lt;button class="btn btn-primary" type="button"&gt;&lt;i class="fas fa-search"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Dropdown Addons --&gt;
+&lt;div class="input-group"&gt;
+  &lt;button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"&gt;Dropdown&lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;input type="text" class="form-control"&gt;
+&lt;/div&gt;
+
+&lt;!-- Multiple Inputs --&gt;
+&lt;div class="input-group"&gt;
+  &lt;span class="input-group-text"&gt;First and last name&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="First name"&gt;
+  &lt;input type="text" class="form-control" placeholder="Last name"&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Validation States -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Validation States</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Input validation states with feedback messages and styling.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Valid State</h6>
+                <div class="mb-3">
+                  <label for="validInput" class="form-label">Valid Input</label>
+                  <input type="text" class="form-control is-valid" id="validInput" value="Valid input" required>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                
+                <h6>Invalid State</h6>
+                <div class="mb-3">
+                  <label for="invalidInput" class="form-label">Invalid Input</label>
+                  <input type="text" class="form-control is-invalid" id="invalidInput" value="" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid input.
+                  </div>
+                </div>
+                
+                <h6>Custom Validation</h6>
+                <div class="mb-3">
+                  <label for="customValidation" class="form-label">Email Validation</label>
+                  <input type="email" class="form-control" id="customValidation" placeholder="Enter email" onblur="validateEmail(this)">
+                  <div class="feedback-message"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Real-time Validation</h6>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label for="realtimeUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="realtimeUsername" placeholder="Username" required minlength="3">
+                    <div class="invalid-feedback">
+                      Username must be at least 3 characters.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="realtimeEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="realtimeEmail" placeholder="Email" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid email.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="realtimePassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="realtimePassword" placeholder="Password" required minlength="6">
+                    <div class="invalid-feedback">
+                      Password must be at least 6 characters.
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('validation-states-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="validation-states-code" class="language-html">&lt;!-- Valid State --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="validInput" class="form-label"&gt;Valid Input&lt;/label&gt;
+  &lt;input type="text" class="form-control is-valid" id="validInput" value="Valid input" required&gt;
+  &lt;div class="valid-feedback"&gt;
+    Looks good!
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Invalid State --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="invalidInput" class="form-label"&gt;Invalid Input&lt;/label&gt;
+  &lt;input type="text" class="form-control is-invalid" id="invalidInput" value="" required&gt;
+  &lt;div class="invalid-feedback"&gt;
+    Please provide a valid input.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bootstrap Validation --&gt;
+&lt;form class="needs-validation" novalidate&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="username" class="form-label"&gt;Username&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="username" required minlength="3"&gt;
+    &lt;div class="invalid-feedback"&gt;
+      Username must be at least 3 characters.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Programmatic Control -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Programmatic Control</h2>
+        <div class="card">
+            <div class="card-body">
+          <p class="text-muted mb-3">Control inputs programmatically with JavaScript methods and events.</p>
+          
+          <!-- Demo -->
+          <div class="p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Input Control</h6>
+                <div class="mb-3">
+                  <label for="controlledInput" class="form-label">Controlled Input</label>
+                  <input type="text" class="form-control" id="controlledInput" placeholder="Type something...">
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-primary me-2" onclick="setInputValue()">Set Value</button>
+                  <button type="button" class="btn btn-secondary me-2" onclick="clearInput()">Clear</button>
+                  <button type="button" class="btn btn-info me-2" onclick="focusInput()">Focus</button>
+                  <button type="button" class="btn btn-warning" onclick="toggleDisabled()">Toggle Disabled</button>
+                </div>
+                
+                <h6>Input Events</h6>
+                <div class="mb-3">
+                  <label for="eventInput" class="form-label">Event Input</label>
+                  <input type="text" class="form-control" id="eventInput" placeholder="Type to see events...">
+                </div>
+                <div class="mb-3">
+                  <div class="border p-3 bg-light" style="height: 150px; overflow-y: auto;">
+                    <h6 class="mb-2">Event Log:</h6>
+                    <div id="eventLog"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Form Data</h6>
+                <form id="demoForm">
+                  <div class="mb-3">
+                    <label for="formName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="formName" name="name" placeholder="Your name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="formEmail" name="email" placeholder="your@email.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="formAge" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="formAge" name="age" placeholder="25">
+                  </div>
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-success me-2" onclick="getFormData()">Get Form Data</button>
+                    <button type="button" class="btn btn-warning me-2" onclick="setFormData()">Set Sample Data</button>
+                    <button type="button" class="btn btn-danger" onclick="resetForm()">Reset Form</button>
+                  </div>
+                </form>
+                
+                <div class="mb-3">
+                  <h6>Form Data Output:</h6>
+                  <pre id="formDataOutput" class="bg-light p-3 border">No data yet...</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('programmatic-control-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="programmatic-control-code" class="language-html">&lt;!-- Controlled Input --&gt;
+&lt;input type="text" class="form-control" id="controlledInput" placeholder="Type something..."&gt;
+
+&lt;script&gt;
+// Set input value
+function setInputValue() {
+  document.getElementById('controlledInput').value = 'Hello World!';
+}
+
+// Clear input
+function clearInput() {
+  document.getElementById('controlledInput').value = '';
+}
+
+// Focus input
+function focusInput() {
+  document.getElementById('controlledInput').focus();
+}
+
+// Toggle disabled state
+function toggleDisabled() {
+  const input = document.getElementById('controlledInput');
+  input.disabled = !input.disabled;
+}
+
+// Event listeners
+const eventInput = document.getElementById('eventInput');
+eventInput.addEventListener('input', function(e) {
+  // Input value changed
+});
+
+eventInput.addEventListener('focus', function(e) {
+  // Input focused
+});
+
+eventInput.addEventListener('blur', function(e) {
+  // Input blurred
+});
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Input control functions
+function setInputValue() {
+  document.getElementById('controlledInput').value = 'Hello World!';
+  logInputEvent('Value set to: Hello World!');
+}
+
+function clearInput() {
+  document.getElementById('controlledInput').value = '';
+  logInputEvent('Input cleared');
+}
+
+function focusInput() {
+  document.getElementById('controlledInput').focus();
+  logInputEvent('Input focused');
+}
+
+function toggleDisabled() {
+  const input = document.getElementById('controlledInput');
+  input.disabled = !input.disabled;
+  logInputEvent(`Input ${input.disabled ? 'disabled' : 'enabled'}`);
+}
+
+// Email validation function
+function validateEmail(input) {
+  const email = input.value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const feedbackDiv = input.nextElementSibling;
+  
+  if (email === '') {
+    input.className = 'form-control';
+    feedbackDiv.textContent = '';
+    feedbackDiv.className = 'feedback-message';
+  } else if (emailRegex.test(email)) {
+    input.className = 'form-control is-valid';
+    feedbackDiv.textContent = 'Valid email address!';
+    feedbackDiv.className = 'feedback-message valid-feedback d-block';
+  } else {
+    input.className = 'form-control is-invalid';
+    feedbackDiv.textContent = 'Please enter a valid email address.';
+    feedbackDiv.className = 'feedback-message invalid-feedback d-block';
+  }
+}
+
+// Form data functions
+function getFormData() {
+  const form = document.getElementById('demoForm');
+  const formData = new FormData(form);
+  const data = {};
+  
+  for (let [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+  
+  document.getElementById('formDataOutput').textContent = JSON.stringify(data, null, 2);
+  logInputEvent('Form data retrieved');
+}
+
+function setFormData() {
+  document.getElementById('formName').value = 'John Doe';
+  document.getElementById('formEmail').value = 'john.doe@example.com';
+  document.getElementById('formAge').value = '30';
+  logInputEvent('Sample data set');
+}
+
+function resetForm() {
+  document.getElementById('demoForm').reset();
+  document.getElementById('formDataOutput').textContent = 'No data yet...';
+  logInputEvent('Form reset');
+}
+
+// Event logging
+function logInputEvent(message) {
+  const eventLog = document.getElementById('eventLog');
+  const timestamp = new Date().toLocaleTimeString();
+  const eventHtml = `<p class="mb-1 small">[${timestamp}] ${message}</p>`;
+  eventLog.insertAdjacentHTML('afterbegin', eventHtml);
+  
+  // Keep only last 10 events
+  const events = eventLog.querySelectorAll('p');
+  if (events.length > 10) {
+    events[events.length - 1].remove();
+  }
+}
+
+// Event input listeners
+document.addEventListener('DOMContentLoaded', function() {
+  const eventInput = document.getElementById('eventInput');
+  
+  if (eventInput) {
+    eventInput.addEventListener('input', function(e) {
+      logInputEvent(`Input: "${e.target.value}"`);
+    });
+    
+    eventInput.addEventListener('focus', function(e) {
+      logInputEvent('Input focused');
+    });
+    
+    eventInput.addEventListener('blur', function(e) {
+      logInputEvent('Input blurred');
+    });
+    
+    eventInput.addEventListener('keydown', function(e) {
+      logInputEvent(`Key pressed: ${e.key}`);
+    });
+  }
+  
+  // Bootstrap form validation
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', function(event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        logInputEvent('Form validation failed');
+      } else {
+        event.preventDefault(); // Prevent actual submission for demo
+        logInputEvent('Form validation passed');
+      }
+      form.classList.add('was-validated');
+    });
+  });
+});
+
+// Format date input to use MM-DD-YYYY format
+document.addEventListener('DOMContentLoaded', function() {
+  const dateInput = document.getElementById('dateInput');
+  if (dateInput) {
+    // Change input type to text to allow custom formatting
+    dateInput.type = 'text';
+    dateInput.placeholder = 'MM-DD-YYYY';
+    
+    // Set default value in MM-DD-YYYY format
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const year = today.getFullYear();
+    dateInput.value = `${month}-${day}-${year}`;
+    
+    // Handle input formatting
+    dateInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+      if (value.length >= 2) {
+        value = value.substring(0, 2) + '-' + value.substring(2);
+      }
+      if (value.length >= 5) {
+        value = value.substring(0, 5) + '-' + value.substring(5, 9);
+      }
+      e.target.value = value;
+    });
+    
+    // Validate date format on blur
+    dateInput.addEventListener('blur', function(e) {
+      const value = e.target.value;
+      const dateRegex = /^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])-(\d{4})$/;
+      if (value && !dateRegex.test(value)) {
+        e.target.classList.add('is-invalid');
+      } else {
+        e.target.classList.remove('is-invalid');
+      }
+    });
+  }
+});
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    
+    btn.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-success');
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.classList.remove('btn-success');
+      btn.classList.add('btn-outline-secondary');
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+}
+</script>
+
+<style>
+.form-control:focus {
+  box-shadow: none !important;
+}
+</style>

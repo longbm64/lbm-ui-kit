@@ -1,0 +1,628 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Toasts</h1>
+        <p class="lead">Toast notification components with various styles, positioning options, and interactive features using LBMUIKit.</p>
+    </div>
+</div>
+
+<!-- Basic Toasts -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Toasts</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Basic toast notifications with different styles and content types.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Colored Toasts</h6>
+                            <button type="button" class="btn btn-success me-2 mb-2" onclick="showBasicSuccess()">Success</button>
+                            <button type="button" class="btn btn-danger me-2 mb-2" onclick="showBasicError()">Error</button>
+                            <button type="button" class="btn btn-warning me-2 mb-2" onclick="showBasicWarning()">Warning</button>
+                            <button type="button" class="btn btn-info me-2 mb-2" onclick="showBasicInfo()">Info</button>
+                            <button type="button" class="btn btn-primary mb-2" onclick="showBasicPrimary()">Primary</button>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Toast without Header</h6>
+                            <button type="button" class="btn btn-outline-success me-2 mb-2" onclick="showNoHeaderSuccess()">Success (No Header)</button>
+                            <button type="button" class="btn btn-outline-danger me-2 mb-2" onclick="showNoHeaderError()">Error (No Header)</button>
+                            <button type="button" class="btn btn-outline-info mb-2" onclick="showNoHeaderInfo()">Info (No Header)</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basic-toasts-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basic-toasts-code" class="language-javascript">// Basic colored toasts with headers
+LBMUIKit.Toasts.success('Operation completed successfully!');
+LBMUIKit.Toasts.error('An error occurred. Please try again.');
+LBMUIKit.Toasts.warning('Warning: Please check your input.');
+LBMUIKit.Toasts.info('Here\'s some helpful information.');
+LBMUIKit.Toasts.primary('Primary notification message.');
+
+// Toasts without headers
+LBMUIKit.Toasts.show('Success message without header', 'success');
+LBMUIKit.Toasts.show('Error message without header', 'error');
+LBMUIKit.Toasts.show('Info message without header', 'info');</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Positioning -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Toast Positioning</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Toast notifications positioned in different areas of the screen.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h6>Position Options</h6>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-outline-primary me-2 mb-2" onclick="showPositionToast('top-start')">Top Left</button>
+                                <button type="button" class="btn btn-outline-primary me-2 mb-2" onclick="showPositionToast('top-center')">Top Center</button>
+                                <button type="button" class="btn btn-outline-primary me-2 mb-2" onclick="showPositionToast('top-end')">Top Right</button>
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2" onclick="showPositionToast('middle-start')">Middle Left</button>
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2" onclick="showPositionToast('middle-center')">Middle Center</button>
+                                <button type="button" class="btn btn-outline-secondary me-2 mb-2" onclick="showPositionToast('middle-end')">Middle Right</button>
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-outline-dark me-2 mb-2" onclick="showPositionToast('bottom-start')">Bottom Left</button>
+                                <button type="button" class="btn btn-outline-dark me-2 mb-2" onclick="showPositionToast('bottom-center')">Bottom Center</button>
+                                <button type="button" class="btn btn-outline-dark mb-2" onclick="showPositionToast('bottom-end')">Bottom Right</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h6>Stacking</h6>
+                            <button type="button" class="btn btn-info me-2 mb-2" onclick="showStackedToasts()">Show Multiple</button>
+                            <button type="button" class="btn btn-warning mb-2" onclick="clearAllToasts()">Clear All</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('position-toasts-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="position-toasts-code" class="language-javascript">// Position toasts in different locations
+LBMUIKit.Toasts.show('Top left toast', 'info', {
+    position: 'top-start',
+    title: 'Position Demo'
+});
+
+LBMUIKit.Toasts.show('Center toast', 'primary', {
+    position: 'middle-center',
+    title: 'Centered'
+});
+
+LBMUIKit.Toasts.show('Bottom right toast', 'success', {
+    position: 'bottom-end',
+    title: 'Bottom Right'
+});
+
+// Clear all toasts
+LBMUIKit.Toasts.hideAll();</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Action Toasts -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Action Toasts</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Toast notifications with interactive action buttons.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Interactive Actions</h6>
+                            <button type="button" class="btn btn-primary me-2 mb-2" onclick="showActionToast()">Download Action</button>
+                            <button type="button" class="btn btn-success me-2 mb-2" onclick="showMultiActionToast()">Multiple Actions</button>
+                            <button type="button" class="btn btn-info mb-2" onclick="showCustomActionToast()">Custom Actions</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('action-toasts-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="action-toasts-code" class="language-javascript">// Action toast with buttons
+const actions = [
+    {
+        text: 'Open',
+        class: 'btn-primary',
+        onclick: 'alert("Opening file...")'
+    },
+    {
+        text: 'Cancel',
+        class: 'btn-secondary',
+        onclick: 'LBMUIKit.Toasts.hideAll()'
+    }
+];
+
+LBMUIKit.Toasts.showAction('File downloaded successfully!', actions, {
+    title: 'Download Complete',
+    autohide: false
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Undo Toasts -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Undo Toasts</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Toast notifications with undo functionality for reversible actions.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Undo Actions</h6>
+                            <button type="button" class="btn btn-danger me-2 mb-2" onclick="showUndoDelete()">Delete Item</button>
+                            <button type="button" class="btn btn-warning me-2 mb-2" onclick="showUndoArchive()">Archive Email</button>
+                            <button type="button" class="btn btn-secondary mb-2" onclick="showUndoMove()">Move File</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('undo-toasts-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="undo-toasts-code" class="language-javascript">// Undo toast with callback function
+LBMUIKit.Toasts.showUndo('Item deleted', function() {
+    alert('Undo action performed!');
+    // Restore the deleted item here
+}, {
+    delay: 8000  // 8 seconds to undo
+});
+
+// Undo with custom message and shorter delay
+LBMUIKit.Toasts.showUndo('Email archived', function() {
+    console.log('Email restored to inbox');
+}, {
+    delay: 5000,
+    title: 'Archive'
+});</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Progress Toasts -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Progress Toasts</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Toast notifications with progress bars for long-running operations.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>Progress Operations</h6>
+                            <button type="button" class="btn btn-primary me-2 mb-2" onclick="showUploadProgress()">File Upload</button>
+                            <button type="button" class="btn btn-success me-2 mb-2" onclick="showDownloadProgress()">Download</button>
+                            <button type="button" class="btn btn-info mb-2" onclick="showProcessingProgress()">Data Processing</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('progress-toasts-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="progress-toasts-code" class="language-javascript">// Show progress toast
+const toastId = LBMUIKit.Toasts.showProgress('Uploading file...', 0);
+
+// Simulate progress updates
+let progress = 0;
+const interval = setInterval(() => {
+    progress += Math.random() * 15;
+    if (progress >= 100) {
+        progress = 100;
+        LBMUIKit.Toasts.updateProgress(toastId, 100);
+        clearInterval(interval);
+        
+        // Hide after completion
+        setTimeout(() => {
+            LBMUIKit.Toasts.hide(toastId);
+        }, 1000);
+    } else {
+        LBMUIKit.Toasts.updateProgress(toastId, progress);
+    }
+}, 300);</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Auto-dismiss & No-dismiss Toasts -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Auto-dismiss & No-dismiss Toasts</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Toast notifications with different auto-dismiss behaviors.</p>
+                
+                <!-- Demo -->
+                <div class="p-4 mb-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Auto-dismiss Options</h6>
+                            <button type="button" class="btn btn-outline-primary me-2 mb-2" onclick="showAutoToast(2000)">2 seconds</button>
+                            <button type="button" class="btn btn-outline-primary me-2 mb-2" onclick="showAutoToast(5000)">5 seconds</button>
+                            <button type="button" class="btn btn-outline-primary me-2 mb-2" onclick="showAutoToast(10000)">10 seconds</button>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>No Auto-dismiss</h6>
+                            <button type="button" class="btn btn-outline-dark me-2 mb-2" onclick="showNoDismissToast()">Persistent Toast</button>
+                            <button type="button" class="btn btn-outline-warning me-2 mb-2" onclick="showImportantToast()">Important Notice</button>
+                            <button type="button" class="btn btn-danger mb-2" onclick="LBMUIKit.Toasts.hideAll()">Hide All</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Code Example -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>JavaScript Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('dismiss-toasts-code')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="dismiss-toasts-code" class="language-javascript">// Auto-dismiss toast with custom delay
+LBMUIKit.Toasts.info('This will auto-dismiss in 5 seconds', {
+    title: 'Auto-dismiss',
+    autohide: true,
+    delay: 5000
+});
+
+// No auto-dismiss toast (persistent)
+LBMUIKit.Toasts.warning('This toast will not auto-dismiss', {
+    title: 'Important',
+    autohide: false
+});
+
+// Hide all toasts manually
+LBMUIKit.Toasts.hideAll();</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Containers for positioning -->
+<div class="toast-container position-fixed top-0 start-0 p-3" id="toast-top-start"></div>
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" id="toast-top-center"></div>
+<div class="toast-container position-fixed top-0 end-0 p-3" id="toast-top-end"></div>
+<div class="toast-container position-fixed top-50 start-0 translate-middle-y p-3" id="toast-middle-start"></div>
+<div class="toast-container position-fixed top-50 start-50 translate-middle p-3" id="toast-middle-center"></div>
+<div class="toast-container position-fixed top-50 end-0 translate-middle-y p-3" id="toast-middle-end"></div>
+<div class="toast-container position-fixed bottom-0 start-0 p-3" id="toast-bottom-start"></div>
+<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" id="toast-bottom-center"></div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast-bottom-end"></div>
+
+<script>
+// Basic Toast Functions
+function showBasicSuccess() {
+    LBMUIKit.Toasts.success('Operation completed successfully!', {
+        title: 'Success',
+        time: 'now'
+    });
+}
+
+function showBasicError() {
+    LBMUIKit.Toasts.error('An error occurred. Please try again.', {
+        title: 'Error',
+        time: 'now'
+    });
+}
+
+function showBasicWarning() {
+    LBMUIKit.Toasts.warning('Warning: Please check your input.', {
+        title: 'Warning',
+        time: 'now'
+    });
+}
+
+function showBasicInfo() {
+    LBMUIKit.Toasts.info('Here\'s some helpful information.', {
+        title: 'Information',
+        time: 'now'
+    });
+}
+
+function showBasicPrimary() {
+    LBMUIKit.Toasts.primary('Primary notification message.', {
+        title: 'Notification',
+        time: 'now'
+    });
+}
+
+// Toast without Header Functions
+function showNoHeaderSuccess() {
+    LBMUIKit.Toasts.show('Success message without header', 'success');
+}
+
+function showNoHeaderError() {
+    LBMUIKit.Toasts.show('Error message without header', 'error');
+}
+
+function showNoHeaderInfo() {
+    LBMUIKit.Toasts.show('Info message without header', 'info');
+}
+
+// Position Toast Functions
+function showPositionToast(position) {
+    const positionName = position.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+    LBMUIKit.Toasts.show(`Toast positioned at ${positionName}`, 'primary', {
+        position: position,
+        title: 'Position Demo',
+        time: 'now'
+    });
+}
+
+function showStackedToasts() {
+    const messages = [
+        { type: 'success', message: 'First stacked toast' },
+        { type: 'info', message: 'Second stacked toast' },
+        { type: 'warning', message: 'Third stacked toast' }
+    ];
+    
+    messages.forEach((msg, index) => {
+        setTimeout(() => {
+            LBMUIKit.Toasts[msg.type](msg.message, {
+                title: `Stack ${index + 1}`,
+                time: 'now'
+            });
+        }, index * 500);
+    });
+}
+
+function clearAllToasts() {
+    LBMUIKit.Toasts.hideAll();
+}
+
+// Action Toast Functions
+function showActionToast() {
+    const actions = [
+        {
+            text: 'Open',
+            class: 'btn-primary',
+            onclick: 'alert("Opening file...")'
+        },
+        {
+            text: 'Cancel',
+            class: 'btn-secondary',
+            onclick: 'LBMUIKit.Toasts.hideAll()'
+        }
+    ];
+    
+    LBMUIKit.Toasts.showAction('File downloaded successfully!', actions, {
+        title: 'Download Complete',
+        autohide: false
+    });
+}
+
+function showMultiActionToast() {
+    const actions = [
+        {
+            text: 'Save',
+            class: 'btn-success',
+            onclick: 'alert("Saving...")'
+        },
+        {
+            text: 'Edit',
+            class: 'btn-primary',
+            onclick: 'alert("Editing...")'
+        },
+        {
+            text: 'Delete',
+            class: 'btn-danger',
+            onclick: 'alert("Deleting...")'
+        }
+    ];
+    
+    LBMUIKit.Toasts.showAction('Document ready for action', actions, {
+        title: 'Document Actions',
+        autohide: false
+    });
+}
+
+function showCustomActionToast() {
+    const actions = [
+        {
+            text: 'View Details',
+            class: 'btn-info',
+            onclick: 'alert("Viewing details...")'
+        },
+        {
+            text: 'Dismiss',
+            class: 'btn-outline-secondary',
+            onclick: 'LBMUIKit.Toasts.hideAll()'
+        }
+    ];
+    
+    LBMUIKit.Toasts.showAction('New update available!', actions, {
+        title: 'Update Notification',
+        autohide: false
+    });
+}
+
+// Undo Toast Functions
+function showUndoDelete() {
+    LBMUIKit.Toasts.showUndo('Item deleted', function() {
+        alert('Item restored!');
+    }, {
+        delay: 8000,
+        title: 'Delete Action'
+    });
+}
+
+function showUndoArchive() {
+    LBMUIKit.Toasts.showUndo('Email archived', function() {
+        alert('Email restored to inbox!');
+    }, {
+        delay: 6000,
+        title: 'Archive Action'
+    });
+}
+
+function showUndoMove() {
+    LBMUIKit.Toasts.showUndo('File moved to trash', function() {
+        alert('File restored!');
+    }, {
+        delay: 10000,
+        title: 'Move Action'
+    });
+}
+
+// Progress Toast Functions
+function showUploadProgress() {
+    const toastId = LBMUIKit.Toasts.showProgress('Uploading file...', 0);
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 12;
+        if (progress >= 100) {
+            progress = 100;
+            LBMUIKit.Toasts.updateProgress(toastId, 100);
+            clearInterval(interval);
+            
+            setTimeout(() => {
+                LBMUIKit.Toasts.hide(toastId);
+                LBMUIKit.Toasts.success('Upload completed!');
+            }, 1000);
+        } else {
+            LBMUIKit.Toasts.updateProgress(toastId, progress);
+        }
+    }, 300);
+}
+
+function showDownloadProgress() {
+    const toastId = LBMUIKit.Toasts.showProgress('Downloading file...', 0);
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 8;
+        if (progress >= 100) {
+            progress = 100;
+            LBMUIKit.Toasts.updateProgress(toastId, 100);
+            clearInterval(interval);
+            
+            setTimeout(() => {
+                LBMUIKit.Toasts.hide(toastId);
+                LBMUIKit.Toasts.success('Download completed!');
+            }, 1000);
+        } else {
+            LBMUIKit.Toasts.updateProgress(toastId, progress);
+        }
+    }, 400);
+}
+
+function showProcessingProgress() {
+    const toastId = LBMUIKit.Toasts.showProgress('Processing data...', 0);
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 10;
+        if (progress >= 100) {
+            progress = 100;
+            LBMUIKit.Toasts.updateProgress(toastId, 100);
+            clearInterval(interval);
+            
+            setTimeout(() => {
+                LBMUIKit.Toasts.hide(toastId);
+                LBMUIKit.Toasts.success('Processing completed!');
+            }, 1000);
+        } else {
+            LBMUIKit.Toasts.updateProgress(toastId, progress);
+        }
+    }, 250);
+}
+
+// Auto-dismiss and No-dismiss Functions
+function showAutoToast(delay) {
+    const seconds = delay / 1000;
+    LBMUIKit.Toasts.info(`This toast will auto-dismiss in ${seconds} seconds`, {
+        title: 'Auto-dismiss',
+        time: 'now',
+        autohide: true,
+        delay: delay
+    });
+}
+
+function showNoDismissToast() {
+    LBMUIKit.Toasts.warning('This toast will not auto-dismiss. Click the X to close.', {
+        title: 'Persistent Toast',
+        time: 'now',
+        autohide: false
+    });
+}
+
+function showImportantToast() {
+    LBMUIKit.Toasts.error('Important: This requires your attention!', {
+        title: 'Critical Notice',
+        time: 'now',
+        autohide: false
+    });
+}
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent;
+    
+    navigator.clipboard.writeText(text).then(function() {
+        LBMUIKit.Toasts.success('Code copied to clipboard!');
+    }).catch(function(err) {
+        LBMUIKit.Toasts.error('Failed to copy code to clipboard.');
+    });
+}
+</script>

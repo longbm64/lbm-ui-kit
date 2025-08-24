@@ -1,54 +1,45 @@
-<%- include('../layout', { title: 'Navs and Tabs - LBM UI Kit', currentPage: 'navs-tabs' }) %>
-
-<div class="container-fluid px-4">
-  <div class="row">
+<div class="row mb-4">
     <div class="col-12">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Navs and Tabs</h1>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/components/overview">Components</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Navs and Tabs</li>
-          </ol>
-        </nav>
-      </div>
+        <h1 class="mb-3">Navs and Tabs</h1>
+        <p class="lead">Navigation and tab components with Bootstrap 5.3 styling and interactive functionality.</p>
+    </div>
+</div>
 
-      <!-- Basic Navigation -->
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Basic Navigation</h6>
-        </div>
-        <div class="card-body">
-          <p class="text-muted mb-3">Basic navigation component with horizontal links.</p>
-          
-          <!-- Demo -->
-          <div class="border rounded p-3 mb-3">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
+<!-- Basic Navigation -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Navigation</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Basic navigation component with horizontal links.</p>
+                
+                <!-- Demo -->
+                <div class="border rounded p-3 mb-3">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
 
-          <!-- Code -->
-          <div class="position-relative">
-            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
-                    onclick="copyToClipboard('basic-nav-code')"
-                    data-bs-toggle="tooltip" 
-                    title="Copy to clipboard">
-              <i class="fas fa-copy"></i>
-            </button>
-            <pre><code id="basic-nav-code" class="language-html">&lt;ul class="nav"&gt;
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basicNavCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basicNavCode" class="language-html">&lt;ul class="nav"&gt;
   &lt;li class="nav-item"&gt;
     &lt;a class="nav-link active" aria-current="page" href="#"&gt;Active&lt;/a&gt;
   &lt;/li&gt;
@@ -62,93 +53,96 @@
     &lt;a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tabs with Content -->
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Tabs with Content</h6>
-        </div>
-        <div class="card-body">
-          <p class="text-muted mb-3">Interactive tabs with content panels that switch when clicked.</p>
-          
-          <!-- Demo -->
-          <div class="border rounded p-3 mb-3">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link disabled" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled" type="button" role="tab" aria-controls="disabled" aria-selected="false" disabled>Disabled</button>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="p-3">
-                  <h5>Home Content</h5>
-                  <p>This is the home tab content. You can put any content here including text, images, forms, or other components.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-              </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="p-3">
-                  <h5>Profile Content</h5>
-                  <p>This is the profile tab content. Here you might display user information, settings, or profile-related content.</p>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <strong>Name:</strong> John Doe<br>
-                      <strong>Email:</strong> john@example.com<br>
-                      <strong>Role:</strong> Administrator
-                    </div>
-                    <div class="col-md-6">
-                      <strong>Joined:</strong> January 2023<br>
-                      <strong>Last Login:</strong> Today<br>
-                      <strong>Status:</strong> <span class="badge bg-success">Active</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="p-3">
-                  <h5>Contact Content</h5>
-                  <p>This is the contact tab content. You might include contact forms, contact information, or communication tools here.</p>
-                  <form>
-                    <div class="mb-3">
-                      <label for="contactName" class="form-label">Name</label>
-                      <input type="text" class="form-control" id="contactName" placeholder="Your name">
-                    </div>
-                    <div class="mb-3">
-                      <label for="contactEmail" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="contactEmail" placeholder="your@email.com">
-                    </div>
-                    <div class="mb-3">
-                      <label for="contactMessage" class="form-label">Message</label>
-                      <textarea class="form-control" id="contactMessage" rows="3" placeholder="Your message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                  </form>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
+</div>
 
-          <!-- Code -->
-          <div class="position-relative">
-            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
-                    onclick="copyToClipboard('tabs-content-code')"
-                    data-bs-toggle="tooltip" 
-                    title="Copy to clipboard">
-              <i class="fas fa-copy"></i>
-            </button>
-            <pre><code id="tabs-content-code" class="language-html">&lt;ul class="nav nav-tabs" id="myTab" role="tablist"&gt;
+<!-- Tabs with Content -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Tabs with Content</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Interactive tabs with content panels that switch when clicked.</p>
+                
+                <!-- Demo -->
+                <div class="border rounded p-3 mb-3">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link disabled" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled" type="button" role="tab" aria-controls="disabled" aria-selected="false" disabled>Disabled</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="p-3">
+                                <h5>Home Content</h5>
+                                <p>This is the home tab content. You can put any content here including text, images, forms, or other components.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="p-3">
+                                <h5>Profile Content</h5>
+                                <p>This is the profile tab content. Here you might display user information, settings, or profile-related content.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <strong>Name:</strong> John Doe<br>
+                                        <strong>Email:</strong> john@example.com<br>
+                                        <strong>Role:</strong> Administrator
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Joined:</strong> January 2023<br>
+                                        <strong>Last Login:</strong> Today<br>
+                                        <strong>Status:</strong> <span class="badge bg-success">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="p-3">
+                                <h5>Contact Content</h5>
+                                <p>This is the contact tab content. You might include contact forms, contact information, or communication tools here.</p>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="contactName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="contactName" placeholder="Your name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="contactEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail" placeholder="your@email.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="contactMessage" class="form-label">Message</label>
+                                        <textarea class="form-control" id="contactMessage" rows="3" placeholder="Your message"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML Code -->
+                <div class="position-relative">
+                    <h6 class="text-muted mb-2">HTML Code</h6>
+                    <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 copy-btn" 
+                            onclick="copyToClipboard('tabs-content-code')"
+                            data-bs-toggle="tooltip" 
+                            title="Copy">
+                        Copy
+                    </button>
+                    <pre><code id="tabs-content-code" class="language-html">&lt;ul class="nav nav-tabs" id="myTab" role="tablist"&gt;
   &lt;li class="nav-item" role="presentation"&gt;
     &lt;button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"&gt;Home&lt;/button&gt;
   &lt;/li&gt;
@@ -179,62 +173,64 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pills Navigation -->
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Pills Navigation</h6>
-        </div>
-        <div class="card-body">
-          <p class="text-muted mb-3">Navigation with pill-style buttons instead of tabs.</p>
-          
-          <!-- Demo -->
-          <div class="border rounded p-3 mb-3">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-              </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="p-3 bg-light rounded">
-                  <h6>Pills Home Content</h6>
-                  <p class="mb-0">This is the home content for the pills navigation. Pills provide a more rounded, button-like appearance compared to traditional tabs.</p>
                 </div>
-              </div>
-              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="p-3 bg-light rounded">
-                  <h6>Pills Profile Content</h6>
-                  <p class="mb-0">This is the profile content for the pills navigation. You can use pills when you want a softer, more modern look.</p>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                <div class="p-3 bg-light rounded">
-                  <h6>Pills Contact Content</h6>
-                  <p class="mb-0">This is the contact content for the pills navigation. Pills work great for settings panels and configuration interfaces.</p>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
 
-          <!-- Code -->
-          <div class="position-relative">
-            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
-                    onclick="copyToClipboard('pills-nav-code')"
-                    data-bs-toggle="tooltip" 
-                    title="Copy to clipboard">
-              <i class="fas fa-copy"></i>
+    <!-- Pills Navigation -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pills Navigation</h5>
+                    <p class="text-muted mb-3">Navigation with pill-style buttons instead of tabs.</p>
+                    
+                    <!-- Demo -->
+                    <div class="border rounded p-3 mb-3">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                <div class="p-3 bg-light rounded">
+                                    <h6>Pills Home Content</h6>
+                                    <p class="mb-0">This is the home content for the pills navigation. Pills provide a more rounded, button-like appearance compared to traditional tabs.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <div class="p-3 bg-light rounded">
+                                    <h6>Pills Profile Content</h6>
+                                    <p class="mb-0">This is the profile content for the pills navigation. You can use pills when you want a softer, more modern look.</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                <div class="p-3 bg-light rounded">
+                                    <h6>Pills Contact Content</h6>
+                                    <p class="mb-0">This is the contact content for the pills navigation. Pills work great for settings panels and configuration interfaces.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HTML Code -->
+                    <div class="position-relative">
+                        <h6 class="text-muted mb-2">HTML Code</h6>
+                        <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 copy-btn" 
+                                onclick="copyToClipboard('pills-nav-code')"
+                                data-bs-toggle="tooltip" 
+                                title="Copy">
+                            Copy
             </button>
-            <pre><code id="pills-nav-code" class="language-html">&lt;ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"&gt;
+                        <pre><code id="pills-nav-code" class="language-html">&lt;ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"&gt;
   &lt;li class="nav-item" role="presentation"&gt;
     &lt;button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"&gt;Home&lt;/button&gt;
   &lt;/li&gt;
@@ -254,29 +250,31 @@
   &lt;/div&gt;
   &lt;!-- Additional tab panes... --&gt;
 &lt;/div&gt;</code></pre>
-          </div>
-        </div>
-      </div>
-
-      <!-- Vertical Navigation -->
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Vertical Navigation</h6>
-        </div>
-        <div class="card-body">
-          <p class="text-muted mb-3">Vertical navigation layout with pills and content side by side.</p>
-          
-          <!-- Demo -->
-          <div class="border rounded p-3 mb-3">
-            <div class="row">
-              <div class="col-3">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                    </div>
                 </div>
-              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical Navigation -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Vertical Navigation</h5>
+                    <p class="text-muted mb-3">Vertical navigation layout with pills and content side by side.</p>
+                    
+                    <!-- Demo -->
+                    <div class="border rounded p-3 mb-3">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+                                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                                </div>
+                            </div>
               <div class="col-9">
                 <div class="tab-content" id="v-pills-tabContent">
                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
@@ -484,11 +482,13 @@
 </div>
 
 <script>
-// Initialize tooltips
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+// Initialize tooltips when Bootstrap is ready
+LBMUIKit.onReady(function() {
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+});
 
 // Copy to clipboard function
 function copyToClipboard(elementId) {
@@ -499,18 +499,20 @@ function copyToClipboard(elementId) {
     // Show success feedback
     const btn = event.target.closest('.copy-btn');
     const originalTitle = btn.getAttribute('data-bs-original-title');
-    const tooltip = bootstrap.Tooltip.getInstance(btn);
-    
-    btn.setAttribute('data-bs-original-title', 'Copied!');
-    tooltip.show();
-    
-    setTimeout(() => {
-      btn.setAttribute('data-bs-original-title', originalTitle);
-    }, 2000);
+    // Check if Bootstrap is available
+    if (typeof bootstrap !== 'undefined') {
+      const tooltip = bootstrap.Tooltip.getInstance(btn);
+      if (tooltip) {
+        btn.setAttribute('data-bs-original-title', 'Copied!');
+        tooltip.show();
+        
+        setTimeout(() => {
+          btn.setAttribute('data-bs-original-title', originalTitle);
+        }, 2000);
+      }
+     }
   }).catch(function(err) {
     console.error('Failed to copy text: ', err);
   });
 }
 </script>
-
-<%- include('../layout-footer') %>
