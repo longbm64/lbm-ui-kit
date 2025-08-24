@@ -1,0 +1,1 @@
+1. nội dung được tạo ra phải 100% tiếng anh

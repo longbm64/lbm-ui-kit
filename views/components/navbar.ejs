@@ -1,0 +1,462 @@
+<%- include('../layout', { title: 'Navbar - LBM UI Kit', currentPage: 'navbar' }) %>
+
+<div class="container-fluid px-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Navbar</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/components/overview">Components</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Navbar</li>
+          </ol>
+        </nav>
+      </div>
+
+      <!-- Basic Navbar -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Basic Navbar</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">A basic navbar with brand and navigation links.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Brand</a>
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('basic-navbar-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="basic-navbar-code" class="language-html">&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+    &lt;div class="navbar-nav"&gt;
+      &lt;a class="nav-link active" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;Features&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;Pricing&lt;/a&gt;
+      &lt;a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Responsive Navbar with Toggler -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Responsive Navbar with Toggler</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">A responsive navbar that collapses on smaller screens with a hamburger menu.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">LBM UI Kit</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('responsive-navbar-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="responsive-navbar-code" class="language-html">&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;LBM UI Kit&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Services&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form class="d-flex"&gt;
+        &lt;input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"&gt;
+        &lt;button class="btn btn-outline-light" type="submit"&gt;Search&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar with Dropdown -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Navbar with Dropdown</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">A navbar with dropdown menus for organizing navigation items.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+              <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Brand</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarDropdown">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Products
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Web Design</a></li>
+                        <li><a class="dropdown-item" href="#">Mobile Apps</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Consulting</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#">About</a>
+                    </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i> Account
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('dropdown-navbar-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="dropdown-navbar-code" class="language-html">&lt;nav class="navbar navbar-expand-lg navbar-light bg-primary"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand text-white" href="#"&gt;Brand&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarDropdown"&gt;
+      &lt;ul class="navbar-nav me-auto mb-2 mb-lg-0"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active text-white" aria-current="page" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item dropdown"&gt;
+          &lt;a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+            Products
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Web Design&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Mobile Apps&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Consulting&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link text-white" href="#"&gt;About&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class="navbar-nav"&gt;
+        &lt;li class="nav-item dropdown"&gt;
+          &lt;a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false"&gt;
+            &lt;i class="fas fa-user"&gt;&lt;/i&gt; Account
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Variations -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Color Variations</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Different color schemes for navbars using Bootstrap's color utilities.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <!-- Light Navbar -->
+            <nav class="navbar navbar-light bg-light mb-3">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Light Navbar</a>
+                <div class="navbar-nav">
+                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="#">About</a>
+                </div>
+              </div>
+            </nav>
+
+            <!-- Dark Navbar -->
+            <nav class="navbar navbar-dark bg-dark mb-3">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Dark Navbar</a>
+                <div class="navbar-nav">
+                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="#">About</a>
+                </div>
+              </div>
+            </nav>
+
+            <!-- Success Navbar -->
+            <nav class="navbar navbar-dark bg-success mb-3">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Success Navbar</a>
+                <div class="navbar-nav">
+                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="#">About</a>
+                </div>
+              </div>
+            </nav>
+
+            <!-- Warning Navbar -->
+            <nav class="navbar navbar-dark bg-warning">
+              <div class="container-fluid">
+                <a class="navbar-brand text-dark" href="#">Warning Navbar</a>
+                <div class="navbar-nav">
+                  <a class="nav-link text-dark" href="#">Home</a>
+                  <a class="nav-link text-dark" href="#">About</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('color-navbar-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="color-navbar-code" class="language-html">&lt;!-- Light Navbar --&gt;
+&lt;nav class="navbar navbar-light bg-light"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Light Navbar&lt;/a&gt;
+    &lt;div class="navbar-nav"&gt;
+      &lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Dark Navbar --&gt;
+&lt;nav class="navbar navbar-dark bg-dark"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Dark Navbar&lt;/a&gt;
+    &lt;div class="navbar-nav"&gt;
+      &lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Colored Navbars --&gt;
+&lt;nav class="navbar navbar-dark bg-success"&gt;...&lt;/nav&gt;
+&lt;nav class="navbar navbar-dark bg-warning"&gt;...&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fixed Positioning -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Fixed Positioning</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Examples of fixed-top and fixed-bottom navbar positioning.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <div class="alert alert-info" role="alert">
+              <i class="fas fa-info-circle"></i> 
+              <strong>Note:</strong> Fixed navbars are demonstrated with static examples. In real implementation, they would stick to the viewport edges.
+            </div>
+            
+            <!-- Fixed Top Example -->
+            <div class="mb-3">
+              <h6>Fixed Top Navbar</h6>
+              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Fixed Top</a>
+                  <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Contact</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+
+            <!-- Fixed Bottom Example -->
+            <div>
+              <h6>Fixed Bottom Navbar</h6>
+              <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Fixed Bottom</a>
+                  <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Contact</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('fixed-navbar-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="fixed-navbar-code" class="language-html">&lt;!-- Fixed Top Navbar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Fixed Top&lt;/a&gt;
+    &lt;div class="navbar-nav"&gt;
+      &lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Fixed Bottom Navbar --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-bottom"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Fixed Bottom&lt;/a&gt;
+    &lt;div class="navbar-nav"&gt;
+      &lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;About&lt;/a&gt;
+      &lt;a class="nav-link" href="#"&gt;Contact&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- Note: Add padding-top or padding-bottom to body when using fixed navbars --&gt;
+&lt;!-- For fixed-top: body { padding-top: 56px; } --&gt;
+&lt;!-- For fixed-bottom: body { padding-bottom: 56px; } --&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const btn = event.target.closest('.copy-btn');
+    const originalTitle = btn.getAttribute('data-bs-original-title');
+    const tooltip = bootstrap.Tooltip.getInstance(btn);
+    
+    btn.setAttribute('data-bs-original-title', 'Copied!');
+    tooltip.show();
+    
+    setTimeout(() => {
+      btn.setAttribute('data-bs-original-title', originalTitle);
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+}
+</script>
+
+<%- include('../layout-footer') %>

@@ -1,0 +1,516 @@
+<%- include('../layout', { title: 'Navs and Tabs - LBM UI Kit', currentPage: 'navs-tabs' }) %>
+
+<div class="container-fluid px-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Navs and Tabs</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/components/overview">Components</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Navs and Tabs</li>
+          </ol>
+        </nav>
+      </div>
+
+      <!-- Basic Navigation -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Basic Navigation</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Basic navigation component with horizontal links.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('basic-nav-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="basic-nav-code" class="language-html">&lt;ul class="nav"&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" aria-current="page" href="#"&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item"&gt;
+    &lt;a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs with Content -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Tabs with Content</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Interactive tabs with content panels that switch when clicked.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link disabled" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled" type="button" role="tab" aria-controls="disabled" aria-selected="false" disabled>Disabled</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="p-3">
+                  <h5>Home Content</h5>
+                  <p>This is the home tab content. You can put any content here including text, images, forms, or other components.</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="p-3">
+                  <h5>Profile Content</h5>
+                  <p>This is the profile tab content. Here you might display user information, settings, or profile-related content.</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <strong>Name:</strong> John Doe<br>
+                      <strong>Email:</strong> john@example.com<br>
+                      <strong>Role:</strong> Administrator
+                    </div>
+                    <div class="col-md-6">
+                      <strong>Joined:</strong> January 2023<br>
+                      <strong>Last Login:</strong> Today<br>
+                      <strong>Status:</strong> <span class="badge bg-success">Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="p-3">
+                  <h5>Contact Content</h5>
+                  <p>This is the contact tab content. You might include contact forms, contact information, or communication tools here.</p>
+                  <form>
+                    <div class="mb-3">
+                      <label for="contactName" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="contactName" placeholder="Your name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="contactEmail" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="contactEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="mb-3">
+                      <label for="contactMessage" class="form-label">Message</label>
+                      <textarea class="form-control" id="contactMessage" rows="3" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('tabs-content-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="tabs-content-code" class="language-html">&lt;ul class="nav nav-tabs" id="myTab" role="tablist"&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"&gt;Home&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"&gt;Profile&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"&gt;Contact&lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content" id="myTabContent"&gt;
+  &lt;div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"&gt;
+    &lt;div class="p-3"&gt;
+      &lt;h5&gt;Home Content&lt;/h5&gt;
+      &lt;p&gt;This is the home tab content...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"&gt;
+    &lt;div class="p-3"&gt;
+      &lt;h5&gt;Profile Content&lt;/h5&gt;
+      &lt;p&gt;This is the profile tab content...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"&gt;
+    &lt;div class="p-3"&gt;
+      &lt;h5&gt;Contact Content&lt;/h5&gt;
+      &lt;p&gt;This is the contact tab content...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pills Navigation -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Pills Navigation</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Navigation with pill-style buttons instead of tabs.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="p-3 bg-light rounded">
+                  <h6>Pills Home Content</h6>
+                  <p class="mb-0">This is the home content for the pills navigation. Pills provide a more rounded, button-like appearance compared to traditional tabs.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="p-3 bg-light rounded">
+                  <h6>Pills Profile Content</h6>
+                  <p class="mb-0">This is the profile content for the pills navigation. You can use pills when you want a softer, more modern look.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="p-3 bg-light rounded">
+                  <h6>Pills Contact Content</h6>
+                  <p class="mb-0">This is the contact content for the pills navigation. Pills work great for settings panels and configuration interfaces.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('pills-nav-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="pills-nav-code" class="language-html">&lt;ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"&gt;Home&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"&gt;Profile&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"&gt;Contact&lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content" id="pills-tabContent"&gt;
+  &lt;div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"&gt;
+    &lt;div class="p-3 bg-light rounded"&gt;
+      &lt;h6&gt;Pills Home Content&lt;/h6&gt;
+      &lt;p class="mb-0"&gt;This is the home content for the pills navigation.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Additional tab panes... --&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vertical Navigation -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Vertical Navigation</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Vertical navigation layout with pills and content side by side.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <div class="row">
+              <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                </div>
+              </div>
+              <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <h6>Vertical Home</h6>
+                    <p>This is the home content in a vertical navigation layout. Vertical navigation is great for dashboards and admin interfaces where you have many navigation options.</p>
+                    <div class="alert alert-info" role="alert">
+                      <i class="fas fa-info-circle"></i> Vertical navigation works well for complex applications with multiple sections.
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <h6>Vertical Profile</h6>
+                    <p>Profile content in vertical layout. This layout provides more space for content while keeping navigation easily accessible.</p>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">User Info</h6>
+                            <p class="card-text">Basic user information and settings.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-body">
+                            <h6 class="card-title">Preferences</h6>
+                            <p class="card-text">User preferences and customization options.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <h6>Vertical Messages</h6>
+                    <p>Messages content in vertical layout. Perfect for communication interfaces and messaging systems.</p>
+                    <div class="list-group">
+                      <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h6 class="mb-1">Message from John</h6>
+                          <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Hello! How are you doing today?</p>
+                        <small>Click to read more...</small>
+                      </div>
+                      <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h6 class="mb-1">Message from Sarah</h6>
+                          <small class="text-muted">1 week ago</small>
+                        </div>
+                        <p class="mb-1">Don't forget about our meeting tomorrow.</p>
+                        <small class="text-muted">Click to read more...</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <h6>Vertical Settings</h6>
+                    <p>Settings content in vertical layout. Ideal for configuration panels and administrative controls.</p>
+                    <form>
+                      <div class="mb-3">
+                        <label for="settingName" class="form-label">Display Name</label>
+                        <input type="text" class="form-control" id="settingName" value="John Doe">
+                      </div>
+                      <div class="mb-3">
+                        <label for="settingEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="settingEmail" value="john@example.com">
+                      </div>
+                      <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="settingNotifications" checked>
+                        <label class="form-check-label" for="settingNotifications">
+                          Enable notifications
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('vertical-nav-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="vertical-nav-code" class="language-html">&lt;div class="row"&gt;
+  &lt;div class="col-3"&gt;
+    &lt;div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"&gt;
+      &lt;button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"&gt;Home&lt;/button&gt;
+      &lt;button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"&gt;Profile&lt;/button&gt;
+      &lt;button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"&gt;Messages&lt;/button&gt;
+      &lt;button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"&gt;Settings&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-9"&gt;
+    &lt;div class="tab-content" id="v-pills-tabContent"&gt;
+      &lt;div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"&gt;
+        &lt;h6&gt;Vertical Home&lt;/h6&gt;
+        &lt;p&gt;This is the home content in a vertical navigation layout.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;!-- Additional tab panes... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Justified Navigation -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Justified Navigation</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Navigation that fills the available width with equal-width nav items.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-3 mb-3">
+            <ul class="nav nav-pills nav-justified mb-3" id="justified-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="justified-home-tab" data-bs-toggle="pill" data-bs-target="#justified-home" type="button" role="tab" aria-controls="justified-home" aria-selected="true">Dashboard</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="justified-analytics-tab" data-bs-toggle="pill" data-bs-target="#justified-analytics" type="button" role="tab" aria-controls="justified-analytics" aria-selected="false">Analytics</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="justified-reports-tab" data-bs-toggle="pill" data-bs-target="#justified-reports" type="button" role="tab" aria-controls="justified-reports" aria-selected="false">Reports</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="justified-settings-tab" data-bs-toggle="pill" data-bs-target="#justified-settings" type="button" role="tab" aria-controls="justified-settings" aria-selected="false">Settings</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="justified-tabContent">
+              <div class="tab-pane fade show active" id="justified-home" role="tabpanel" aria-labelledby="justified-home-tab">
+                <div class="text-center p-4">
+                  <i class="fas fa-tachometer-alt fa-3x text-primary mb-3"></i>
+                  <h5>Dashboard</h5>
+                  <p>Welcome to your dashboard. Here you can see an overview of your data and key metrics.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="justified-analytics" role="tabpanel" aria-labelledby="justified-analytics-tab">
+                <div class="text-center p-4">
+                  <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+                  <h5>Analytics</h5>
+                  <p>View detailed analytics and insights about your data and user behavior.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="justified-reports" role="tabpanel" aria-labelledby="justified-reports-tab">
+                <div class="text-center p-4">
+                  <i class="fas fa-file-alt fa-3x text-info mb-3"></i>
+                  <h5>Reports</h5>
+                  <p>Generate and view comprehensive reports for your business needs.</p>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="justified-settings" role="tabpanel" aria-labelledby="justified-settings-tab">
+                <div class="text-center p-4">
+                  <i class="fas fa-cog fa-3x text-warning mb-3"></i>
+                  <h5>Settings</h5>
+                  <p>Configure your application settings and preferences.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('justified-nav-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="justified-nav-code" class="language-html">&lt;ul class="nav nav-pills nav-justified mb-3" id="justified-tab" role="tablist"&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link active" id="justified-home-tab" data-bs-toggle="pill" data-bs-target="#justified-home" type="button" role="tab" aria-controls="justified-home" aria-selected="true"&gt;Dashboard&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="justified-analytics-tab" data-bs-toggle="pill" data-bs-target="#justified-analytics" type="button" role="tab" aria-controls="justified-analytics" aria-selected="false"&gt;Analytics&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="justified-reports-tab" data-bs-toggle="pill" data-bs-target="#justified-reports" type="button" role="tab" aria-controls="justified-reports" aria-selected="false"&gt;Reports&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="nav-item" role="presentation"&gt;
+    &lt;button class="nav-link" id="justified-settings-tab" data-bs-toggle="pill" data-bs-target="#justified-settings" type="button" role="tab" aria-controls="justified-settings" aria-selected="false"&gt;Settings&lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content" id="justified-tabContent"&gt;
+  &lt;div class="tab-pane fade show active" id="justified-home" role="tabpanel" aria-labelledby="justified-home-tab"&gt;
+    &lt;div class="text-center p-4"&gt;
+      &lt;i class="fas fa-tachometer-alt fa-3x text-primary mb-3"&gt;&lt;/i&gt;
+      &lt;h5&gt;Dashboard&lt;/h5&gt;
+      &lt;p&gt;Welcome to your dashboard.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Additional tab panes... --&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const btn = event.target.closest('.copy-btn');
+    const originalTitle = btn.getAttribute('data-bs-original-title');
+    const tooltip = bootstrap.Tooltip.getInstance(btn);
+    
+    btn.setAttribute('data-bs-original-title', 'Copied!');
+    tooltip.show();
+    
+    setTimeout(() => {
+      btn.setAttribute('data-bs-original-title', originalTitle);
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+}
+</script>
+
+<%- include('../layout-footer') %>

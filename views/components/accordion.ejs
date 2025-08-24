@@ -1,0 +1,475 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Accordion</h1>
+        <p class="lead">Bootstrap accordion components với WCAG AA compliance và hỗ trợ dark/light mode.</p>
+    </div>
+</div>
+
+<!-- Basic Accordion -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Accordion</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Đây là nội dung của accordion item đầu tiên.</strong> Nội dung này được hiển thị mặc định khi trang được tải. Accordion giúp tiết kiệm không gian và tổ chức thông tin một cách hiệu quả.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="fas fa-cog me-2"></i>
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Đây là nội dung của accordion item thứ hai.</strong> Nội dung này được ẩn mặc định và chỉ hiển thị khi người dùng click vào header. Accordion hỗ trợ đầy đủ keyboard navigation và screen reader.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="fas fa-question-circle me-2"></i>
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Đây là nội dung của accordion item thứ ba.</strong> Tất cả các accordion item đều tuân thủ WCAG AA guidelines với contrast ratio phù hợp và hỗ trợ đầy đủ cho assistive technologies.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basicAccordionCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basicAccordionCode" class="language-html">&lt;div class="accordion" id="accordionExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"&gt;
+        &lt;i class="fas fa-info-circle me-2"&gt;&lt;/i&gt;Accordion Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"&gt;
+      &lt;div class="accordion-body"&gt;Nội dung của accordion item đầu tiên.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"&gt;
+        &lt;i class="fas fa-cog me-2"&gt;&lt;/i&gt;Accordion Item #2
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample"&gt;
+      &lt;div class="accordion-body"&gt;Nội dung của accordion item thứ hai.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Copy to Clipboard -->
+<script>
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent || element.innerText;
+    
+    // Create a temporary textarea element
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    
+    // Select and copy the text
+    textarea.select();
+    document.execCommand('copy');
+    
+    // Remove the temporary element
+    document.body.removeChild(textarea);
+    
+    // Show feedback
+    const button = event.target.closest('button');
+    const originalHTML = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+    button.classList.remove('btn-outline-secondary');
+    button.classList.add('btn-success');
+    
+    // Reset button after 2 seconds
+    setTimeout(() => {
+        button.innerHTML = originalHTML;
+        button.classList.remove('btn-success');
+        button.classList.add('btn-outline-secondary');
+    }, 2000);
+}
+</script>
+
+<!-- CSS for Code Blocks -->
+<style>
+pre {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+code {
+    color: #d63384;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-success {
+    transition: all 0.3s ease;
+}
+</style>
+
+<!-- Flush Accordion -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Flush Accordion</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <i class="fas fa-home me-2"></i>
+                                Flush Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Flush accordion loại bỏ border và rounded corners để tạo ra giao diện phẳng hơn. Phù hợp khi muốn tích hợp accordion vào layout mà không có border bổ sung.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <i class="fas fa-user me-2"></i>
+                                Flush Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Flush accordion vẫn giữ nguyên tất cả các tính năng accessibility và responsive design như accordion thông thường.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                <i class="fas fa-star me-2"></i>
+                                Flush Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Sử dụng flush accordion khi bạn muốn tạo ra một danh sách các mục có thể mở rộng mà không có viền phân cách rõ ràng.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('flushAccordionCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="flushAccordionCode" class="language-html">&lt;div class="accordion accordion-flush" id="accordionFlushExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"&gt;
+        &lt;i class="fas fa-home me-2"&gt;&lt;/i&gt;Flush Accordion Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample"&gt;
+      &lt;div class="accordion-body"&gt;Flush accordion loại bỏ border và rounded corners.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"&gt;
+        &lt;i class="fas fa-user me-2"&gt;&lt;/i&gt;Flush Accordion Item #2
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample"&gt;
+      &lt;div class="accordion-body"&gt;Nội dung của flush accordion item thứ hai.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Always Open Accordion -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Always Open Accordion</h2>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-muted mb-3">Accordion này cho phép mở nhiều item cùng lúc (không có data-bs-parent).</p>
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <i class="fas fa-list me-2"></i>
+                                Always Open Item #1
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <strong>Accordion này cho phép mở nhiều panel cùng lúc.</strong> Điều này hữu ích khi bạn muốn người dùng có thể so sánh nội dung giữa các panel khác nhau.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <i class="fas fa-chart-bar me-2"></i>
+                                Always Open Item #2
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <strong>Mỗi panel hoạt động độc lập.</strong> Bạn có thể mở hoặc đóng từng panel mà không ảnh hưởng đến các panel khác.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <i class="fas fa-tools me-2"></i>
+                                Always Open Item #3
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <strong>Phù hợp cho FAQ hoặc documentation.</strong> Người dùng có thể mở nhiều câu hỏi cùng lúc để tham khảo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('alwaysOpenAccordionCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="alwaysOpenAccordionCode" class="language-html">&lt;div class="accordion" id="accordionPanelsStayOpenExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"&gt;
+        &lt;i class="fas fa-list me-2"&gt;&lt;/i&gt;Always Open Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"&gt;
+      &lt;div class="accordion-body"&gt;Accordion này cho phép mở nhiều panel cùng lúc.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo"&gt;
+        &lt;i class="fas fa-chart-bar me-2"&gt;&lt;/i&gt;Always Open Item #2
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"&gt;
+      &lt;div class="accordion-body"&gt;Mỗi panel hoạt động độc lập.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Colored Accordion -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Colored Accordion</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion" id="accordionColorExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#colorCollapseOne" aria-expanded="true" aria-controls="colorCollapseOne">
+                                <i class="fas fa-palette me-2"></i>
+                                Primary Accordion
+                            </button>
+                        </h2>
+                        <div id="colorCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionColorExample">
+                            <div class="accordion-body">
+                                Accordion với màu primary. Tất cả màu sắc đều tuân thủ WCAG AA contrast ratio để đảm bảo khả năng đọc tốt.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#colorCollapseTwo" aria-expanded="false" aria-controls="colorCollapseTwo">
+                                <i class="fas fa-check me-2"></i>
+                                Success Accordion
+                            </button>
+                        </h2>
+                        <div id="colorCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionColorExample">
+                            <div class="accordion-body">
+                                Accordion với màu success. Phù hợp để hiển thị thông tin tích cực hoặc trạng thái thành công.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-warning text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#colorCollapseThree" aria-expanded="false" aria-controls="colorCollapseThree">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                Warning Accordion
+                            </button>
+                        </h2>
+                        <div id="colorCollapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionColorExample">
+                            <div class="accordion-body">
+                                Accordion với màu warning. Sử dụng text-dark để đảm bảo contrast tốt với background màu vàng.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('coloredAccordionCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="coloredAccordionCode" class="language-html">&lt;div class="accordion" id="accordionColorExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#colorCollapseOne" aria-expanded="true" aria-controls="colorCollapseOne"&gt;
+        &lt;i class="fas fa-palette me-2"&gt;&lt;/i&gt;Primary Accordion
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="colorCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionColorExample"&gt;
+      &lt;div class="accordion-body"&gt;Accordion với màu primary.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#colorCollapseTwo" aria-expanded="false" aria-controls="colorCollapseTwo"&gt;
+        &lt;i class="fas fa-check me-2"&gt;&lt;/i&gt;Success Accordion
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="colorCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionColorExample"&gt;
+      &lt;div class="accordion-body"&gt;Accordion với màu success.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button collapsed bg-warning text-dark" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#colorCollapseThree" aria-expanded="false" aria-controls="colorCollapseThree"&gt;
+        &lt;i class="fas fa-exclamation-triangle me-2"&gt;&lt;/i&gt;Warning Accordion
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="colorCollapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionColorExample"&gt;
+      &lt;div class="accordion-body"&gt;Accordion với màu warning.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Accessibility Features -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Accessibility Features</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">WCAG AA Compliance</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i> Keyboard navigation support (Tab, Enter, Space)</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Screen reader compatibility với ARIA attributes</li>
+                    <li><i class="fas fa-check text-success me-2"></i> High contrast colors (4.5:1 ratio minimum)</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Focus indicators rõ ràng</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Semantic HTML structure</li>
+                </ul>
+                
+                <h5 class="card-title mt-4">Keyboard Shortcuts</h5>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><kbd>Tab</kbd></td>
+                                <td>Navigate between accordion headers</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Enter</kbd> / <kbd>Space</kbd></td>
+                                <td>Toggle accordion panel</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Arrow Keys</kbd></td>
+                                <td>Navigate between accordion items (when focused)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

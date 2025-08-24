@@ -1,0 +1,626 @@
+<%- include('../layout', { title: 'Tooltips - LBM UI Kit', currentPage: 'tooltips' }) %>
+
+<div class="container-fluid px-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Tooltips</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/components/overview">Components</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tooltips</li>
+          </ol>
+        </nav>
+      </div>
+
+      <!-- Basic Tooltips -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Basic Tooltips</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Basic tooltips that appear on hover to provide additional information.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-4 mb-3 text-center">
+            <button type="button" class="btn btn-secondary me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+              Tooltip on top
+            </button>
+            <button type="button" class="btn btn-secondary me-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
+              Tooltip on right
+            </button>
+            <button type="button" class="btn btn-secondary me-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+              Tooltip on bottom
+            </button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
+              Tooltip on left
+            </button>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('basic-tooltips-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="basic-tooltips-code" class="language-html">&lt;button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top"&gt;
+  Tooltip on top
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"&gt;
+  Tooltip on right
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom"&gt;
+  Tooltip on bottom
+&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left"&gt;
+  Tooltip on left
+&lt;/button&gt;
+
+&lt;script&gt;
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- HTML Content Tooltips -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">HTML Content Tooltips</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Tooltips with HTML content for richer information display.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-4 mb-3 text-center">
+            <button type="button" class="btn btn-primary me-2" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-html="true" 
+                    title="<strong>Bold text</strong><br><em>Italic text</em><br><u>Underlined text</u>">
+              HTML Tooltip
+            </button>
+            <button type="button" class="btn btn-success me-2" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-html="true" 
+                    title="<div class='text-center'><i class='fas fa-check-circle text-success'></i><br><strong>Success!</strong><br>Operation completed</div>">
+              Success Tooltip
+            </button>
+            <button type="button" class="btn btn-info me-2" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-html="true" 
+                    title="<div><strong>User Info:</strong><br>Name: John Doe<br>Email: john@example.com<br>Role: Admin</div>">
+              User Info
+            </button>
+            <button type="button" class="btn btn-warning" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-html="true" 
+                    title="<div class='text-center'><i class='fas fa-exclamation-triangle text-warning'></i><br><strong>Warning!</strong><br>This action cannot be undone</div>">
+              Warning Tooltip
+            </button>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('html-tooltips-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="html-tooltips-code" class="language-html">&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="tooltip" 
+        data-bs-html="true" 
+        title="&lt;strong&gt;Bold text&lt;/strong&gt;&lt;br&gt;&lt;em&gt;Italic text&lt;/em&gt;&lt;br&gt;&lt;u&gt;Underlined text&lt;/u&gt;"&gt;
+  HTML Tooltip
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-success" 
+        data-bs-toggle="tooltip" 
+        data-bs-html="true" 
+        title="&lt;div class='text-center'&gt;&lt;i class='fas fa-check-circle text-success'&gt;&lt;/i&gt;&lt;br&gt;&lt;strong&gt;Success!&lt;/strong&gt;&lt;br&gt;Operation completed&lt;/div&gt;"&gt;
+  Success Tooltip
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Styled Tooltips -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Custom Styled Tooltips</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Tooltips with custom CSS classes for different styling.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-4 mb-3 text-center">
+            <button type="button" class="btn btn-outline-primary me-2" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-custom-class="custom-tooltip-primary"
+                    title="This is a custom primary tooltip">
+              Primary Style
+            </button>
+            <button type="button" class="btn btn-outline-success me-2" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-custom-class="custom-tooltip-success"
+                    title="This is a custom success tooltip">
+              Success Style
+            </button>
+            <button type="button" class="btn btn-outline-danger me-2" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-custom-class="custom-tooltip-danger"
+                    title="This is a custom danger tooltip">
+              Danger Style
+            </button>
+            <button type="button" class="btn btn-outline-dark" 
+                    data-bs-toggle="tooltip" 
+                    data-bs-custom-class="custom-tooltip-dark"
+                    title="This is a custom dark tooltip">
+              Dark Style
+            </button>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('custom-tooltips-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="custom-tooltips-code" class="language-html">&lt;button type="button" class="btn btn-outline-primary" 
+        data-bs-toggle="tooltip" 
+        data-bs-custom-class="custom-tooltip-primary"
+        title="This is a custom primary tooltip"&gt;
+  Primary Style
+&lt;/button&gt;
+
+&lt;style&gt;
+.custom-tooltip-primary .tooltip-inner {
+  background-color: var(--bs-primary);
+  color: white;
+  font-weight: 500;
+}
+.custom-tooltip-primary .tooltip-arrow::before {
+  border-top-color: var(--bs-primary);
+}
+
+.custom-tooltip-success .tooltip-inner {
+  background-color: var(--bs-success);
+  color: white;
+  font-weight: 500;
+}
+.custom-tooltip-success .tooltip-arrow::before {
+  border-top-color: var(--bs-success);
+}
+&lt;/style&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Tooltips -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Interactive Tooltips</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Tooltips with different trigger methods and interactive features.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Trigger Methods</h6>
+                <button type="button" class="btn btn-outline-primary me-2 mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-trigger="hover"
+                        title="Triggered on hover (default)">
+                  Hover
+                </button>
+                <button type="button" class="btn btn-outline-secondary me-2 mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-trigger="click"
+                        title="Triggered on click">
+                  Click
+                </button>
+                <button type="button" class="btn btn-outline-info me-2 mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-trigger="focus"
+                        title="Triggered on focus">
+                  Focus
+                </button>
+                <button type="button" class="btn btn-outline-warning mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-trigger="hover focus"
+                        title="Triggered on hover and focus">
+                  Hover + Focus
+                </button>
+              </div>
+              <div class="col-md-6">
+                <h6>Delay Options</h6>
+                <button type="button" class="btn btn-outline-success me-2 mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-delay="{&quot;show&quot;:500, &quot;hide&quot;:100}"
+                        title="Delayed show (500ms)">
+                  Delayed Show
+                </button>
+                <button type="button" class="btn btn-outline-danger me-2 mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-delay="{&quot;show&quot;:100, &quot;hide&quot;:500}"
+                        title="Delayed hide (500ms)">
+                  Delayed Hide
+                </button>
+                <button type="button" class="btn btn-outline-dark mb-2" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-delay="1000"
+                        title="Both delayed (1000ms)">
+                  Both Delayed
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('interactive-tooltips-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="interactive-tooltips-code" class="language-html">&lt;!-- Trigger Methods --&gt;
+&lt;button type="button" class="btn btn-outline-primary" 
+        data-bs-toggle="tooltip" 
+        data-bs-trigger="hover"
+        title="Triggered on hover (default)"&gt;
+  Hover
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-outline-secondary" 
+        data-bs-toggle="tooltip" 
+        data-bs-trigger="click"
+        title="Triggered on click"&gt;
+  Click
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-outline-info" 
+        data-bs-toggle="tooltip" 
+        data-bs-trigger="focus"
+        title="Triggered on focus"&gt;
+  Focus
+&lt;/button&gt;
+
+&lt;!-- Delay Options --&gt;
+&lt;button type="button" class="btn btn-outline-success" 
+        data-bs-toggle="tooltip" 
+        data-bs-delay='{"show":500, "hide":100}'
+        title="Delayed show (500ms)"&gt;
+  Delayed Show
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-outline-danger" 
+        data-bs-toggle="tooltip" 
+        data-bs-delay='{"show":100, "hide":500}'
+        title="Delayed hide (500ms)"&gt;
+  Delayed Hide
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tooltips on Different Elements -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Tooltips on Different Elements</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Examples of tooltips applied to various HTML elements.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Form Elements</h6>
+                <div class="mb-3">
+                  <label for="tooltipInput" class="form-label">Input with tooltip</label>
+                  <input type="text" class="form-control" id="tooltipInput" 
+                         data-bs-toggle="tooltip" 
+                         title="Enter your full name here"
+                         placeholder="Your name">
+                </div>
+                <div class="mb-3">
+                  <label for="tooltipSelect" class="form-label">Select with tooltip</label>
+                  <select class="form-select" id="tooltipSelect" 
+                          data-bs-toggle="tooltip" 
+                          title="Choose your preferred option">
+                    <option selected>Choose...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="tooltipCheck" 
+                         data-bs-toggle="tooltip" 
+                         title="Check this to agree to terms">
+                  <label class="form-check-label" for="tooltipCheck">
+                    Checkbox with tooltip
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6>Other Elements</h6>
+                <p>
+                  <a href="#" data-bs-toggle="tooltip" title="This is a link tooltip">Link with tooltip</a>
+                </p>
+                <p>
+                  <span class="badge bg-primary" data-bs-toggle="tooltip" title="This is a badge tooltip">Badge with tooltip</span>
+                </p>
+                <p>
+                  <i class="fas fa-info-circle text-info" 
+                     data-bs-toggle="tooltip" 
+                     title="This icon provides additional information"></i>
+                  Icon with tooltip
+                </p>
+                <div class="alert alert-info" role="alert">
+                  <i class="fas fa-lightbulb" 
+                     data-bs-toggle="tooltip" 
+                     title="Click for more details about this tip"></i>
+                  Alert with tooltip icon
+                </div>
+                <div class="progress" style="height: 20px;" data-bs-toggle="tooltip" title="Progress: 75% complete">
+                  <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('elements-tooltips-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="elements-tooltips-code" class="language-html">&lt;!-- Form Elements --&gt;
+&lt;input type="text" class="form-control" 
+       data-bs-toggle="tooltip" 
+       title="Enter your full name here"
+       placeholder="Your name"&gt;
+
+&lt;select class="form-select" 
+        data-bs-toggle="tooltip" 
+        title="Choose your preferred option"&gt;
+  &lt;option selected&gt;Choose...&lt;/option&gt;
+  &lt;option value="1"&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;input class="form-check-input" type="checkbox" 
+       data-bs-toggle="tooltip" 
+       title="Check this to agree to terms"&gt;
+
+&lt;!-- Other Elements --&gt;
+&lt;a href="#" data-bs-toggle="tooltip" title="This is a link tooltip"&gt;Link with tooltip&lt;/a&gt;
+
+&lt;span class="badge bg-primary" data-bs-toggle="tooltip" title="This is a badge tooltip"&gt;Badge with tooltip&lt;/span&gt;
+
+&lt;i class="fas fa-info-circle text-info" 
+   data-bs-toggle="tooltip" 
+   title="This icon provides additional information"&gt;&lt;/i&gt;
+
+&lt;div class="progress" data-bs-toggle="tooltip" title="Progress: 75% complete"&gt;
+  &lt;div class="progress-bar" role="progressbar" style="width: 75%"&gt;75%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programmatic Control -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Programmatic Control</h6>
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">Control tooltips programmatically with JavaScript methods.</p>
+          
+          <!-- Demo -->
+          <div class="border rounded p-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Target Tooltip</h6>
+                <button type="button" class="btn btn-primary" id="programmaticTooltip" 
+                        data-bs-toggle="tooltip" 
+                        title="This tooltip is controlled programmatically">
+                  Target Tooltip
+                </button>
+              </div>
+              <div class="col-md-6">
+                <h6>Control Buttons</h6>
+                <button type="button" class="btn btn-outline-success btn-sm me-2" onclick="showTooltip()">
+                  <i class="fas fa-eye"></i> Show
+                </button>
+                <button type="button" class="btn btn-outline-danger btn-sm me-2" onclick="hideTooltip()">
+                  <i class="fas fa-eye-slash"></i> Hide
+                </button>
+                <button type="button" class="btn btn-outline-info btn-sm me-2" onclick="toggleTooltip()">
+                  <i class="fas fa-exchange-alt"></i> Toggle
+                </button>
+                <button type="button" class="btn btn-outline-warning btn-sm me-2" onclick="updateTooltip()">
+                  <i class="fas fa-edit"></i> Update
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" onclick="disposeTooltip()">
+                  <i class="fas fa-trash"></i> Dispose
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code -->
+          <div class="position-relative">
+            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 mt-2 me-2 copy-btn" 
+                    onclick="copyToClipboard('programmatic-tooltips-code')"
+                    data-bs-toggle="tooltip" 
+                    title="Copy to clipboard">
+              <i class="fas fa-copy"></i>
+            </button>
+            <pre><code id="programmatic-tooltips-code" class="language-html">&lt;button type="button" class="btn btn-primary" id="programmaticTooltip" 
+        data-bs-toggle="tooltip" 
+        title="This tooltip is controlled programmatically"&gt;
+  Target Tooltip
+&lt;/button&gt;
+
+&lt;script&gt;
+// Get tooltip instance
+const tooltipElement = document.getElementById('programmaticTooltip');
+const tooltip = new bootstrap.Tooltip(tooltipElement);
+
+// Control functions
+function showTooltip() {
+  tooltip.show();
+}
+
+function hideTooltip() {
+  tooltip.hide();
+}
+
+function toggleTooltip() {
+  tooltip.toggle();
+}
+
+function updateTooltip() {
+  tooltipElement.setAttribute('data-bs-original-title', 'Updated tooltip content!');
+  tooltip.setContent({ '.tooltip-inner': 'Updated tooltip content!' });
+}
+
+function disposeTooltip() {
+  tooltip.dispose();
+}
+&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* Custom tooltip styles */
+.custom-tooltip-primary .tooltip-inner {
+  background-color: var(--bs-primary);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+}
+.custom-tooltip-primary .tooltip-arrow::before {
+  border-top-color: var(--bs-primary);
+}
+
+.custom-tooltip-success .tooltip-inner {
+  background-color: var(--bs-success);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+}
+.custom-tooltip-success .tooltip-arrow::before {
+  border-top-color: var(--bs-success);
+}
+
+.custom-tooltip-danger .tooltip-inner {
+  background-color: var(--bs-danger);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+}
+.custom-tooltip-danger .tooltip-arrow::before {
+  border-top-color: var(--bs-danger);
+}
+
+.custom-tooltip-dark .tooltip-inner {
+  background-color: var(--bs-dark);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+.custom-tooltip-dark .tooltip-arrow::before {
+  border-top-color: var(--bs-dark);
+}
+</style>
+
+<script>
+// Initialize all tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+// Programmatic control functions
+const tooltipElement = document.getElementById('programmaticTooltip');
+let tooltip = null;
+
+// Initialize the programmatic tooltip
+document.addEventListener('DOMContentLoaded', function() {
+  if (tooltipElement) {
+    tooltip = new bootstrap.Tooltip(tooltipElement);
+  }
+});
+
+function showTooltip() {
+  if (tooltip) tooltip.show();
+}
+
+function hideTooltip() {
+  if (tooltip) tooltip.hide();
+}
+
+function toggleTooltip() {
+  if (tooltip) tooltip.toggle();
+}
+
+function updateTooltip() {
+  if (tooltip && tooltipElement) {
+    tooltipElement.setAttribute('data-bs-original-title', 'Updated tooltip content!');
+    tooltip.setContent({ '.tooltip-inner': 'Updated tooltip content!' });
+  }
+}
+
+function disposeTooltip() {
+  if (tooltip) {
+    tooltip.dispose();
+    tooltip = null;
+  }
+}
+
+// Copy to clipboard function
+function copyToClipboard(elementId) {
+  const element = document.getElementById(elementId);
+  const text = element.textContent;
+  
+  navigator.clipboard.writeText(text).then(function() {
+    // Show success feedback
+    const btn = event.target.closest('.copy-btn');
+    const originalTitle = btn.getAttribute('data-bs-original-title');
+    const tooltip = bootstrap.Tooltip.getInstance(btn);
+    
+    btn.setAttribute('data-bs-original-title', 'Copied!');
+    tooltip.show();
+    
+    setTimeout(() => {
+      btn.setAttribute('data-bs-original-title', originalTitle);
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy text: ', err);
+  });
+}
+</script>
+
+<%- include('../layout-footer') %>

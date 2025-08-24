@@ -1,0 +1,314 @@
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="mb-3">Badges</h1>
+        <p class="lead">Badge components with WCAG AA compliance and dark/light mode support.</p>
+    </div>
+</div>
+
+<script>
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent;
+    
+    navigator.clipboard.writeText(text).then(function() {
+        // Show success feedback
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check me-1"></i>Copied!';
+        button.classList.remove('btn-outline-secondary');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-secondary');
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+</script>
+
+<style>
+.code-block {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.code-block code {
+    color: #212529;
+    background: transparent;
+}
+
+.language-html {
+    display: block;
+    padding: 1rem;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+</style>
+
+<!-- Basic Badges -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Basic Badges</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-primary">Primary</span>
+                    <span class="badge bg-secondary">Secondary</span>
+                    <span class="badge bg-success">Success</span>
+                    <span class="badge bg-danger">Danger</span>
+                    <span class="badge bg-warning text-dark">Warning</span>
+                    <span class="badge bg-info text-dark">Info</span>
+                    <span class="badge bg-light text-dark">Light</span>
+                    <span class="badge bg-dark">Dark</span>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('basicBadgesCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="basicBadgesCode" class="language-html">&lt;span class="badge bg-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge bg-secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="badge bg-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge bg-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge bg-warning text-dark"&gt;Warning&lt;/span&gt;
+&lt;span class="badge bg-info text-dark"&gt;Info&lt;/span&gt;
+&lt;span class="badge bg-light text-dark"&gt;Light&lt;/span&gt;
+&lt;span class="badge bg-dark"&gt;Dark&lt;/span&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pill Badges -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Pill Badges</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge rounded-pill bg-primary">Primary</span>
+                    <span class="badge rounded-pill bg-secondary">Secondary</span>
+                    <span class="badge rounded-pill bg-success">Success</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+                    <span class="badge rounded-pill bg-info text-dark">Info</span>
+                    <span class="badge rounded-pill bg-light text-dark">Light</span>
+                    <span class="badge rounded-pill bg-dark">Dark</span>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('pillBadgesCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="pillBadgesCode" class="language-html">&lt;span class="badge rounded-pill bg-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-secondary"&gt;Secondary&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-warning text-dark"&gt;Warning&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-info text-dark"&gt;Info&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-light text-dark"&gt;Light&lt;/span&gt;
+&lt;span class="badge rounded-pill bg-dark"&gt;Dark&lt;/span&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Badges in Headings -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Badges in Headings</h2>
+        <div class="card">
+            <div class="card-body">
+                <h1>Example heading <span class="badge bg-secondary">New</span></h1>
+                <h2>Example heading <span class="badge bg-secondary">New</span></h2>
+                <h3>Example heading <span class="badge bg-secondary">New</span></h3>
+                <h4>Example heading <span class="badge bg-secondary">New</span></h4>
+                <h5>Example heading <span class="badge bg-secondary">New</span></h5>
+                <h6>Example heading <span class="badge bg-secondary">New</span></h6>
+                <pre><code>&lt;h1&gt;Example heading &lt;span class="badge bg-secondary"&gt;New&lt;/span&gt;&lt;/h1&gt;
+&lt;h2&gt;Example heading &lt;span class="badge bg-secondary"&gt;New&lt;/span&gt;&lt;/h2&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Badges with Buttons -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Badges with Buttons</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <button type="button" class="btn btn-primary">
+                        Notifications <span class="badge bg-secondary">4</span>
+                    </button>
+                    <button type="button" class="btn btn-success">
+                        Messages <span class="badge bg-light text-dark">9</span>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        Profile <span class="badge bg-primary">2</span>
+                        <span class="visually-hidden">unread messages</span>
+                    </button>
+                </div>
+                <pre><code>&lt;button type="button" class="btn btn-primary"&gt;
+    Notifications &lt;span class="badge bg-secondary"&gt;4&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Positioned Badges -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Positioned Badges</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-4 mb-3">
+                    <button type="button" class="btn btn-primary position-relative">
+                        Inbox
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            99+
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </button>
+                    
+                    <button type="button" class="btn btn-primary position-relative">
+                        Profile
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </button>
+                    
+                    <div class="position-relative d-inline-block">
+                        <svg width="32" height="32" class="text-primary" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                        </svg>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            2
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </div>
+                </div>
+                <pre><code>&lt;button type="button" class="btn btn-primary position-relative"&gt;
+    Inbox
+    &lt;span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"&gt;
+        99+
+        &lt;span class="visually-hidden"&gt;unread messages&lt;/span&gt;
+    &lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Badge Sizes -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Badge Sizes</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                    <span class="badge bg-primary fs-6">Large Badge</span>
+                    <span class="badge bg-secondary">Normal Badge</span>
+                    <span class="badge bg-success" style="font-size: 0.75em;">Small Badge</span>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('badgeSizesCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="badgeSizesCode" class="language-html">&lt;span class="badge bg-primary fs-6"&gt;Large Badge&lt;/span&gt;
+&lt;span class="badge bg-secondary"&gt;Normal Badge&lt;/span&gt;
+&lt;span class="badge bg-success" style="font-size: 0.75em;"&gt;Small Badge&lt;/span&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Badges with Icons -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Badges with Icons</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-primary"><i class="fas fa-star me-1"></i>Featured</span>
+                    <span class="badge bg-success"><i class="fas fa-check me-1"></i>Verified</span>
+                    <span class="badge bg-warning text-dark"><i class="fas fa-exclamation-triangle me-1"></i>Warning</span>
+                    <span class="badge bg-danger"><i class="fas fa-times me-1"></i>Error</span>
+                    <span class="badge bg-info text-dark"><i class="fas fa-info-circle me-1"></i>Info</span>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('badgeIconsCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="badgeIconsCode" class="language-html">&lt;span class="badge bg-primary"&gt;&lt;i class="fas fa-star me-1"&gt;&lt;/i&gt;Featured&lt;/span&gt;
+&lt;span class="badge bg-success"&gt;&lt;i class="fas fa-check me-1"&gt;&lt;/i&gt;Verified&lt;/span&gt;
+&lt;span class="badge bg-warning text-dark"&gt;&lt;i class="fas fa-exclamation-triangle me-1"&gt;&lt;/i&gt;Warning&lt;/span&gt;
+&lt;span class="badge bg-danger"&gt;&lt;i class="fas fa-times me-1"&gt;&lt;/i&gt;Error&lt;/span&gt;
+&lt;span class="badge bg-info text-dark"&gt;&lt;i class="fas fa-info-circle me-1"&gt;&lt;/i&gt;Info&lt;/span&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Interactive Badges -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="mb-3">Interactive Badges</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <a href="#" class="badge bg-primary text-decoration-none">Primary Link</a>
+                    <a href="#" class="badge bg-secondary text-decoration-none">Secondary Link</a>
+                    <a href="#" class="badge bg-success text-decoration-none">Success Link</a>
+                    <a href="#" class="badge bg-danger text-decoration-none">Danger Link</a>
+                </div>
+                
+                <!-- HTML Code -->
+                <div class="mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="mb-0 text-muted"><i class="fas fa-code me-2"></i>HTML Code</h6>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="copyToClipboard('interactiveBadgesCode')">
+                            <i class="fas fa-copy me-1"></i>Copy
+                        </button>
+                    </div>
+                    <pre class="code-block"><code id="interactiveBadgesCode" class="language-html">&lt;a href="#" class="badge bg-primary text-decoration-none"&gt;Primary Link&lt;/a&gt;
+&lt;a href="#" class="badge bg-secondary text-decoration-none"&gt;Secondary Link&lt;/a&gt;
+&lt;a href="#" class="badge bg-success text-decoration-none"&gt;Success Link&lt;/a&gt;
+&lt;a href="#" class="badge bg-danger text-decoration-none"&gt;Danger Link&lt;/a&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

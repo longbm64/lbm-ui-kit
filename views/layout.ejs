@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <!-- Bootstrap CSS is included in lbm-ui-kit.css -->
+    
+    <!-- Custom CSS -->
+    <link href="/assets/lbm-colors.css" rel="stylesheet">
+    <link href="/assets/lbm-ui-kit.css" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link href="/assets/fontawesome-6.7.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="/assets/highlight.js/highlight.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white border-bottom shadow-sm position-fixed w-100" data-bs-theme-target style="top: 0; z-index: 1030;">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid px-0">
+                <!-- Sidebar brand area -->
+                <div class="col-md-3 col-lg-2 d-flex align-items-center px-3 border-end">
+                    <button class="navbar-toggler d-md-none me-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand fw-bold mb-0" href="/">
+                        <i class="fas fa-palette me-2"></i>
+                        LBM UI Kit
+                    </a>
+                </div>
+                
+                <!-- Main header area -->
+                <div class="flex-grow-1 d-flex justify-content-end align-items-center px-3">
+                
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <button class="btn btn-outline-secondary" id="themeToggle" title="Toggle Theme">
+                                    <i class="fas fa-sun" id="themeIcon"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Body -->
+    <div class="container-fluid" style="margin-top: 56px;">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky">
+  
+            <ul class="nav flex-column pt-4">
+                <li class="nav-item">
+                    <a class="nav-link <%= page === 'home' ? 'active' : '' %>" href="/">
+                        <i class="fas fa-home me-2"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%= page === 'components' || page?.startsWith('components/') ? 'active' : '' %>" href="/components" data-bs-toggle="collapse" data-bs-target="#componentsSubmenu" aria-expanded="<%= page === 'components' || page?.startsWith('components/') ? 'true' : 'false' %>">
+                        <i class="fas fa-th me-2"></i>
+                        Components
+                        <i class="fas fa-chevron-down ms-auto"></i>
+                    </a>
+                    <div class="collapse <%= page === 'components' || page?.startsWith('components/') ? 'show' : '' %>" id="componentsSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components' ? 'active' : '' %>" href="/components">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Overview
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/accordion' ? 'active' : '' %>" href="/components/accordion">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Accordion
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/alerts' ? 'active' : '' %>" href="/components/alerts">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Alerts
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/badges' ? 'active' : '' %>" href="/components/badges">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Badges
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/breadcrumb' ? 'active' : '' %>" href="/components/breadcrumb">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Breadcrumb
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/buttons' ? 'active' : '' %>" href="/components/buttons">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Buttons
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/cards' ? 'active' : '' %>" href="/components/cards">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Cards
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link <%= page === 'components/modals' ? 'active' : '' %>" href="/components/modals">
+                                    <i class="fas fa-circle me-2" style="font-size: 0.5rem;"></i>
+                                    Modals
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%= page === 'colors' ? 'active' : '' %>" href="/colors">
+                        <i class="fas fa-palette me-2"></i>
+                        Colors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%= page === 'typography' ? 'active' : '' %>" href="/typography">
+                        <i class="fas fa-font me-2"></i>
+                        Typography
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <%= page === 'forms' ? 'active' : '' %>" href="/forms">
+                        <i class="bi bi-ui-checks me-2"></i>
+                        Forms
+                    </a>
+                </li>
+            </ul>
+            
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Information</span>
+            </h6>
+            <div class="px-3">
+                <p class="small text-muted mb-2">Bootstrap 5.3.7</p>
+                <p class="small text-muted mb-2">WCAG AA Compliant</p>
+                <p class="small text-muted mb-0">© 2024 LBM Team</p>
+            </div>
+        </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="py-4">
+                    <%- body %>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- LBM UI Kit JS (includes Bootstrap JS) -->
+    <script src="/assets/lbm-ui-kit.js"></script>
+    
+    <!-- Highlight.js -->
+    <script src="/assets/highlight.js/highlight.min.js"></script>
+    <script>
+        // Initialize Highlight.js
+        hljs.highlightAll();
+    </script>
+    
+    <!-- Theme Switcher Script -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+        
+        // Get saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-bs-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+            }
+        }
+    </script>
+</body>
+</html>
